@@ -10,93 +10,11 @@
     <link rel="stylesheet" href="./css/footer-styles.css">
     <link rel="stylesheet" href="./css/search-bar-styles.css">
     <link rel="stylesheet" href="./css/results-styles.css">
-    <!-- BROSWER ICON for FF, Chrome, Opera -->
-    <link rel="icon" type="image/png" href="./images/ICONS/browser-tab/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="./images/ICONS/browser-tab/favicon-32x32.png" sizes="32x32">
-    <!-- BROWSER ICON for IE -->
-    <link rel="icon" type="image/x-icon" href="./images/ICONS/browser-tab/favicon.ico" >
-    <link rel="shortcut icon" type="image/x-icon" href="./images/ICONS/browser-tab/favicon.ico"/>
-    <meta name="currentPage" content="ADOPT">
+    <?php require './php-html-blocks/favicon.php'?>
 </head>
 <body>
 
-    <header class="header-container">
-        <div class="header-wrapper">
-            <div class="header-max-width">
-                <div class="icons-and-menu-container">
-                    <div class="header-logo-container">
-                        <img src="./images/LOGO/LOGO.svg" alt="Cebu Pet Match logo" class="logo-image-style">
-                        <img src="./images/LOGO/LOGOTEXT2.svg" alt="Cebu Pet Match" class="logo-image-style">
-                    </div>
-                    <div class="hamburger-menu-wrap">
-                        <input type="checkbox" id="myCheck" onclick="displayMenuMobile()" class="toggler">
-                        <div class="hamburger"><div></div></div>
-                    </div>
-                </div>
-                <nav id="navMenu" class="nav-container">
-                    <ul>
-                        <div class="dropdown">
-                            <li><a href="index.html" class="sel">HOME</a></li>
-                        </div>
-                        <div class="dropdown">
-                            <li>
-                                <a class="sel dropDown-title" onclick="expandMobileMenuContent(0)">ADOPT</a>
-                                <svg class="dropDown-arrow" viewBox="0 0 24 24">
-                                    <path d="M 12 14.070312 L 8.179688 10.25 C 7.765625 9.835938 7.09375 9.835938 6.679688 10.25 C 6.265625 10.664062 6.265625 11.335938 6.679688 11.75 L 11.292969 16.363281 C 11.683594 16.753906 12.316406 16.753906 12.707031 16.363281 L 17.320312 11.75 C 17.734375 11.335938 17.734375 10.664062 17.320312 10.25 C 16.90625 9.835938 16.234375 9.835938 15.820312 10.25 Z M 12 14.070312"></path>
-                                </svg>
-                            </li>
-                                <ul class="dropdown-content">
-                                        <li><a href="#">Dog</a> </li>
-                                        <li><a href="#">Cat</a></li>
-                                        <li><a href="#">Bird</a></li>
-                                        <li><a href="#">Rodent / Rabbit</a></li>
-                                        <li> <a href="#">Reptile / Turtle</a></li>
-                                </ul>
-                        </div>
-                        <div class="dropdown">
-                            <li>
-                                <a class="sel dropDown-title" onclick="expandMobileMenuContent(1)">PLACEMENTS</a>
-                                <svg class="dropDown-arrow" viewBox="0 0 24 24">
-                                    <path d="M 12 14.070312 L 8.179688 10.25 C 7.765625 9.835938 7.09375 9.835938 6.679688 10.25 C 6.265625 10.664062 6.265625 11.335938 6.679688 11.75 L 11.292969 16.363281 C 11.683594 16.753906 12.316406 16.753906 12.707031 16.363281 L 17.320312 11.75 C 17.734375 11.335938 17.734375 10.664062 17.320312 10.25 C 16.90625 9.835938 16.234375 9.835938 15.820312 10.25 Z M 12 14.070312"></path>
-                                </svg>
-                            </li>
-                            <ul class="dropdown-content">
-                                <li><a href="">Request to post pet up for adoption</a></li>
-                                <li><a href="">Nearby Shelters</a></li>                               
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <li>
-                                <a class="sel dropDown-title" onclick="expandMobileMenuContent(2)">TESTIMONIALS</a>
-                                <svg class="dropDown-arrow" viewBox="0 0 24 24">
-                                    <path d="M 12 14.070312 L 8.179688 10.25 C 7.765625 9.835938 7.09375 9.835938 6.679688 10.25 C 6.265625 10.664062 6.265625 11.335938 6.679688 11.75 L 11.292969 16.363281 C 11.683594 16.753906 12.316406 16.753906 12.707031 16.363281 L 17.320312 11.75 C 17.734375 11.335938 17.734375 10.664062 17.320312 10.25 C 16.90625 9.835938 16.234375 9.835938 15.820312 10.25 Z M 12 14.070312"></path>
-                                </svg>
-                            </li>
-                            <ul class="dropdown-content">
-                                <li><a href="">Sarah and Connor</a></li>
-                                <li><a href="">Nathan</a></li>
-                                <li><a href="">Melinda</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <li>
-                                <a class="sel dropDown-title" onclick="expandMobileMenuContent(3)">ABOUT</a>
-                                <svg class="dropDown-arrow" viewBox="0 0 24 24">
-                                    <path d="M 12 14.070312 L 8.179688 10.25 C 7.765625 9.835938 7.09375 9.835938 6.679688 10.25 C 6.265625 10.664062 6.265625 11.335938 6.679688 11.75 L 11.292969 16.363281 C 11.683594 16.753906 12.316406 16.753906 12.707031 16.363281 L 17.320312 11.75 C 17.734375 11.335938 17.734375 10.664062 17.320312 10.25 C 16.90625 9.835938 16.234375 9.835938 15.820312 10.25 Z M 12 14.070312"></path>
-                                </svg>
-                            </li>
-                            <ul class="dropdown-content">
-                                <li><a href="">GENERAL</a></li>
-                                <li><a href="">F.A.Q.S</a></li>     
-                                <li><a href="">CONTACT US</a></li>                           
-                            </ul>
-                        </div>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <script src="./javascript/header.js" type="text/javascript"></script>
-    </header>
+<?php require './php-html-blocks/header.php'?>
     
     <div class="header-padding2" style="background-color: #766F9B; transform: translateY(5px);"></div>
     <form method="post" id="hom_res_search_filter" action="search.php">
@@ -426,78 +344,7 @@
         </div>
     </div>
 
-    <footer class="footer-block">  
-        <div class="footer-max-width">
-            <div class="footer-block-wrapper">
-                <div class="logo-block-wrapper">
-                    <img src="./images/LOGO/LOGO BLOCK.svg" alt="Cebu Pet Match Logo" class="footer-logo-style">
-                </div>
-                <div class="footer-sitemap-contact-block">
-                    <div class="footer-sitemap">
-                        <h5 class="padding-mobile">SITE NAVIGATION</h5>
-                        <ul class="footer-sitemap-categories">
-                            <div class="footer-sitemap-categories-block" onclick="expandFooterMenuContent(0)">
-                                <li class="footer-sitemap-header">
-                                    <h6 >ADOPT OR POST         
-                                        <svg class="dropDown-arrow-footer" viewBox="0 0 24 24">
-                                        <path d="M 12 14.070312 L 8.179688 10.25 C 7.765625 9.835938 7.09375 9.835938 6.679688 10.25 C 6.265625 10.664062 6.265625 11.335938 6.679688 11.75 L 11.292969 16.363281 C 11.683594 16.753906 12.316406 16.753906 12.707031 16.363281 L 17.320312 11.75 C 17.734375 11.335938 17.734375 10.664062 17.320312 10.25 C 16.90625 9.835938 16.234375 9.835938 15.820312 10.25 Z M 12 14.070312"></path>
-                                        </svg>
-                                    </h6>
-                                </li>
-                                <ul class="footer-sitemap-links">
-                                    <li><a href="">SEARCH SITE FOR PET</a></li>
-                                    <li><a href="">CHECK SHELTER</a></li>
-                                    <li><a href="">POST FOR ADOPTION</a></li>
-                                </ul>
-                            </div>
-                            <div  class="footer-sitemap-categories-block center-adjust" onclick="expandFooterMenuContent(1)">
-                                <li class="footer-sitemap-header">
-                                    <h6>ABOUT
-                                        <svg class="dropDown-arrow-footer" viewBox="0 0 24 24">
-                                            <path d="M 12 14.070312 L 8.179688 10.25 C 7.765625 9.835938 7.09375 9.835938 6.679688 10.25 C 6.265625 10.664062 6.265625 11.335938 6.679688 11.75 L 11.292969 16.363281 C 11.683594 16.753906 12.316406 16.753906 12.707031 16.363281 L 17.320312 11.75 C 17.734375 11.335938 17.734375 10.664062 17.320312 10.25 C 16.90625 9.835938 16.234375 9.835938 15.820312 10.25 Z M 12 14.070312"></path>
-                                        </svg>
-                                    </h6>
-                                </li>
-                                <ul class="footer-sitemap-links">
-                                    <li><a href="">GENERAL</a></li>
-                                    <li><a href="">F.A.Q.S</a></li>
-                                </ul>
-                            </div>
-                            <div  class="footer-sitemap-categories-block center-adjust" onclick="expandFooterMenuContent(2)">
-                                <li class="footer-sitemap-header">
-                                    <h6>TESTIMONIALS
-                                        <svg class="dropDown-arrow-footer" viewBox="0 0 24 24">
-                                            <path d="M 12 14.070312 L 8.179688 10.25 C 7.765625 9.835938 7.09375 9.835938 6.679688 10.25 C 6.265625 10.664062 6.265625 11.335938 6.679688 11.75 L 11.292969 16.363281 C 11.683594 16.753906 12.316406 16.753906 12.707031 16.363281 L 17.320312 11.75 C 17.734375 11.335938 17.734375 10.664062 17.320312 10.25 C 16.90625 9.835938 16.234375 9.835938 15.820312 10.25 Z M 12 14.070312"></path>
-                                        </svg>
-                                    </h6></li>
-                                <ul class="footer-sitemap-links">
-                                    <li><a href="">Sarah and Connor</a></li>
-                                    <li><a href="">Nathan</a></li>
-                                    <li><a href="">Melinda</a></li>
-                                </ul>
-                            </div>
-                        </ul>
-                    </div>
-                    <div class="footer-contact">
-                        <div class="footer-contact-wrapper">
-                            <div>
-                                <p>Have something on your mind?</p>
-                            </div>
-                            <div id="contact-button" class="contact-button">
-                                CONTACT US
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="footer-copyright">
-                    <p class="footer-copyright-c">© Copyright 2011-2021 Cebu Pet Match</p>
-                    <p>Cebu Pet Match is provided as a service to potential adopters. Listings for adoptable animals are provided courtesy of the Shelters and Posters. The information in these listings is reviewed by Administrators. For more information, please see our Terms & Conditions. </p>
-                </div>
-            </div>  
-        </div>
-        <script src="./javascript/footer.js" async defer></script>
-    </footer>
+    <?php require './php-html-blocks/footer.php'?>
 
 
     <script src="./javascript/searchResults.js"></script>
