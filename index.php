@@ -25,7 +25,7 @@
                 <?php require './php-html-blocks/tagline-mobile.php'?>
                 <div class="hom_-search-banner">
                     <!-- FORM START -->
-                    <form id="hom_form_search_filter" class="hom_--search-banner-col-1">
+                    <form method="get" id="hom_form_search_filter" class="hom_--search-banner-col-1" action="search.php">
                         <div class="hom_---search-empty"></div>
                         <div class="hom_---search-block">
                             <div class="hom_----title-banner">
@@ -82,11 +82,11 @@
                                 </div>
                             </div>
                             <div class="bar_---search-button">
-                                <button class="bar__button" id="hom_search_BTN" onclick="tempFunc(event)">GET STARTED</button>
+                                <button class="bar__button" id="hom_search_BTN" onclick="document.getElementById('hom_form_search_filter').submit()">GET STARTED</button>
                             </div>
                             <div>
-                                <input class="bar__text_form" type="text" name="city" id="hom_city" value="All Cebu" disabled><br>
-                                <input class="bar__text_form" type="text" name="animal" id="hom_animal" value="Dog" disabled><br>
+                                <input class="bar__text_form" type="text" name="city" id="hom_city" value="All Cebu" readonly="readonly" ><br>
+                                <input class="bar__text_form" type="text" name="animal" id="hom_animal" value="Dog" readonly="readonly"><br>
                             </div>
                         </div>
                         <!-- SEARCH BAR HTML END -->
@@ -197,7 +197,6 @@
 
     
     <script src="./javascript/customSelectBox.js"></script>
-    <script src="./javascript/homepageSearchRedirect.js"></script>
 
     <script type="text/javascript">
     </script>

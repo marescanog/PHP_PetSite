@@ -1,3 +1,12 @@
+<?php 
+    $city = isset($_GET['city']) ? $_GET['city'] : 'All Cebu';
+    $animal = isset($_GET['animal']) ? $_GET['animal'] : 'Dog';
+    $gender = isset($_GET['gender']) ? $_GET['gender'] : 'Any';
+    $age = isset($_GET['age']) ? $_GET['age'] : 'Any';
+    $size= isset($_GET['size']) ? $_GET['size'] : 'Any';
+    $page= isset($_GET['page']) ? $_GET['page'] : '1';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +19,17 @@
     <link rel="stylesheet" href="./css/footer-styles.css">
     <link rel="stylesheet" href="./css/search-bar-styles.css">
     <link rel="stylesheet" href="./css/results-styles.css">
+    <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script>
     <?php require './php-html-blocks/favicon.php'?>
 </head>
 <body>
+<script type="text/javascript">
 
+</script>
 <?php require './php-html-blocks/header.php'?>
     
     <div class="header-padding2" style="background-color: #766F9B; transform: translateY(5px);"></div>
-    <form method="post" id="hom_res_search_filter" action="search.php">
+    <form method="get" id="hom_res_search_filter" action="search.php">
         <div class="res_search-bar-container">
             <div class="res__general-wrapper">
                 <h1>SEARCH RESULTS FOR</h1>
@@ -29,17 +41,19 @@
                             <div class="bar__-select">                                  <!-- custom-select-wrapper -->
                                 <div name="city" id="city" class="bar__-custom-select"> <!-- custom-select -->
                                     <div class="bar__-select-trigger bar__city">        <!-- custom-select__trigger -->
-                                        <span>Enter City</span>
+                                        <span>
+                                            <?php echo $city;?>
+                                        </span>
                                         <div class="arrow" style="margin-left: 10px;"></div>
                                     </div>
                                     <div class="bar__-select-options" data-select-bar-type="0">                  <!-- custom-options -->
-                                        <span class="bar__-option selected" data-value="All Cebu">All Cebu</span>
-                                        <span class="bar__-option" data-value="Cebu">Cebu</span>
-                                        <span class="bar__-option" data-value="Mandaue">Mandaue</span>
-                                        <span class="bar__-option" data-value="Lapulapu">Lapulapu</span>
-                                        <span class="bar__-option" data-value="Toledo">Toledo</span>
-                                        <span class="bar__-option" data-value="Danao">Danao</span>
-                                        <span class="bar__-option" data-value="Talisay">Talisay</span>
+                                        <span class="bar__-option <?php if($city == 'All Cebu'){echo ' selected';}?>" data-value="All Cebu">All Cebu</span>
+                                        <span class="bar__-option <?php if($city == 'Cebu'){echo ' selected';}?>" data-value="Cebu">Cebu</span>
+                                        <span class="bar__-option <?php if($city == 'Mandaue'){echo ' selected';}?>" data-value="Mandaue">Mandaue</span>
+                                        <span class="bar__-option <?php if($city == 'Lapulapu'){echo ' selected';}?>" data-value="Lapulapu">Lapulapu</span>
+                                        <span class="bar__-option <?php if($city == 'Toledo'){echo ' selected';}?>" data-value="Toledo">Toledo</span>
+                                        <span class="bar__-option <?php if($city == 'Danao'){echo ' selected';}?>" data-value="Danao">Danao</span>
+                                        <span class="bar__-option <?php if($city == 'Talisay'){echo ' selected';}?>" data-value="Talisay">Talisay</span>
                                     </div>
                                 </div>
                             </div>
@@ -54,18 +68,18 @@
                             <div class="bar__-select">                                  <!-- custom-select-wrapper -->
                                 <div name="animal" id="animal" class="bar__-custom-select"> <!-- custom-select -->
                                     <div class="bar__-select-trigger bar__animal">        <!-- custom-select__trigger -->
-                                        <img id="selectImage" src="./images/ICONS/searchbar/Dog.svg" alt="animal icon" class="bar__animal-icon">
+                                        <img id="selectImage" src="./images/ICONS/searchbar/<?php echo $animal;?>.svg" alt="animal icon" class="bar__animal-icon">
                                         <div class="bar__--anim-desc">
-                                            <span>A Dog</span>
+                                            <span>A <?php echo $animal;?></span>
                                             <div class="arrow"></div>
                                         </div>
                                     </div>
                                     <div class="pink bar__-select-options" data-select-bar-type="1">       <!-- custom-options -->
-                                        <span class="pink bar__-option selected" data-value="Dog">A Dog</span>
-                                        <span class="pink bar__-option" data-value="Cat">A Cat</span>
-                                        <span class="pink bar__-option" data-value="Bird">A Bird</span>
-                                        <span class="pink bar__-option" data-value="Reptile">A Reptile</span>
-                                        <span class="pink bar__-option" data-value="Rabbit">A Rabbit</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Dog'){echo ' selected';}?>" data-value="Dog">A Dog</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Cat'){echo ' selected';}?>" data-value="Cat">A Cat</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Bird'){echo ' selected';}?>" data-value="Bird">A Bird</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Reptile'){echo ' selected';}?>" data-value="Reptile">A Reptile</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Rabbit'){echo ' selected';}?>" data-value="Rabbit">A Rabbit</span>
                                     </div>
                                 </div>
                             </div>
@@ -74,8 +88,9 @@
                             <button class="bar__button">GET STARTED</button>
                         </div>
                         <div class="bar_--mobile-hide-text">
-                            <input class="bar__text_form" type="text" name="city" id="hom_city" value="All Cebu" disabled><br>
-                            <input class="bar__text_form" type="text" name="animal" id="hom_animal" value="Dog" disabled><br>
+                            <input class="bar__text_form" type="text" name="city" id="hom_city" value="All Cebu" readonly="readonly"><br>
+                            <input class="bar__text_form" type="text" name="animal" id="hom_animal" value="Dog" readonly="readonly"><br>
+                            <input class="bar__text_form" type="hidden" name="page" id="hom_count" value="1" readonly="readonly"><br>     
                         </div>
                     </div>
                 </div>
@@ -88,7 +103,16 @@
             </div>
         </div>
         
-        
+        <?php 
+        /*
+        echo '<p>City:'.$city.'</p>';
+        echo '<p>Animal:'.$animal.'</p>';
+        echo '<p>Gender:'.$gender.'</p>';
+        echo '<p>Age:'.$age.'</p>';
+        echo '<p>Size:'.$size.'</p>';
+        echo '<p>Page:'.$page.'</p>';
+        */
+        ?>
         <div class="res__general-wrapper">
             <div class="res_-advanced-filters">
                 <button onclick="resToggleFilter(event)" class="res__search-filter-toggle">MORE FILTERS <span id="res__filter-span">+</span></button>
@@ -96,31 +120,33 @@
 
                     <div>
                         <p class="filtype">GENDER</p>
+                        <!-- Maybe change so that form doesn't submit?  After getting data, just filter the results gotten-->
                     <select name="gender" id="gender">
-                        <option value="Any">Any</option>
-                        <option value="MALE">Male</option>
-                        <option value="FEMALE">Female</option>
+                        <option value="Any" <?php if($gender == 'Any'){echo 'selected';}?>>Any</option>
+                        <option value="Male" <?php if($gender == 'Male'){echo 'selected';}?>>Male</option>
+                        <option value="Female" <?php if($gender == 'Female'){echo 'selected';}?>>Female</option>
                     </select>
                     </div>
 
                     <div>
                         <p class="filtype">AGE</p>
+                        <!-- Maybe change so that form doesn't submit?  -->
                     <select name="age" id="age">
-                        <option value="Any">Any</option>
-                        <option value="1">Young</option>
-                        <option value="2">Puppy</option>
-                        <option value="3">Adult</option>
-                        <option value="4">Old</option>
+                        <option value="Any" <?php if($age == 'Any'){echo 'selected';}?>>Any</option>
+                        <option value="1" <?php if($age == '1'){echo 'selected';}?>>Young</option>
+                        <option value="2" <?php if($age == '2'){echo 'selected';}?>>Puppy</option>
+                        <option value="3" <?php if($age == '3'){echo 'selected';}?>>Adult</option>
+                        <option value="4" <?php if($age == '4'){echo 'selected';}?>>Old</option>
                     </select>
                     </div>
-
                     <div>
                         <p class="filtype">SIZE</p>
+                    <!-- <select name="size" id="size" onchange="this.form.submit();"> -->
                     <select name="size" id="size">
-                        <option value="Any">Any</option>
-                        <option value="S">Small</option>
-                        <option value="M">Medium</option>
-                        <option value="L">Large</option>
+                        <option value="Any" <?php if($size == 'Any'){echo 'selected';}?>>Any</option>
+                        <option value="S" <?php if($size == 'S'){echo 'selected';}?>>Small</option>
+                        <option value="M" <?php if($size == 'M'){echo 'selected';}?>>Medium</option>
+                        <option value="L" <?php if($size == 'L'){echo 'selected';}?>>Large</option>
                     </select>
                     </div>
 
@@ -347,7 +373,7 @@
     <?php require './php-html-blocks/footer.php'?>
 
 
-    <script src="./javascript/searchResults.js"></script>
+    <script type="text/javascript" src="./javascript/searchResults.js"></script>
     <script type="text/javascript">
 
     </script>
