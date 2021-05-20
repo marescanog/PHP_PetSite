@@ -1,0 +1,462 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+    .inf__main{
+        font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+        font-size: 1.25rem;
+    }
+
+    .inf__main p{
+        font-family: 'Calibri Light','Calibri', 'Trebuchet MS', sans-serif;
+        font-size: 1.25rem;
+    }
+
+    .inf__main h4{
+        color: #766F9B;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        margin-top: 15px;
+    }
+
+    .inf__main ul {
+        list-style-type: none;
+    }
+
+    .inf__col-2{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .inf__max_width{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .inf__wrapper-vertical{
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .inf__arrow{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: text-bottom;
+        fill: white;
+        transition: all 0.3s ease;
+        transform: rotate(90deg);
+        z-index: 0;
+        position: relative;
+    }
+
+/* DESKTOP: If the browser window is 900px or larger */
+    @media only screen and (min-width: 900px) {
+        h4{
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .inf__max_width{
+            max-width: 1060px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        .inf__col-2{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*        PAGE HEADER SECTION             */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+    .inf_header{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #766F9B;
+    }
+
+    .inf_header h1{
+        color: white;
+        font-size: 2.25rem;
+        margin-left: 5%;
+    }
+
+    .inf_header a{
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        margin-left: 5%;
+    }
+
+
+/* DESKTOP: If the browser window is 900px or larger */
+    @media only screen and (min-width: 900px) {
+        .inf_header h1{
+            font-size: 3rem;
+            margin-left: 0px;
+        }
+
+        .inf_header a{
+            font-size: 1rem;
+            margin-left: 0px;
+        }
+    }
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      DESCRIPTION CONTENT BLOCK         */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.inf_content-block{
+    flex: 1;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.inf_--about-content li{
+    font-family: 'Calibri Light','Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.inf_--about-content span{
+    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: #766F9B;
+    display: inline-block;
+    margin-right: 35px;
+    margin-bottom: 10px;
+    width: 55px;
+}
+
+.inf_-details p{
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.inf_-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.inf_-contact h4{
+    color: #BF3D96;
+    text-align: center;
+}
+
+.inf_-contact button{
+    margin-top:10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    background-color: #BF3D96;
+    color: white;
+    border: 1px solid #888888;
+    box-shadow: -3px 3px 3px #707070;
+}
+
+    .inf_-contact button:hover{
+        cursor: pointer;
+        background-color: #d44eaa;
+        color: white;
+    }
+
+    
+
+/* TABLET: If the browser window is 500px or larger */
+@media only screen and (min-width: 500px) {
+    .inf__main h4{
+        font-size: 1.5rem;
+    }
+
+
+    .inf_-details p{
+        text-align: justify;
+        font-size: 1em;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .inf_content-block{
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none;
+        margin-bottom: 20px;
+    }
+
+    .inf_--about-content{
+        display: flex;
+    }
+        .inf_---about-content-col-1{
+            flex: 1;
+        }
+        .inf_---about-content-col-2{
+            flex:1;
+        }
+
+    .inf_--about-content span{
+        margin-right: 25px;
+    }
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*           IMAGE CAROUSEL               */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* If the browser window is 350px or smaller. Smallest phone size is 280px */
+@media only screen and (max-width: 350px) {
+    .inf_-slider-thumbnail-collection{
+        max-width: 125px;
+    }
+
+    .inf_-slider-thumbnail-collection img{
+        max-width: 185px;
+    }
+
+    .inf_--slider-thumbnails{
+        max-width: 185px;
+    }
+
+        .inf_thumbnail-button.previous{
+            left: -25px;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1.25rem;
+        }
+
+        .inf_thumbnail-button.next{
+            right: -25px;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1.25rem;
+        }
+}
+
+/* MOBILE: If the browser window is smaller than 900px */
+.inf_slider-block{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.inf_-slider-frame{
+    padding: 15px;
+    background-color: #D8DBE3;
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 250px;
+}
+
+    #slider{
+        flex: 1;
+        overflow: hidden;
+        max-width: 400px;
+        max-height: 500px;
+    }
+/*
+    #slider figure{
+        position: relative;
+        width: 400%;
+        margin: 0;
+        left: 0;
+        transition: all 3s ease;
+    }
+*/
+
+    /* CHANGE WIDTH ACCORDING TO NUMBER OF IMAGES
+        .inf_slider-images -> width = (total number of images)*100%
+        .inf_slider-images img -> width = 100%/(total number of images) */
+        .inf_slider-images{
+            position: relative;
+            width: 400%;
+            margin: 0;
+            left: 0;
+            transition: all 1s ease;
+        }
+
+        #slider figure img{
+            width: 25%;
+            float: left;
+        }
+
+.inf_-slider-thumbnail-collection{
+    flex:1;
+    align-items: center;
+    display: flex;
+    margin:auto;
+    position: relative;
+}
+
+.inf_-slider-thumbnail-collection img{
+    margin: 10px 5px 10px 5px;
+    max-width: 50px;
+    opacity: 50%;
+    flex: 1;
+}
+
+.inf_-slider-thumbnail-collection img:hover{
+    cursor: pointer;
+    opacity: 100%;
+}
+
+.inf_thumbnail-image_selected{
+    opacity: 100% !important;
+}
+
+    .inf_thumbnail-button{
+        background: #211753;
+        border:0;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        height: 2rem;
+        opacity: 50%;
+        position: absolute;
+        transition: opacity 0.25;
+        width: 2rem;
+        z-index: 1;
+    }
+        .inf_thumbnail-button.previous{
+            left: -35px;
+        }
+
+        .inf_thumbnail-button.next{
+            right: -35px;
+        }
+
+        .inf_thumbnail-button:hover{
+            opacity: 80%;
+        }
+
+
+.inf_-slider-thumbnails{
+    display: flex;
+    transform: translate(0);
+    transition: transform 0.25s;
+    overflow: hidden;
+    max-width: 248px;
+}
+
+/* Added line to troubleshoot safari? */
+.inf_-slider-thumbnails img{
+   max-height: min-content;
+}
+
+
+/* If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .inf_slider-block{
+        flex: 1;
+        max-width: fit-content;
+        padding-left: 5%;
+    }
+
+    .inf_--slider-thumbnails{
+        max-width: 185px;
+    }
+
+    .inf_--slider-thumbnails img{
+        max-width: 35px;
+    }
+
+        .inf_thumbnail-button.previous{
+            left: -25px;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1.25rem;
+            left: -30px;
+        }
+
+        .inf_thumbnail-button.next{
+            right: -25px;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1.25rem;
+            right: -30px;
+        }
+
+}
+
+

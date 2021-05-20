@@ -1,0 +1,47 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+    /* CSS RESET */
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }

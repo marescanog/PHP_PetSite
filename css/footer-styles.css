@@ -1,0 +1,241 @@
+.footer-block{
+    background-color: #211753;
+    border-top: 1px solid #BF3D96;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.footer-block p{
+    text-align: center;
+}
+
+.footer-block a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Calibri Light', 'Trebuchet MS', sans-serif;
+}
+
+.footer-block ul{
+    list-style: none;
+}
+
+.footer-block h5{
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+.footer-block h6{
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
+.footer-max-width{
+    max-width: 130em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer-block-wrapper{
+    padding: 5% 0 5% 0;
+}
+
+.padding-mobile{
+    padding:  0 5% 0 5%;
+}
+
+.logo-block-wrapper{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: fit-content;
+    padding: 0px;
+}
+
+.footer-logo-style{
+    height: 65px;
+}
+
+.footer-sitemap{
+    padding-top: 2.5%;
+    text-align: center;
+}
+
+.footer-sitemap-categories{
+   // padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+.footer-sitemap-header{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-sitemap-header:hover{
+    color: wheat;
+    cursor: pointer;
+}
+
+.footer-sitemap-header:hover .dropDown-arrow-footer{
+    fill: wheat;
+    cursor: pointer;
+}
+
+.footer-sitemap-links{
+    display: none;
+}
+
+.footer-sitemap-links li{
+    background-color: #BF3D96;
+    padding:  15px 5% 15px 5%;
+}
+
+.footer-sitemap-links a:hover{
+    color: wheat;
+}
+
+.footer-contact-wrapper{
+    padding-top: 10px;
+}
+
+            .contact-button{
+                background-color: #211753;
+                border: 2px solid white;
+                border-radius: 50px;
+                padding: 10px 30px 10px 30px;
+                text-align: center;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+            }
+
+            .contact-button:hover{
+                background-color: white;
+                color: #211753;
+                cursor: pointer;
+            }
+
+.footer-copyright{
+    font-size: .8em;
+    font-family: 'Calibri Light', 'Trebuchet MS', sans-serif;
+    padding-top: 20px;    
+    padding-bottom: 5px;  
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+    .footer-copyright-c{
+        padding: 10px;
+    }
+
+    .dropDown-arrow-footer{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: text-bottom;
+    fill: white;
+    transition: all 0.3s ease;
+}
+
+.dropDown-arrow-expanded-footer{
+    transform: rotate(-180deg);
+}
+
+.display-footer{
+    display: block;
+}
+
+
+
+/* If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .footer-block h5{
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+
+    .footer-block-wrapper{
+        padding: 1% 8% 1% 8%;
+    }
+
+    .logo-block-wrapper{
+        padding: 10px;
+    }
+
+    .footer-logo-style{
+        height: 80px;
+    }
+
+    .footer-sitemap-contact-block
+    {
+        display: flex;
+        max-width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+        .footer-sitemap{
+            flex: 4;
+            margin-right: 5%;
+            padding-top: 0;
+            text-align: left;
+        }
+
+            .footer-sitemap-categories{
+                display: flex;
+                padding-top: 2%;
+                padding-bottom: 2%;
+            }
+
+                .footer-sitemap-categories-block{
+                    flex: 1;
+                }
+
+                .center-adjust{
+                    text-align: center;
+                }
+
+                .footer-sitemap-header{
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+
+                .footer-sitemap-header:hover{
+                    color: white;
+                    cursor: auto;
+                }
+
+                .footer-sitemap-links{
+                    display: block;
+                }
+
+                .footer-sitemap-links li{
+                    background-color: #211753;
+                    padding: 0;
+                    padding-top: 10px;
+                }
+
+        .footer-contact{
+            flex: 2;
+        }
+            .footer-contact-wrapper{
+                max-height: fit-content;
+                margin-top: 15%;
+            }
+
+.padding-mobile{
+    padding:  0;
+}
+
+.dropDown-arrow-footer{
+    display: none;
+}
+
+.footer-copyright{
+    padding-top: 10px;
+}
+
+}

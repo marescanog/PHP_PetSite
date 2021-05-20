@@ -1,0 +1,602 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.hom__max-width{
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ban__image-mobile{
+    width: 60%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    transform: translateY(10px);
+}
+
+.hom__page-section{
+    padding: 2rem 0;
+}
+
+
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .ban__image-mobile{
+        width: 45%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .ban__image-mobile{
+        display: none
+    }
+    
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*             HERO BANNER                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.hom_hero-banner-container{
+    background-color: #766F9B;
+    max-height: fit-content;
+}
+
+/*
+.hom_hero-banner-padding{
+    padding-bottom: 2.5em;
+}
+*/
+
+.hom_banner-mobile-disable{
+    display: none;
+}
+
+.hom_banner-mobile-enable{
+    display: block;
+}
+
+.hom_tagline_mobile{
+    max-width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2.5em;
+    transform: translateX(5px);
+}
+
+    .hom_----title-banner{
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hom_----title-banner h1{
+        font-size: 6vw;
+        margin-bottom: 15px;
+        transform: translateY(10px);
+    }
+
+    .hom_----title-banner h1{
+        color: #211753;
+        font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+        margin-top: 10px;
+    }
+
+.hom_---search-block{
+    text-align: center;
+
+}
+
+.bar_---search-bar{
+    margin-top:0;
+}
+
+.hom_---search-empty{
+    padding: 1px;
+    min-width: 0;
+}
+
+.bar__link{
+    padding-bottom: 2em;
+}
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .hom_----title-banner{
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hom_----title-banner h1{
+        font-size: 4.5vw;
+        margin-bottom: 15px;
+    }
+
+    .hom_tagline_mobile{
+        max-width: 50%;
+        padding-top: 2.5em;
+        transform: translate(15px, 10px);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .bar__link{
+        padding-bottom: 0;
+    }
+
+    .hom_---search-empty{
+        padding: 10px;
+        min-width: 350px;
+    }
+
+    .hom_----title-banner{
+        max-width: none;
+    }
+
+    .hom_----title-banner h1{
+        font-size: 1.75rem;
+        margin-top: 10px;
+        margin-bottom: 0px;;
+    }
+
+    .hom_hero-banner-container{
+        max-height: 575px;
+    }
+
+    .hom_hero-banner-padding{
+        padding-right: 25px;
+        padding-left: 25px;
+        padding-bottom: 0;
+    }
+
+    .hom_tagline_desktop{
+        max-width: 65%;
+        transform: translateY(90px);
+    }
+
+    .hom_banner-mobile-disable{
+        display: block;
+    }
+
+    .hom_banner-mobile-enable{
+        display: none;
+    }
+    
+    .hom_-search-banner{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hom_--search-banner-col-1{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hom_--search-banner-col-2{
+        flex: 1;
+    }
+
+    .hom--search-banner-image{
+        max-height: 430px;
+        max-width: fit-content;
+    }
+
+    .hom_---search-empty{
+        flex: 1;
+     //   background-color: khaki;
+        min-width: 350px;
+    }
+
+    .hom_---search-block{
+        flex: 3;
+       // background-color: lightcoral;
+        text-align: left;
+    }
+
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*               FEATURES                 */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.hom_features-container{
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.hom_features-container h2{
+    color: #d666b3;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+    font-size: 1.75rem;
+    margin-top: 1em;
+}
+
+.hom_-feature-card-container{
+    display: block;
+    margin-top: 1em;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hom_--feature-card{
+    max-width: 250px;
+    margin-top: 2em;
+}
+
+.hom_--feature-card h3{
+    color: #d666b3;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+    font-size: 1.25rem;
+    margin-top: 1em;
+}
+
+.hom_--feature-card p{
+    font-family: 'Calibri light','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+    text-align: justify;
+    margin-top: 1em;
+}
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .hom_features-container h2{
+        font-size: 2rem;
+    }
+
+    .hom_--feature-card h3{
+        font-size: 1.75rem;
+        margin-top: 0.5em;
+    }
+
+    .hom_--feature-card p{
+        margin-top: 0.5em;
+        font-size: 1.2rem;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .hom_features-container h2{
+        font-size: 2.5rem;
+    }
+
+    .hom_--feature-card h3{
+        font-size: 1.75rem;
+        margin-top: 0.5em;
+    }
+
+    .hom_--feature-card p{
+        margin-top: 0.5em;
+        font-size: 1.2rem;
+    }
+
+    .hom_-feature-card-container{
+        display: flex;
+        max-width: 900px;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.5em;
+    }
+
+}
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*             ABOUT SECTION              */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.hom_svg-pawprint{
+    width: 100px;
+    height: 100px;
+    margin-top: 1em;
+}
+
+.hom_about-container{
+    background-color: #766F9B;
+    color: white;
+    text-align: center;
+}
+
+    .hom_about-container h2{
+        font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+        font-size: 1.75rem;
+        font-weight: 300;
+    }
+
+    .hom_about-container p{
+        font-family: 'Calibri Light','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+        font-size: 1rem;
+        margin-top: 1em;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+.hom__--about-max-width{
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .hom_about-container h2{
+        font-size: 2.2rem;
+    }
+
+    .hom__--about-max-width{
+        max-width: 500px;
+    }
+
+    .hom_about-container p{
+        font-size: 1.1rem;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .hom__--about-max-width{
+        max-width: 850px;
+    }
+
+    .hom_about-container h2{
+        font-size: 2.5rem;
+    }
+
+    .hom_about-container p{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*             TESTIMONIALS               */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.hom_testimonials-container{
+    text-align: center;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+}
+
+.hom_-testimonials{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+}
+
+        .hom_testimonials-background{
+            background-color: rgba(118, 111, 155, 0.35);
+        }
+
+        .hom_-testimonials p{
+            text-align: justify;
+        }
+
+.home_-section-title{
+    padding-bottom:7rem;
+}
+
+    .home_-section-title h2{
+        color: #211753;
+        font-size: 1.75rem;
+        margin-top: 1em;
+    }
+
+    .home_-section-title span{
+        font-weight: 300;
+    }
+
+    .home_-section-title svg{
+        position: relative;
+        top:5px
+    }
+
+.hom_--testimon-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+}
+
+.hom_---testimonials-card{
+    max-width: 350px;
+    background-color: rgba(255,255,255,.8);
+    padding: 0 0.5rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: 110px;
+}
+    /* Makes selected cards equal height */
+    .hom_---testimonials-card > div{
+        float: none;
+        display: flex;
+    }
+
+    .hom_--testimonials-card a:hover{
+        text-decoration: underline;
+    }
+
+    .hom_---testimon-image {
+        border-radius:50%;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border: 6px solid rgba(255,255,255,.8);
+        outline: 0;
+        margin: 0 auto -80px auto;
+        position: relative;    
+        top:-80px;
+    }
+
+    .hom_---testimonials-last{
+        margin-bottom: 0;
+    }
+
+    .hom_---testimonials-card h3{
+        color: #211753;
+        margin-top: 5px;
+    }
+
+    .hom_---testimonials-card span{
+        color: #BF3D96;
+        font-weight: 500;
+    }
+
+    .hom_---testimonials-card p{
+        margin-top: 5px;
+    }
+
+    .hom_---testimonials-card a{
+        margin-top: 5px;
+        text-decoration: none;
+    }
+
+    .hom_---testimonials-card a:hover{
+        text-decoration: underline;
+    }
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .home_-section-title h2{
+        font-size: 2.2rem;
+    }
+    .hom_---testimonials-card{
+        max-width: 280px;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .hom_-testimonials{
+        max-width: 900px;
+        margin-bottom: 2em;
+    }
+
+    .home_-section-title h2{
+        font-size: 2.5rem;
+    }
+
+    .hom_--testimon-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: none;
+    }
+
+    .hom_testimonials-background{
+        background: url('../images/PEOPLE/banner/testimonials-bg.jpg') top center no-repeat;
+        background-size: cover;
+        opacity: 80%;
+    }
+
+    .hom_---testimonials-card{
+        padding: 0 1.8rem 1rem 1.8rem;    
+        margin-bottom: 0;
+    }
+
+    .hom_---testimonials-card h3{
+        font-size: 1.25rem;
+        margin-top: 15px;
+    }
+
+    .hom_---testimonials-card span{
+        font-weight: 500;
+    }
+
+    .hom_---testimonials-card p{
+        margin-top: 15px;
+    }
+
+    .hom_---testimonials-card a{
+        margin-top: 15px;
+        text-decoration: none;
+    }
+
+    .hom_---testimonials-card a:hover{
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,595 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+Note padding left is 30px for this page
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+#gender{
+    width: 15em;
+    height: 3em;
+    padding-left: 1em;
+}
+
+#age{
+    width: 15em;
+    height: 3em;
+    padding-left: 1em;
+}
+
+#size{
+    width: 15em;
+    height: 3em;
+    padding-left: 1em;
+}
+
+.res__bottom_Page{
+    text-align: center;
+    font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.res__bottom_Page a{
+    text-decoration: none;
+    margin-bottom: 2em;
+}
+
+.res__general-wrapper{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  //  background-color: cadetblue;
+}
+
+.res_design_dogcat-icon{
+    display: none;
+}
+
+.res__hr-padding{
+    margin-bottom: 0;
+   // max-width: 1070px;
+}
+
+.res__bottom_foot{
+    padding-bottom: 2em;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .res__hr-padding{
+        margin-bottom: 1em;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .res_design_dogcat-icon{
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 70%;
+    }
+
+    .res_design_dogcat-icon img{
+        width: 250px;
+        height: auto;
+        transform: rotate(15deg);
+    }
+}
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*           SEARCH BAR HEADER            */
+/*        AND SELECT BAR OVERRIDE         */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.res_search-bar-container{
+    background-color: #766F9B;
+}
+
+.res_search-bar-container h1{
+    font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    color: #211753;
+    margin-right: 10px;
+    margin-left:10px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top:0.5em;
+}
+
+.res_-search-bar-select-container{
+  //  background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 1.25em;
+}
+
+.bar_---search-bar{
+    flex: 1;
+    margin-bottom: auto;
+    margin-top: 0;
+}
+
+.bar__link{
+    display: none;
+}
+
+.bar_---search-button{
+    max-width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+}
+
+.bar__button{
+    width: 100%;
+}
+
+/* Adjust and override height of original select */
+    .bar__-select{
+        height: 30px;
+    }
+    .bar__box {
+        height: 30px;
+    }
+    .bar__-select-trigger{
+        height: 30px;
+    }
+
+/* Adjust and override size and position of the icon image */
+    .bar__animal img{
+        height: 25px;
+        margin:0;
+    }
+
+    .bar__animal-icon {
+        transform: translate(-10px,-2px);
+    }
+
+
+
+/* TABLET: If the browser window is 400px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+
+    /* Adjust and override size and position of the icon image */
+        .bar__animal img{
+            height: 25px;
+            margin:0;
+        }
+        .bar__animal-icon {
+            transform: translate(-10px,-1px);
+        }
+
+    .res_search-bar-container h1{
+        font-size: 1.5rem;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    /* Adjust and override size and position of the icon image */
+        .bar__animal img{
+            height: 30px;
+            margin:0;
+        }
+        .bar__animal-icon {
+            transform: translate(-0px,-1px);
+        }
+
+
+    .res_search-bar-container h1{
+        text-align: left;
+        font-size: 2rem;
+        padding-left: 30px;
+        margin-left: 0;
+    }
+
+    
+
+    .res_-search-bar-select-container{
+        display: flex;
+        flex-direction: row;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-left: 0;
+        margin-right: auto;
+        padding-bottom: 10px;
+        padding-left: 30px;
+    }
+
+    /* Adjust Desktop Button Position */
+        .bar__button{
+            margin-left: 2em;
+            margin-bottom: 1em;
+        }
+
+    /* Adjust and override height of original select */
+        .bar__-select{
+            height: 40px;
+        }
+        .bar__box {
+            height: 40px;
+        }
+        .bar__-select-trigger{
+            height: 40px;
+        }
+
+    /* Adjust the shadows of custom select boxes */
+    .bar_----select-bar-city{
+        box-shadow: -3px 3px 2px rgb(51, 51, 51);
+        z-index: 3;
+    }
+
+    .bar_----search-bar-caption{
+        box-shadow: -10px 3px 2px rgb(51, 51, 51);
+        z-index: 2;
+    }
+
+    .bar_----select-bar-animal{
+        box-shadow: -10px 3px 2px rgb(51, 51, 51);
+    }
+}
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            FILTER SECTION              */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.res__search-filter-toggle{
+    border: solid 1px;
+    width: 130px;
+    text-align: center;
+    padding:10px;
+    cursor: pointer;
+    color: #211753;
+    background-color: white;
+    font-family:  'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+    .res__search-filter-toggle:hover{
+        background-color: #766F9B;
+        color: white;
+    }
+
+    .res_--all-adv-filters.res__hidden{
+        display: none;
+    }
+
+.filtype{
+    margin-left: 1em;
+    margin-bottom: 0.2em;
+    margin-top: 10px;
+}
+
+.res_-advanced-filters{
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+}
+
+.res_-advanced-filters p{
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: small;
+}
+
+/* TABLET: If the browser window is 360px or smaller (For text adjustment)*/
+@media only screen and (max-width: 366px) {
+    .res_-advanced-filters{
+        max-width: 250px;
+    }
+}
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .res__search-filter-toggle{
+        margin-left: 1.9em;
+    }
+
+    .res_-advanced-filters{
+        padding: 10px;
+        max-width: 500px;
+    }
+
+    .res_--all-adv-filters{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+}
+
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .res_--all-adv-filters{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: left;
+    }
+
+    .res_-advanced-filters{
+        padding: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none;
+        padding-left: 30px;
+    }
+
+    .res__search-filter-toggle{
+        margin-left: 0;
+    }
+
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*        SEARCH RESULTS SECTION          */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.res_search-results{
+    padding: 10px
+}
+
+.res_-search-results-header h3, .res_-search-results-header  span, .res_-search-results-header p{
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.res_-search-results-header h3{
+    font-size: 1rem;
+}
+.res_-search-results-header p{
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+.res_---search-pet-container{
+    position: relative;
+    background: #fff;
+    color: #1e617f;
+    border: 1px solid black;
+    min-height: 392px;
+    overflow: hidden;
+    max-width: none;
+}
+
+ul.res_-search-results-list>li {
+    margin: 0 0 40px;
+}
+
+.res__search-target{
+    display: block;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: 0 0;
+    border: 0;
+    padding-bottom: 136%;
+    margin-bottom: -136%;
+    padding-bottom: calc(100% + 130px);
+    margin-bottom: calc(-100% - 130px);
+  // Debugging this box
+  //  background-color: rgba(0,0,255,.5);
+}
+
+.res_----search-pet-details{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    margin-top: -8px;
+    color: #666;
+}
+
+span.res__search-pet-name {
+    display: block;
+    text-align: center;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+}
+
+span.res__search-pet-meta, span.res__search-pet-breed{
+    display: block;
+    text-align: center;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+span.res__search-view-more{
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    color: #a364a5;
+    font-family: brandon-grotesque,sans-serif;
+    font-weight: 600;
+}
+
+.res_search-results{
+    width: 100%;
+    height: auto;
+}
+
+.res__image-adjustment{
+    display: flex;
+}
+
+.res__image-adjustment img{
+    flex: 1;
+}
+
+.res__image-adjustment{
+    height: 100%;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+        /* === SPECIAL OTHER MEDIA QUERIES FOR MOBILE - RESPONSIVE SEARCH DISPLAY === */
+                /* If the browser window is 330px or smaller */
+                @media only screen and (max-width: 400px) {
+                    .res_---search-pet-container{
+                        max-width: 250px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+
+                /* If the browser window is 568px or larger */
+                @media only screen and (min-width: 568px) {
+                    ul.res_-search-results-list>li {
+                        -webkit-box-flex: 1;
+                        -webkit-flex: 1 1 48%;
+                        -moz-box-flex: 1;
+                        -moz-flex: 1 1 48%;
+                        -ms-flex: 1 1 48%;
+                        flex: 1 1 48%;
+                        max-width: 48%;
+                        margin-right: 1%;
+                    }
+                    
+                    .res_-search-results-list{
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        padding: 0;
+                        margin: 0;
+                        position: relative;
+                        list-style-type: none;
+                    }
+                }
+                /* If the browser window is 769px or larger */
+                @media only screen and (min-width: 769px) {
+                    ul.res_-search-results-list>li {
+                        -webkit-box-flex: 1;
+                        -webkit-flex: 1 1 30%;
+                        -moz-box-flex: 1;
+                        -moz-flex: 1 1 30%;
+                        -ms-flex: 1 1 30%;
+                        flex: 1 1 30%;
+                        max-width: 30%;
+                        margin-right: 3%;
+                    }
+
+                    .res__search-target{
+                        padding-bottom: 160%;
+                        margin-bottom: -160%;
+                        padding-bottom: calc(100% + 145px);
+                        margin-bottom: calc(-100% - 145px);
+                    }
+
+                    span.res__search-pet-name {
+                        font-size: 1.111111111rem;
+                    }
+
+                    span.res__search-pet-meta, span.res__search-pet-breed{
+                        font-size: .888888889rem;
+                    }
+
+                    .span.res__search-view-more{
+                        font-size: .875rem;
+                    }
+
+                }
+                /* If the browser window is 1120px or larger */
+                @media only screen and (min-width: 1120px) {
+                    ul.res_-search-results-list>li {
+                        -webkit-box-flex: 1;
+                        -webkit-flex: 1 1 22%;
+                        -moz-box-flex: 1;
+                        -moz-flex: 1 1 22%;
+                        -ms-flex: 1 1 22%;
+                        flex: 1 1 22%;
+                        max-width: 22%;
+                        margin-right: 3%;
+                    }
+                }
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .res_search-results{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

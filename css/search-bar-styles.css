@@ -1,0 +1,445 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.bar_--mobile-hide-text{
+    display: none;
+}
+
+.bar__text_form{
+    margin-top:auto;
+    height: min-content;
+    opacity: 0;
+    z-index: -10;
+}
+
+.bar_---search-bar{
+  //  margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar_---search-button a{
+    margin-top: 10px;
+}
+
+.bar__box{
+    flex: 1;
+    max-width: 65%;
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .bar_----search-bar-caption{
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+        height: 40px;
+        width: 100%;
+        background-color: #BF3D96;
+        border-bottom: 2px solid #211753;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .bar_----search-bar-caption p{
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .bar__box-----caption-sizing{
+        max-height: min-content;
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+
+.arrow {
+    position: relative;
+    height: 8px;
+    width: 8px;
+}
+
+.arrow::before, .arrow::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 0.15rem;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+.arrow::before {
+    left: -3px;
+    transform: rotate(45deg);
+    background-color: white;
+}
+
+.arrow::after {
+    left: 2px;
+    transform: rotate(-45deg);
+    background-color: white;
+}
+
+.open .arrow::before {
+    left: -3px;
+    transform: rotate(-45deg);
+}
+
+.open .arrow::after {
+    left: 2px;
+    transform: rotate(45deg);
+}
+
+.bar__animal-icon{
+    width: 35px;
+    margin-right: 10px;
+    transform: translate(0,-2px);
+}
+
+.bar_----search-bar-caption{
+    display: flex;
+    flex-direction: column;
+}
+
+    .bar__button{
+        padding: 10px 15px 10px 15px;
+        background-color: #211753;
+        border: 2px solid #211753;
+        color: white;
+        border-radius: 0 0 30px 30px ;
+        font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+        font-weight: bold;
+        font-size: 0.9rem;
+        box-shadow: -3px 3px 1px 
+        #3f3f3f;
+        width: 65%;
+    }
+
+    .bar__button:hover{
+        cursor: pointer;
+        background-color: #34296d;
+        border: 2px solid #34296d;
+        color: white;
+    }
+
+    .bar_---search-button a{
+        text-decoration: none;
+        margin-left: 10px;
+        color: #211753;
+    }
+
+    .bar_---search-button a:hover{
+        text-decoration: underline;
+    }
+
+    .bar__link{
+        margin-top: 15px;
+    }
+
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .bar_--mobile-hide-text{
+        display: block;
+    }
+
+    .bar__link{
+        margin-top: 0px;
+    }
+
+    .bar__button{
+        background-color: #BF3D96;
+        border: 2px solid #BF3D96;
+        color: #211753;
+        margin-top: 0px;
+        width: max-content;
+        border-radius: 30px;
+    }
+
+    .bar__button:hover{
+        cursor: pointer;
+        background-color: #da53af;
+        border: 2px solid #da53af;
+        color: #322768;
+    }
+
+
+    .bar__animal-icon{
+        width: 30px;
+        margin-right: 1px;
+        transform: translate(0,-3px);
+    }
+
+    .bar_---search-bar{
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .bar__box{
+        flex: 1;
+        max-width: 165px;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: none;
+    }
+
+    .bar_----search-bar-caption{
+        background-color: #BF3D96;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 0;
+    }
+
+    .bar_----search-bar-caption p{
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+        .bar__box-----caption-sizing{
+            max-height: min-content;
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+
+    .bar_---search-button{
+        display: flex;
+        margin-top: 15px;
+        align-items: center;
+    }
+
+}
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            SELECT BOXES                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+    .bar_----select-bar-city{
+        background-color: #211753;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+        text-align: center;
+    }
+
+    .bar_----select-bar-animal{
+        background-color: #BF3D96;
+        border-radius: 0 0 10px 10px;
+        position: relative;
+        text-align: center;
+    }
+
+.bar__-select{
+    position: relative;
+    user-select: none;
+    width: 100%;
+    height: 40px;
+    overflow: visible;
+}
+
+.bar__-custom-select{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar__-select-trigger{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px;
+    font-weight: 300;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+}
+    .bar__city{
+        background: #211753;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .bar__animal{
+        background: #BF3D96;
+        //border-radius: 0 0 10px 10px;
+        border-radius: 0;
+    }
+
+.bar__-select-trigger span{
+    margin-right: 15px;
+}
+
+.bar__-select-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 2px solid #394a6d;
+    border-top: 0;
+    background: #fff;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pink.bar__-select-options{
+    border: 2px solid #6d3962;
+}
+
+.bar__-custom-select.open .bar__-select-options {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
+}
+
+.bar__-option {
+    position: relative;
+    display: block;
+    font-size: 1em;
+    font-weight: 300;
+    color: #3b3b3b;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.bar__-option:hover {
+    cursor: pointer;
+    background-color: #b2b2b2;
+}
+.bar__-option.selected {
+    color: #ffffff;
+    background-color: #305c91;
+}
+
+.pink.bar__-option.selected {
+    color: #ffffff;
+    background-color: #c55ba4;
+}
+
+.bar__--anim-desc{
+    display: flex;
+    min-width: 80px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .bar_----select-bar-city{
+        max-width:505px; 
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .bar_----select-bar-animal{
+        max-width:505px; 
+        border-radius: 0 10px 10px 0;
+        border-left: 1px solid #211753;
+    }
+
+    .bar__-select-trigger span{
+        margin-right: 1px;
+    }
+
+    .bar__-select{
+        height: 60px;
+    }
+
+    .bar__-select-trigger{
+        height: 60px;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+        .bar__city{
+            border-radius: 10px 0 0 10px;
+        }
+
+        .bar__animal{
+            border-radius: 10px 10px 10px 10px;
+            justify-content: space-around;
+        }
+
+    .bar__city.bar__-select-trigger.open{
+        border-radius: 10px 0 0 0;
+    }
+
+    .bar__animal.bar__-select-trigger.open{
+        border-radius: 0 10px 0 0;
+    }
+    
+}
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*          SEARCH BUTTON & LINK          */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+
+}
