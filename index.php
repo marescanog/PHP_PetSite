@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/footer-styles.css">
     <link rel="stylesheet" href="./css/search-bar-styles.css">
     <?php require './php-html-blocks/favicon.php'?>
+    <?php require_once './php/enum.php'?>
 </head>
 <body >
 

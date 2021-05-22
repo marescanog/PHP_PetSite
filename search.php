@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./css/results-styles.css">
     <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script>
     <?php require './php-html-blocks/favicon.php'?>
+    <?php require_once './php/enum.php'?>
 </head>
 <body>
 <script type="text/javascript">
