@@ -64,16 +64,16 @@
     }
 
     abstract class ENUM_AGE extends BasicEnum {
-        const Puppy = 1;
-        const Young = 2;
-        const Adult = 3;
-        const Senior = 4;
+        const puppy = 1;
+        const young = 2;
+        const adult = 3;
+        const senior = 4;
     }
 
     abstract class ENUM_SIZE extends BasicEnum {
-        const Small = 1;
-        const Medium = 2;
-        const Large = 3;
+        const small = 1;
+        const medium = 2;
+        const large = 3;
     }
 
     abstract class ENUM_STATUS{

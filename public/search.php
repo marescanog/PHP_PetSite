@@ -9,7 +9,7 @@
     $age = isset($_GET['age']) ? $_GET['age'] : 'Any';
     $size= isset($_GET['size']) ? $_GET['size'] : 'Any';
     $page= isset($_GET['page']) ? $_GET['page'] : '1';
-    $query = 'SELECT pet_ID, petName, gender, age, breed, size FROM pets WHERE status = 1 AND ';
+    $query = 'SELECT pet_ID, petName, gender, age, breed, size FROM pets WHERE status ='.ENUM_STATUS::Open.' AND ';
 
 
     /* 
@@ -188,7 +188,7 @@
         </div>
         
         <!-- CODE DEBUGGING AREA-->
-        <?php require_once('./php-html-blocks/test.php'); ?>                                       
+        <?php /* require_once('./php-html-blocks/test.php'); */ ?>                                       
         
         <div class="res__general-wrapper">
             <div class="res_-advanced-filters">

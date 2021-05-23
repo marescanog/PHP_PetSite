@@ -16,4 +16,14 @@
     if(ENUM_GENDER::isValidName($gender)){
         $query .= ' AND gender = '.ENUM_GENDER::parse($gender);   
     }
+
+    /* Age Filter - defaults to 'Any'*/
+    if(ENUM_AGE::isValidName($age)){
+        $query .= ' AND age = '.ENUM_AGE::parse($age);   
+    }
+
+    /* Size Filter - defaults to 'Any'*/
+    if(ENUM_SIZE::isValidName($size)){
+        $query .= ' AND size = '.ENUM_SIZE::parse($size);   
+    }
 ?>
