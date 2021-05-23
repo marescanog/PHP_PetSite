@@ -26,19 +26,8 @@
             Add html injection protection for other filters
     TODO Add new records to database
     */
+    require_once('./php/search-filter-query.php');
 
-    /* Species Filter */
-    if(ENUM_SPECIES::isValidName($animal) && $animal != 'DOG'){
-        $val = ENUM_SPECIES::parse($animal);
-        $query .= 'species = '. $val;
-    } else {
-        $query .= 'species = '. ENUM_SPECIES::Dog;
-    }
-
-    /* City Filter */
-    if(ENUM_CITY::isValidName($city)){
-        $query .= ' AND city = '.ENUM_CITY::parse($city);
-    } 
 
 
 
@@ -97,7 +86,7 @@
                                     <div class="bar__-select-options" data-select-bar-type="0">    <!-- custom-options -->
                                         <span class="bar__-option 
                                             <?php 
-                                                /* Protects against javascript error. Defaults to All Cebu*/
+                                                /* Defaults to 'All' Cebu when none of the choices selected*/
                                                 switch($city){
                                                     case 'Cebu';
                                                     case 'Mandaue';
@@ -158,7 +147,7 @@
                                     <div class="pink bar__-select-options" data-select-bar-type="1">       <!-- custom-options -->
                                         <span class="pink bar__-option 
                                             <?php 
-                                                /* Protects against javascript error. Defaults to Dog*/
+                                                /* Defaults to 'Dog' when none of the choices selected*/
                                                 switch($animal){
                                                     case 'Cat';
                                                     case 'Bird';
@@ -180,7 +169,7 @@
                             </div>
                         </div>
                         <div class="bar_---search-button">
-                            <button class="bar__button">GET STARTED</button>
+                            <button class="bar__button">SEARCH</button>
                         </div>
                         <div class="bar_--mobile-hide-text">
                             <input class="bar__text_form" type="text" name="city" id="hom_city" value="All Cebu" readonly="readonly"><br>
@@ -209,28 +198,64 @@
                     <div>
                         <p class="filtype">GENDER</p>
                     <select name="gender" id="gender">
-                        <option value="Any" <?php if($gender == 'Any'){echo 'selected';}?>>Any</option>
-                        <option value=<?php echo ENUM_GENDER::Male; if($gender == ENUM_GENDER::Male){echo ' selected';}?>>Male</option>
-                        <option value=<?php echo ENUM_GENDER::Female; if($gender == ENUM_GENDER::Female){echo ' selected';}?>>Female</option>
+                        <option value="Any" 
+                            <?php 
+                                /* Defaults to 'Any' when none of the choices selected*/
+                                switch($gender){
+                                    case 'male':
+                                    case 'female':
+                                        echo '';
+                                    break;
+                                    default:
+                                        echo ' selected';
+                                }
+                            ?>>Any</option>
+                        <option value="male" <?php if($gender == 'male'){echo ' selected';}?>>Male</option>
+                        <option value="female" <?php if($gender == 'female'){echo ' selected';}?>>Female</option>
                     </select>
                     </div>
                     <div>
                         <p class="filtype">AGE</p>
                     <select name="age" id="age">
-                        <option value="Any" <?php if($age == 'Any'){echo ' selected';}?>>Any</option>
-                        <option value=<?php echo ENUM_AGE::Puppy; if($age == ENUM_AGE::Puppy){echo ' selected';}?>>Puppy</option>
-                        <option value=<?php echo ENUM_AGE::Young; if($age == ENUM_AGE::Young){echo ' selected';}?>>Young</option>
-                        <option value=<?php echo ENUM_AGE::Adult; if($age == ENUM_AGE::Adult){echo ' selected';}?>>Adult</option>
-                        <option value=<?php echo ENUM_AGE::Senior; if($age == ENUM_AGE::Senior){echo ' selected';}?>>Senior</option>
+                        <option value="Any" 
+                            <?php 
+                                /* Defaults to 'Any' when none of the choices selected*/
+                                switch($age){
+                                    case 'puppy':
+                                    case 'young':
+                                    case 'adult':
+                                    case 'senior':
+                                        echo '';
+                                    break;
+                                    default:
+                                        echo ' selected';                                    
+                                }
+                            ?>>Any</option>
+                        <option value="puppy" <?php if($age == 'puppy'){echo ' selected';}?>>Puppy</option>
+                        <option value="young" <?php if($age == 'young'){echo ' selected';}?>>Young</option>
+                        <option value="adult" <?php if($age == 'adult'){echo ' selected';}?>>Adult</option>
+                        <option value="senior" <?php if($age == 'senior'){echo ' selected';}?>>Senior</option>
                     </select>
                     </div>
                     <div>
                         <p class="filtype">SIZE</p>
                     <select name="size" id="size">
-                        <option value="Any" <?php   if($size == 'Any'){echo ' selected';}?>>Any</option>
-                        <option value=<?php echo ENUM_SIZE::Small; if($size == ENUM_SIZE::Small){echo ' selected';}?>>Small</option>
-                        <option value=<?php echo ENUM_SIZE::Medium; if($size == ENUM_SIZE::Medium){echo ' selected';}?>>Medium</option>
-                        <option value=<?php echo ENUM_SIZE::Large; if($size == ENUM_SIZE::Large){echo ' selected';}?>>Large</option>
+                        <option value="Any" 
+                            <?php   
+                                /* Defaults to 'Any' when none of the choices selected*/
+                                switch($size){
+                                    case 'small':
+                                    case 'medium':
+                                    case 'large':
+                                        echo '';
+                                        break;
+                                    default:
+                                        echo ' selected';
+                                }
+                            ?>>Any</option>
+                        <option value='small'<?php if($size == 'small'){echo ' selected';}?>>Small</option>
+                        <option value='medium'<?php if($size == 'medium'){echo ' selected';}?>>Medium</option>
+                        <option value='large'<?php if($size == 'large'){echo ' selected';}?>>Large</option>
                     </select>
                     </div>
 

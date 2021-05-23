@@ -59,8 +59,8 @@
     }
 
     abstract class ENUM_GENDER extends BasicEnum {
-        const Male = 1;
-        const Female = 2;
+        const male = 1;
+        const female = 2;
     }
 
     abstract class ENUM_AGE extends BasicEnum {

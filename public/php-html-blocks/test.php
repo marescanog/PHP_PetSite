@@ -9,7 +9,7 @@
         echo '<p>City:'.$city.'</p>';
         echo '<p>Animal:'.$animal.'</p>';
         echo '<p>Gender:'.$gender.'</p>';
-        echo '<p>'. var_dump( $gender==ENUM_GENDER::Male ) .'</p>';
+        echo '<p>'. var_dump( $gender==ENUM_GENDER::male ) .'</p>';
         echo '<p>Age:'.$age.'</p>';
         echo '<p>Size:'.$size.'</p>';
         echo '<p>Page:'.$page.'</p>';
