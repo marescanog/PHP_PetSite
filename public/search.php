@@ -1,10 +1,50 @@
 <?php 
+
+    require_once('../private/db_config.php');
+    require_once('./php/enum.php');
+
     $city = isset($_GET['city']) ? $_GET['city'] : 'All Cebu';
     $animal = isset($_GET['animal']) ? $_GET['animal'] : 'Dog';
     $gender = isset($_GET['gender']) ? $_GET['gender'] : 'Any';
     $age = isset($_GET['age']) ? $_GET['age'] : 'Any';
     $size= isset($_GET['size']) ? $_GET['size'] : 'Any';
     $page= isset($_GET['page']) ? $_GET['page'] : '1';
+    $query = 'SELECT pet_ID, petName, gender, age, breed, size FROM pets WHERE status = 1 AND ';
+
+
+    /* 
+    COMPLETED:
+        Added security protocol for:
+            City custom select (HTML injection)
+            Animal custom select (HTML injection)
+            Animal custom select - icon (HTML injection)
+            Javascript protection - City Custom select options (Defaults to All Cebu)
+            javascript protection - Animal customer selection options (Defaults to Dog)
+    TODO finish search logic 
+            SQL Injection ?
+            Add javascript protection for other filter logic (Must default to Any if link is modified)
+            Add html injection protection for other filters
+    TODO Add new records to database
+    */
+
+    /* Species Filter */
+    if(ENUM_SPECIES::isValidName($animal) && $animal != 'DOG'){
+        $val = ENUM_SPECIES::parse($animal);
+        $query .= 'species = '. $val;
+    } else {
+        $query .= 'species = '. ENUM_SPECIES::Dog;
+    }
+
+    /* City Filter */
+    if(ENUM_CITY::isValidName($city)){
+        $query .= ' AND city = '.ENUM_CITY::parse($city);
+    } 
+
+
+
+    $results = $db_connection->query($query); 
+
+    $db_connection = NULL;
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +61,7 @@
     <link rel="stylesheet" href="./css/results-styles.css">
     <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script>
     <?php require './php-html-blocks/favicon.php'?>
-    <?php require_once './php/enum.php'?>
+    
 </head>
 <body>
 <script type="text/javascript">
@@ -43,18 +83,41 @@
                                 <div name="city" id="city" class="bar__-custom-select"> <!-- custom-select -->
                                     <div class="bar__-select-trigger bar__city">        <!-- custom-select__trigger -->
                                         <span>
-                                            <?php echo $city;?>
+                                            <?php 
+                                                /* Security protocol against HTML injection */
+                                                if(ENUM_CITY::isValidName($city)){
+                                                    echo htmlentities($city);
+                                                } else {
+                                                    echo 'All Cebu';
+                                                }
+                                            ?>
                                         </span>
                                         <div class="arrow" style="margin-left: 10px;"></div>
                                     </div>
-                                    <div class="bar__-select-options" data-select-bar-type="0">                  <!-- custom-options -->
-                                        <span class="bar__-option <?php if($city == 'All Cebu'){echo ' selected';}?>" data-value="All Cebu">All Cebu</span>
-                                        <span class="bar__-option <?php if($city == 'Cebu'){echo ' selected';}?>" data-value="Cebu">Cebu</span>
-                                        <span class="bar__-option <?php if($city == 'Mandaue'){echo ' selected';}?>" data-value="Mandaue">Mandaue</span>
-                                        <span class="bar__-option <?php if($city == 'Lapulapu'){echo ' selected';}?>" data-value="Lapulapu">Lapulapu</span>
-                                        <span class="bar__-option <?php if($city == 'Toledo'){echo ' selected';}?>" data-value="Toledo">Toledo</span>
-                                        <span class="bar__-option <?php if($city == 'Danao'){echo ' selected';}?>" data-value="Danao">Danao</span>
-                                        <span class="bar__-option <?php if($city == 'Talisay'){echo ' selected';}?>" data-value="Talisay">Talisay</span>
+                                    <div class="bar__-select-options" data-select-bar-type="0">    <!-- custom-options -->
+                                        <span class="bar__-option 
+                                            <?php 
+                                                /* Protects against javascript error. Defaults to All Cebu*/
+                                                switch($city){
+                                                    case 'Cebu';
+                                                    case 'Mandaue';
+                                                    case 'Lapulapu';
+                                                    case 'Toledo';
+                                                    case 'Danao';
+                                                    case 'Talisay';
+                                                        echo '';
+                                                    break;
+                                                    default:
+                                                        echo ' selected ';
+                                                }
+                                                if($city == 'All Cebu'){echo ' selected ';}
+                                            ?>" data-value="All Cebu">All Cebu</span>
+                                        <span class="bar__-option <?php if($city == 'Cebu'){echo ' selected ';}?>" data-value="Cebu">Cebu</span>
+                                        <span class="bar__-option <?php if($city == 'Mandaue'){echo ' selected ';}?>" data-value="Mandaue">Mandaue</span>
+                                        <span class="bar__-option <?php if($city == 'Lapulapu'){echo ' selected ';}?>" data-value="Lapulapu">Lapulapu</span>
+                                        <span class="bar__-option <?php if($city == 'Toledo'){echo ' selected ';}?>" data-value="Toledo">Toledo</span>
+                                        <span class="bar__-option <?php if($city == 'Danao'){echo ' selected ';}?>" data-value="Danao">Danao</span>
+                                        <span class="bar__-option <?php if($city == 'Talisay'){echo ' selected ';}?>" data-value="Talisay">Talisay</span>
                                     </div>
                                 </div>
                             </div>
@@ -69,18 +132,49 @@
                             <div class="bar__-select">                                  <!-- custom-select-wrapper -->
                                 <div name="animal" id="animal" class="bar__-custom-select"> <!-- custom-select -->
                                     <div class="bar__-select-trigger bar__animal">        <!-- custom-select__trigger -->
-                                        <img id="selectImage" src="./images/ICONS/searchbar/<?php echo $animal;?>.svg" alt="animal icon" class="bar__animal-icon">
+                                        <img id="selectImage" src="
+                                            <?php 
+                                                /* Security protocol against HTML injection */
+                                                if(ENUM_SPECIES::isValidName($animal)){
+                                                    echo './images/ICONS/searchbar/'.htmlentities($animal).'.svg';
+                                                } else {
+                                                    echo './images/ICONS/searchbar/Dog.svg';
+                                                }
+                                            ?>
+                                            " alt="animal icon" class="bar__animal-icon">
                                         <div class="bar__--anim-desc">
-                                            <span>A <?php echo $animal;?></span>
+                                            <span>A 
+                                                <?php 
+                                                /* Security protocol against HTML injection */
+                                                if(ENUM_SPECIES::isValidName($animal)){
+                                                    echo htmlentities($animal);
+                                                } else {
+                                                    echo 'Dog';
+                                                }
+                                                ?></span>
                                             <div class="arrow"></div>
                                         </div>
                                     </div>
                                     <div class="pink bar__-select-options" data-select-bar-type="1">       <!-- custom-options -->
-                                        <span class="pink bar__-option <?php if($animal == 'Dog'){echo ' selected';}?>" data-value="Dog">A Dog</span>
-                                        <span class="pink bar__-option <?php if($animal == 'Cat'){echo ' selected';}?>" data-value="Cat">A Cat</span>
-                                        <span class="pink bar__-option <?php if($animal == 'Bird'){echo ' selected';}?>" data-value="Bird">A Bird</span>
-                                        <span class="pink bar__-option <?php if($animal == 'Reptile'){echo ' selected';}?>" data-value="Reptile">A Reptile</span>
-                                        <span class="pink bar__-option <?php if($animal == 'Rabbit'){echo ' selected';}?>" data-value="Rabbit">A Rabbit</span>
+                                        <span class="pink bar__-option 
+                                            <?php 
+                                                /* Protects against javascript error. Defaults to Dog*/
+                                                switch($animal){
+                                                    case 'Cat';
+                                                    case 'Bird';
+                                                    case 'Reptile';
+                                                    case 'Rabbit';
+                                                        echo '';
+                                                    break;
+                                                    default:
+                                                        echo ' selected ';
+                                                }
+                                            ?>" 
+                                            data-value="Dog">A Dog</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Cat'){echo ' selected ';}?>" data-value="Cat">A Cat</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Bird'){echo ' selected ';}?>" data-value="Bird">A Bird</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Reptile'){echo ' selected ';}?>" data-value="Reptile">A Reptile</span>
+                                        <span class="pink bar__-option <?php if($animal == 'Rabbit'){echo ' selected ';}?>" data-value="Rabbit">A Rabbit</span>
                                     </div>
                                 </div>
                             </div>
@@ -104,16 +198,9 @@
             </div>
         </div>
         
-        <?php 
-        /*
-        echo '<p>City:'.$city.'</p>';
-        echo '<p>Animal:'.$animal.'</p>';
-        echo '<p>Gender:'.$gender.'</p>';
-        echo '<p>Age:'.$age.'</p>';
-        echo '<p>Size:'.$size.'</p>';
-        echo '<p>Page:'.$page.'</p>';
-        */
-        ?>
+        <!-- CODE DEBUGGING AREA-->
+        <?php require_once('./php-html-blocks/test.php'); ?>                                       
+        
         <div class="res__general-wrapper">
             <div class="res_-advanced-filters">
                 <button onclick="resToggleFilter(event)" class="res__search-filter-toggle">MORE FILTERS <span id="res__filter-span">+</span></button>
@@ -121,33 +208,29 @@
 
                     <div>
                         <p class="filtype">GENDER</p>
-                        <!-- Maybe change so that form doesn't submit?  After getting data, just filter the results gotten-->
                     <select name="gender" id="gender">
                         <option value="Any" <?php if($gender == 'Any'){echo 'selected';}?>>Any</option>
-                        <option value="Male" <?php if($gender == 'Male'){echo 'selected';}?>>Male</option>
-                        <option value="Female" <?php if($gender == 'Female'){echo 'selected';}?>>Female</option>
+                        <option value=<?php echo ENUM_GENDER::Male; if($gender == ENUM_GENDER::Male){echo ' selected';}?>>Male</option>
+                        <option value=<?php echo ENUM_GENDER::Female; if($gender == ENUM_GENDER::Female){echo ' selected';}?>>Female</option>
                     </select>
                     </div>
-
                     <div>
                         <p class="filtype">AGE</p>
-                        <!-- Maybe change so that form doesn't submit?  -->
                     <select name="age" id="age">
-                        <option value="Any" <?php if($age == 'Any'){echo 'selected';}?>>Any</option>
-                        <option value="1" <?php if($age == '1'){echo 'selected';}?>>Young</option>
-                        <option value="2" <?php if($age == '2'){echo 'selected';}?>>Puppy</option>
-                        <option value="3" <?php if($age == '3'){echo 'selected';}?>>Adult</option>
-                        <option value="4" <?php if($age == '4'){echo 'selected';}?>>Old</option>
+                        <option value="Any" <?php if($age == 'Any'){echo ' selected';}?>>Any</option>
+                        <option value=<?php echo ENUM_AGE::Puppy; if($age == ENUM_AGE::Puppy){echo ' selected';}?>>Puppy</option>
+                        <option value=<?php echo ENUM_AGE::Young; if($age == ENUM_AGE::Young){echo ' selected';}?>>Young</option>
+                        <option value=<?php echo ENUM_AGE::Adult; if($age == ENUM_AGE::Adult){echo ' selected';}?>>Adult</option>
+                        <option value=<?php echo ENUM_AGE::Senior; if($age == ENUM_AGE::Senior){echo ' selected';}?>>Senior</option>
                     </select>
                     </div>
                     <div>
                         <p class="filtype">SIZE</p>
-                    <!-- <select name="size" id="size" onchange="this.form.submit();"> -->
                     <select name="size" id="size">
-                        <option value="Any" <?php if($size == 'Any'){echo 'selected';}?>>Any</option>
-                        <option value="S" <?php if($size == 'S'){echo 'selected';}?>>Small</option>
-                        <option value="M" <?php if($size == 'M'){echo 'selected';}?>>Medium</option>
-                        <option value="L" <?php if($size == 'L'){echo 'selected';}?>>Large</option>
+                        <option value="Any" <?php   if($size == 'Any'){echo ' selected';}?>>Any</option>
+                        <option value=<?php echo ENUM_SIZE::Small; if($size == ENUM_SIZE::Small){echo ' selected';}?>>Small</option>
+                        <option value=<?php echo ENUM_SIZE::Medium; if($size == ENUM_SIZE::Medium){echo ' selected';}?>>Medium</option>
+                        <option value=<?php echo ENUM_SIZE::Large; if($size == ENUM_SIZE::Large){echo ' selected';}?>>Large</option>
                     </select>
                     </div>
 

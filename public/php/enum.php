@@ -51,11 +51,11 @@
     }
 
     abstract class ENUM_SPECIES extends BasicEnum {
-        const DOG = 1;
-        const CAT = 2;
-        const BIRD = 3;
-        const REPTILE = 4;
-        const RABBIT = 5;
+        const Dog = 1;
+        const Cat = 2;
+        const Bird = 3;
+        const Reptile = 4;
+        const Rabbit = 5;
     }
 
     abstract class ENUM_GENDER extends BasicEnum {
