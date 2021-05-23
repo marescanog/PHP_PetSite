@@ -38,6 +38,16 @@
             }
             return $retval;
         }
+
+        public static function getKey($value, $strict = true) {
+            $constants = self::getConstants();
+            $keys = array_keys($constants, $value);             
+            if(self::isValidValue($value)){
+                return $keys[0];
+            } else {
+                return 'Invalid';
+            }
+        }
     }
 
     abstract class ENUM_CITY extends BasicEnum {

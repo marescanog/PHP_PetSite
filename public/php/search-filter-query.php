@@ -1,4 +1,6 @@
 <?php
+    $query = 'SELECT pet_ID, petName, gender, age, breed, size FROM pets WHERE status ='.ENUM_STATUS::Open.' AND ';
+
     /* Species Filter - defaults to 'DOG'*/
     if(ENUM_SPECIES::isValidName($animal) && $animal != 'DOG'){
         $val = ENUM_SPECIES::parse($animal);
@@ -26,4 +28,6 @@
     if(ENUM_SIZE::isValidName($size)){
         $query .= ' AND size = '.ENUM_SIZE::parse($size);   
     }
+
+    $results = $db_connection->query($query); 
 ?>

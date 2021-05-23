@@ -9,29 +9,32 @@
     $age = isset($_GET['age']) ? $_GET['age'] : 'Any';
     $size= isset($_GET['size']) ? $_GET['size'] : 'Any';
     $page= isset($_GET['page']) ? $_GET['page'] : '1';
-    $query = 'SELECT pet_ID, petName, gender, age, breed, size FROM pets WHERE status ='.ENUM_STATUS::Open.' AND ';
+    
 
 
     /* 
     COMPLETED:
         Added security protocol for:
+            SQL Injection ?
             City custom select (HTML injection)
             Animal custom select (HTML injection)
             Animal custom select - icon (HTML injection)
             Javascript protection - City Custom select options (Defaults to All Cebu)
             javascript protection - Animal customer selection options (Defaults to Dog)
-    TODO finish search logic 
-            SQL Injection ?
             Add javascript protection for other filter logic (Must default to Any if link is modified)
             Add html injection protection for other filters
-    TODO Add new records to database
+        Completed:
+            search logic 
+            Add javascript protection for other filter logic (Must default to Any if link is modified)
+            Add html injection protection for other filters
+    TODO Add new records to database and figure out page filters
     */
     require_once('./php/search-filter-query.php');
 
 
 
 
-    $results = $db_connection->query($query); 
+    
 
     $db_connection = NULL;
 ?>
@@ -52,7 +55,7 @@
     <?php require './php-html-blocks/favicon.php'?>
     
 </head>
-<body>
+<body onload="loadValues()">
 <script type="text/javascript">
 
 </script>
@@ -71,7 +74,7 @@
                             <div class="bar__-select">                                  <!-- custom-select-wrapper -->
                                 <div name="city" id="city" class="bar__-custom-select"> <!-- custom-select -->
                                     <div class="bar__-select-trigger bar__city">        <!-- custom-select__trigger -->
-                                        <span>
+                                        <span id="citySpan">
                                             <?php 
                                                 /* Security protocol against HTML injection */
                                                 if(ENUM_CITY::isValidName($city)){
@@ -99,7 +102,6 @@
                                                     default:
                                                         echo ' selected ';
                                                 }
-                                                if($city == 'All Cebu'){echo ' selected ';}
                                             ?>" data-value="All Cebu">All Cebu</span>
                                         <span class="bar__-option <?php if($city == 'Cebu'){echo ' selected ';}?>" data-value="Cebu">Cebu</span>
                                         <span class="bar__-option <?php if($city == 'Mandaue'){echo ' selected ';}?>" data-value="Mandaue">Mandaue</span>
@@ -132,7 +134,7 @@
                                             ?>
                                             " alt="animal icon" class="bar__animal-icon">
                                         <div class="bar__--anim-desc">
-                                            <span>A 
+                                            <span  id="animalSpan" >A 
                                                 <?php 
                                                 /* Security protocol against HTML injection */
                                                 if(ENUM_SPECIES::isValidName($animal)){
@@ -168,13 +170,13 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="bar_---search-button">
-                            <button class="bar__button">SEARCH</button>
-                        </div>
+                            <button class="bar__button" >SEARCH</button>
+                        </div> 
                         <div class="bar_--mobile-hide-text">
-                            <input class="bar__text_form" type="text" name="city" id="hom_city" value="All Cebu" readonly="readonly"><br>
-                            <input class="bar__text_form" type="text" name="animal" id="hom_animal" value="Dog" readonly="readonly"><br>
-                            <input class="bar__text_form" type="hidden" name="page" id="hom_count" value="1" readonly="readonly"><br>     
+                            <input class="bar__text_form" type="text" name="city" id="hom_city" readonly="readonly"><br>
+                            <input class="bar__text_form" type="text" name="animal" id="hom_animal" readonly="readonly"><br>    
                         </div>
                     </div>
                 </div>
@@ -268,208 +270,44 @@
     <main class="res__general-wrapper">
         <div class="res_search-results">
             <div class="res_-search-results-header">
+                <!-- ADD PHP TO MAKE RESULTS APPEAR DYNAMIC - BRANDON -->
                 <h3><span>17</span> Pets Available in your City</h3>
                 <p>Showing results <span>1</span>-<span>12</span></p>
                 <div class="res__hr-padding">
                     <hr>
+                    <input type="hidden" name="page" id="hom_count" value="1" readonly="readonly"><br> 
                 </div>
             </div>
+
             <ul class="res_-search-results-list">
                 <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="32" data-pet-name="peanut"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/32-cover.jpg" alt="peanut">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Peanut</span>
-                            <span class="res__search-pet-meta">Female | Puppy</span>
-                            <span class="res__search-pet-breed">Bolonka Lapdog</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
+                <?php
+                    $results = $results->fetchAll(PDO::FETCH_ASSOC);
+                    //echo var_dump(count($results));
+                    //echo '</br>';
+                    foreach($results as $result){
 
-                <!--Delete later, This is for testing if CSS works-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="33" data-pet-name="blondie"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/33-cover.jpg" alt="Blondie">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Blondie</span>
-                            <span class="res__search-pet-meta">Male | Adult</span>
-                            <span class="res__search-pet-breed">Golden Retriever</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="34" data-pet-name="Spike"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/34-cover.jpg" alt="Spike">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Spike</span>
-                            <span class="res__search-pet-meta">Male | Old</span>
-                            <span class="res__search-pet-breed">Brown Labrador</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="35" data-pet-name="Bead"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/35-cover.jpg" alt="Bead">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Bead</span>
-                            <span class="res__search-pet-meta">Male | Puppy</span>
-                            <span class="res__search-pet-breed">Mixed</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="37" data-pet-name="Ranger"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/37-cover.jpg" alt="Ranger">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Ranger</span>
-                            <span class="res__search-pet-meta">Female | Old</span>
-                            <span class="res__search-pet-breed">Collie</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="38" data-pet-name="Freckles"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/38-cover.jpg" alt="Freckles">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Freckles</span>
-                            <span class="res__search-pet-meta">Male | Young</span>
-                            <span class="res__search-pet-breed">Mixed</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="39" data-pet-name="Mars"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/39-cover.jpg" alt="Mars">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Mars</span>
-                            <span class="res__search-pet-meta">Female | Puppy</span>
-                            <span class="res__search-pet-breed">Mixed</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="40" data-pet-name="Max"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/40-cover.jpg" alt="Max">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Max</span>
-                            <span class="res__search-pet-meta">Female | Adult</span>
-                            <span class="res__search-pet-breed">Shih tzu</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="41" data-pet-name="Nina"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/41-cover.jpg" alt="Nina">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Nina</span>
-                            <span class="res__search-pet-meta">Female | Adult</span>
-                            <span class="res__search-pet-breed">Lab mix</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="42" data-pet-name="Dotty"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/42-cover.jpg" alt="Dotty">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Dotty</span>
-                            <span class="res__search-pet-meta">Male | Puppy</span>
-                            <span class="res__search-pet-breed">Dalmatian</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="43" data-pet-name="Butter"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/43-cover.jpg" alt="Butter">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Butter</span>
-                            <span class="res__search-pet-meta">Male | Puppy</span>
-                            <span class="res__search-pet-breed">Labrador</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!-- TEMPLATE FOR BLOCK START -->
-                <li class="res_--search-pet">
-                    <div class="res_---search-pet-container">
-                        <button class="res__search-target" data-pet-id="44" data-pet-name="Spot"></button>
-                        <div class="res__image-adjustment">
-                            <img src="./images/PETS/cover/44-cover.jpg" alt="Spot">
-                        </div>
-                        <div class="res_----search-pet-details">
-                            <span class="res__search-pet-name">Spot</span>
-                            <span class="res__search-pet-meta">Female | Old</span>
-                            <span class="res__search-pet-breed">Mixed</span>
-                            <span class="res__search-view-more">View More Details +</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- TEMPLATE FOR BLOCK END-->
-                <!--Delete later, This is for testing if CSS works-->
+                        $petGender = $result['gender'];
+                        $petGender += 0;
+                        $petAge = $result['age'];
+                        $petAge += 0;
+                        echo '<br>';
+                          echo '<li class="res_--search-pet">';
+                          echo      '<div class="res_---search-pet-container">';
+                          echo          '<button class="res__search-target" data-pet-id='.$result['pet_ID'].' data-pet-name="'.$result['petName'].'"></button>';
+                          echo          '<div class="res__image-adjustment">';
+                          echo              '<img src="./images/PETS/cover/'.$result['pet_ID'].'.jpg" alt="peanut">';
+                          echo          '</div>';
+                          echo          '<div class="res_----search-pet-details">';
+                          echo              '<span class="res__search-pet-name">'.$result['petName'].'</span>';
+                          echo              '<span class="res__search-pet-meta">'.ucfirst(ENUM_GENDER::getKey($petGender)).' | '.ucfirst(ENUM_AGE::getKey($petAge)).'</span>';
+                          echo              '<span class="res__search-pet-breed">'.$result['breed'].'</span>';
+                          echo              '<span class="res__search-view-more">View More Details +</span>';
+                          echo          '</div>';
+                          echo      '</div>';
+                          echo '</li>';
+                    }
+                ?>               
             </ul>
         </div>
     </main>

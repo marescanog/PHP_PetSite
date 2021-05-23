@@ -81,6 +81,7 @@ Note padding left is 30px for this page
 
 .res__hr-padding{
     margin-bottom: 0;
+    max-height: 10px;
    // max-width: 1070px;
 }
 
@@ -91,7 +92,8 @@ Note padding left is 30px for this page
 /* TABLET: If the browser window is 900px or larger (For text adjustment)*/
 @media only screen and (min-width: 500px) {
     .res__hr-padding{
-        margin-bottom: 1em;
+        max-height: none;
+        margin-bottom: 10px;
     }
 }
 
