@@ -32,5 +32,4 @@
     $results = $db_connection->query($query); 
     $results = $results->fetchAll(PDO::FETCH_ASSOC);
     $resCount = count($results);
-    $pages = ceil($resCount/12);
 ?>

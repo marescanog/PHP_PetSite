@@ -4,4 +4,4 @@
     <!-- BROWSER ICON for IE -->
     <link rel="icon" type="image/x-icon" href="./images/ICONS/browser-tab/favicon.ico" >
     <link rel="shortcut icon" type="image/x-icon" href="./images/ICONS/browser-tab/favicon.ico"/>
-    <meta name="currentPage" content="HOME">
+   

@@ -8,7 +8,7 @@
     $gender = isset($_GET['gender']) ? $_GET['gender'] : 'Any';
     $age = isset($_GET['age']) ? $_GET['age'] : 'Any';
     $size= isset($_GET['size']) ? $_GET['size'] : 'Any';
-    $page= isset($_GET['page']) ? $_GET['page'] : '1';
+    $currentPage = isset($_GET['page']) ? $_GET['page'] : '1';
     
 
 
@@ -32,7 +32,22 @@
         The layer of the dropdown list. You will click the first pet and redirect to the first page instead of selecting option from custom select box
     */
     require_once('./php/search-filter-query.php');
+    /* 
+    
+    what do you want to do?
+    -Display only 12 at a time
+    -Everytime search is clicked Page, page goes back to one.
+            - and, if page no is out of range then default is page 1
+    -Get total number of pages
+    -At the bottom there are clickable links to page numbers
 
+    Page numbers affect the results displayed
+    page 1 displays 1-12
+    page 2 displays 2-14
+    page 3 displays 3-24 and so on
+            Page on bottom only displays 10 pages at a time
+            Beyond 10 there is a "Previous and Next option which displays the next 10 page numbers"
+    */
 
 
 
@@ -53,6 +68,7 @@
     <link rel="stylesheet" href="./css/footer-styles.css">
     <link rel="stylesheet" href="./css/search-bar-styles.css">
     <link rel="stylesheet" href="./css/results-styles.css">
+    <meta name="currentPage" content="ADOPT">
     <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script>
     <?php require './php-html-blocks/favicon.php'?>
     
@@ -178,7 +194,8 @@
                         </div> 
                         <div class="bar_--mobile-hide-text">
                             <input class="bar__text_form" type="text" name="city" id="hom_city" readonly="readonly"><br>
-                            <input class="bar__text_form" type="text" name="animal" id="hom_animal" readonly="readonly"><br>    
+                            <input class="bar__text_form" type="text" name="animal" id="hom_animal" readonly="readonly"><br>
+                           <!-- <input type="hidden" name="page" id="hom_count" value=<?php //echo htmlentities($currentPage);?> readonly="readonly"><br>     -->
                         </div>
                     </div>
                 </div>
@@ -272,26 +289,19 @@
     <main class="res__general-wrapper">
         <div class="res_search-results">
             <div class="res_-search-results-header">
-                <!-- ADD PHP TO MAKE RESULTS APPEAR DYNAMIC - BRANDON -->
+                <!-- ADD PHP TO MAKE RESULTS APPEAR DYNAMIC -->
                 <h3><span><?php echo $resCount?></span> Pets Available in your City</h3>
                 <p>Showing results <span>1</span>-<span>12</span></p>
                 <div class="res__hr-padding">
                     <hr>
-                    <input type="hidden" name="page" id="hom_count" value="1" readonly="readonly"><br> 
                 </div>
             </div>
 
             <ul class="res_-search-results-list">
                 <!-- TEMPLATE FOR BLOCK START -->
                 <?php
-                    
-                    /* echo var_dump($resCount);
-                    echo '</br>';
-                    echo var_dump($pages);
-                    echo '</br>'; */
 
                     foreach($results as $result){
-
                         $petGender = $result['gender'];
                         $petGender += 0;
                         $petAge = $result['age'];
@@ -316,7 +326,8 @@
             </ul>
         </div>
     </main>
-        <div class="res__bottom_foot">
+
+     <div class="res__bottom_foot">
             <p class="res__bottom_Page">Showing results <span>1</span>-<span>12</span></p>
             <p class="res__bottom_Page">Page <a href=""><b><u>1</u></b> </a><a href="">2</a></p>
         </div>

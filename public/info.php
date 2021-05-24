@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./css/info-styles.css">
         <link rel="stylesheet" href="./css/header-styles.css">
         <link rel="stylesheet" href="./css/footer-styles.css">
+        <meta name="currentPage" content="ADOPT">
         <?php require './php-html-blocks/favicon.php'?>
         <?php require_once './php/enum.php'?>
     </head>
