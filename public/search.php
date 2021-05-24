@@ -28,6 +28,8 @@
             Add javascript protection for other filter logic (Must default to Any if link is modified)
             Add html injection protection for other filters
     TODO Add new records to database and figure out page filters
+    BUGS
+        The layer of the dropdown list. You will click the first pet and redirect to the first page instead of selecting option from custom select box
     */
     require_once('./php/search-filter-query.php');
 
@@ -271,7 +273,7 @@
         <div class="res_search-results">
             <div class="res_-search-results-header">
                 <!-- ADD PHP TO MAKE RESULTS APPEAR DYNAMIC - BRANDON -->
-                <h3><span>17</span> Pets Available in your City</h3>
+                <h3><span><?php echo $resCount?></span> Pets Available in your City</h3>
                 <p>Showing results <span>1</span>-<span>12</span></p>
                 <div class="res__hr-padding">
                     <hr>
@@ -282,9 +284,12 @@
             <ul class="res_-search-results-list">
                 <!-- TEMPLATE FOR BLOCK START -->
                 <?php
-                    $results = $results->fetchAll(PDO::FETCH_ASSOC);
-                    //echo var_dump(count($results));
-                    //echo '</br>';
+                    
+                    /* echo var_dump($resCount);
+                    echo '</br>';
+                    echo var_dump($pages);
+                    echo '</br>'; */
+
                     foreach($results as $result){
 
                         $petGender = $result['gender'];
