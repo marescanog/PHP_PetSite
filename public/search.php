@@ -290,13 +290,20 @@
             <p class="res__bottom_Page">Pages 
             <?php 
             /* BUILD THE PAGINATION LINKS */
-            $pagelink='?city='.str_replace(' ','+',$city).'&animal='.$animal.'&gender='.$gender.'&age='.$age.'&size='.$size;
+            $pagelink='?city=';
+            /* Validation for the links to avoid html injection */
+            (ENUM_CITY::isValidName($city)) ? $pagelink.=$city : $pagelink.='All+Cebu';
+            (ENUM_SPECIES::isValidName($animal)) ? $pagelink.='&animal='.$animal : $pagelink.='&animal=Dog';
+            (ENUM_GENDER::isValidName($gender)) ? $pagelink.='&gender='.$gender : $pagelink.='&gender=Any';
+            (ENUM_AGE::isValidName($age)) ? $pagelink.='&age='.$age : $pagelink.='&age=Any';
+            (ENUM_SIZE::isValidName($size)) ? $pagelink.='&size='.$size : $pagelink.='&size=Any';
+
             // if not on page 1, don't show back links
             if ($currentpage > 1) {
-                // show << link to go back to page 1
+                // show << link to go back to page 1 
                 echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=1'>&nbsp;&nbsp;<<&nbsp;&nbsp;</a> ";
                 // get previous page num
-                $prevpage = $currentpage - 1;
+                $prevpage = $currentpage - 1; 
                 // show < link to go back to 1 page
                 echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$prevpage'>< &nbsp;</a> ";
             } // end if
@@ -330,11 +337,8 @@
                 echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$totalPages'>&nbsp;&nbsp;>></a> ";
             } // end if
             /****** end build pagination links ******/
+            echo '<input type="hidden" data-current-page='.$currentpage.' id="pageLink" name="pageLink" value='.$pagelink.'>';
             ?>
-
-
-            
-            <!-- <a href=""><b><u>1</u></b> </a><a href="">2</a></p> -->
         </div>
     </div>
 
