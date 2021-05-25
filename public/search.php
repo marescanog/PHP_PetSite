@@ -160,7 +160,7 @@
         </div>
         
         <!-- CODE DEBUGGING AREA-->
-        <?php require_once('./php-html-blocks/test.php');  ?>                                       
+        <?php /* require_once('./php-html-blocks/test.php');  */?>                                       
         
         <div class="res__general-wrapper">
             <div class="res_-advanced-filters">
@@ -242,7 +242,14 @@
             <div class="res_-search-results-header">
                 <!-- ADD PHP TO MAKE RESULTS APPEAR DYNAMIC -->
                 <h3><span><?php echo $totalResults?></span> Pets Available in your City</h3>
-                <p>Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $offset + $resultsPerPage; ?></span></p>
+                <?php
+                    if($currentpage == $totalPages){
+                       $remainingPages = $totalResults;
+                    } else {
+                        $remainingPages = $offset + $resultsPerPage;
+                    }
+                ?>
+                <p>Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $remainingPages; ?></span></p>
                 <div class="res__hr-padding">
                     <hr>
                 </div>
@@ -279,13 +286,11 @@
     </main>
 
      <div class="res__bottom_foot">
-            <p class="res__bottom_Page">Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $offset + $resultsPerPage; ?></span></p>
+            <p class="res__bottom_Page">Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $remainingPages; ?></span></p>
             <p class="res__bottom_Page">Pages 
             <?php 
             /* BUILD THE PAGINATION LINKS */
-
-            
-
+            $pagelink='?city='.str_replace(' ','+',$city).'&animal='.$animal.'&gender='.$gender.'&age='.$age.'&size='.$size;
             // if not on page 1, don't show back links
             if ($currentpage > 1) {
                 // show << link to go back to page 1
