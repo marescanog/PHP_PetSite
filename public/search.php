@@ -1,59 +1,10 @@
 <?php 
-
+    /* Database Connection */
     require_once('../private/db_config.php');
+    /* Custom Static Enum Classes (Also used for quick validation)*/
     require_once('./php/enum.php');
-
-    $city = isset($_GET['city']) ? $_GET['city'] : 'All Cebu';
-    $animal = isset($_GET['animal']) ? $_GET['animal'] : 'Dog';
-    $gender = isset($_GET['gender']) ? $_GET['gender'] : 'Any';
-    $age = isset($_GET['age']) ? $_GET['age'] : 'Any';
-    $size= isset($_GET['size']) ? $_GET['size'] : 'Any';
-    $currentPage = isset($_GET['page']) ? $_GET['page'] : '1';
-    
-
-
-    /* 
-    COMPLETED:
-        Added security protocol for:
-            SQL Injection ?
-            City custom select (HTML injection)
-            Animal custom select (HTML injection)
-            Animal custom select - icon (HTML injection)
-            Javascript protection - City Custom select options (Defaults to All Cebu)
-            javascript protection - Animal customer selection options (Defaults to Dog)
-            Add javascript protection for other filter logic (Must default to Any if link is modified)
-            Add html injection protection for other filters
-        Completed:
-            search logic 
-            Add javascript protection for other filter logic (Must default to Any if link is modified)
-            Add html injection protection for other filters
-    TODO Add new records to database and figure out page filters
-    BUGS
-        The layer of the dropdown list. You will click the first pet and redirect to the first page instead of selecting option from custom select box
-    */
+    /* Filtering & Pagination Logic. Extracting Data from Database*/
     require_once('./php/search-filter-query.php');
-    /* 
-    
-    what do you want to do?
-    -Display only 12 at a time
-    -Everytime search is clicked Page, page goes back to one.
-            - and, if page no is out of range then default is page 1
-    -Get total number of pages
-    -At the bottom there are clickable links to page numbers
-
-    Page numbers affect the results displayed
-    page 1 displays 1-12
-    page 2 displays 2-14
-    page 3 displays 3-24 and so on
-            Page on bottom only displays 10 pages at a time
-            Beyond 10 there is a "Previous and Next option which displays the next 10 page numbers"
-    */
-
-
-
-    
-
-    $db_connection = NULL;
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +28,7 @@
 <script type="text/javascript">
 
 </script>
-<?php require './php-html-blocks/header.php'?>
+<?php require './php-html-blocks/header.php' ?>
     
     <div class="header-padding2" style="background-color: #766F9B; transform: translateY(5px);"></div>
     <form method="get" id="hom_res_search_filter" action="search.php">
@@ -209,7 +160,7 @@
         </div>
         
         <!-- CODE DEBUGGING AREA-->
-        <?php /* require_once('./php-html-blocks/test.php'); */ ?>                                       
+        <?php require_once('./php-html-blocks/test.php');  ?>                                       
         
         <div class="res__general-wrapper">
             <div class="res_-advanced-filters">
@@ -290,8 +241,8 @@
         <div class="res_search-results">
             <div class="res_-search-results-header">
                 <!-- ADD PHP TO MAKE RESULTS APPEAR DYNAMIC -->
-                <h3><span><?php echo $resCount?></span> Pets Available in your City</h3>
-                <p>Showing results <span>1</span>-<span>12</span></p>
+                <h3><span><?php echo $totalResults?></span> Pets Available in your City</h3>
+                <p>Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $offset + $resultsPerPage; ?></span></p>
                 <div class="res__hr-padding">
                     <hr>
                 </div>
@@ -328,8 +279,57 @@
     </main>
 
      <div class="res__bottom_foot">
-            <p class="res__bottom_Page">Showing results <span>1</span>-<span>12</span></p>
-            <p class="res__bottom_Page">Page <a href=""><b><u>1</u></b> </a><a href="">2</a></p>
+            <p class="res__bottom_Page">Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $offset + $resultsPerPage; ?></span></p>
+            <p class="res__bottom_Page">Pages 
+            <?php 
+            /* BUILD THE PAGINATION LINKS */
+
+            
+
+            // if not on page 1, don't show back links
+            if ($currentpage > 1) {
+                // show << link to go back to page 1
+                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=1'>&nbsp;&nbsp;<<&nbsp;&nbsp;</a> ";
+                // get previous page num
+                $prevpage = $currentpage - 1;
+                // show < link to go back to 1 page
+                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$prevpage'>< &nbsp;</a> ";
+            } // end if
+            
+            // range of num links to show
+            $range = 9;
+
+            // loop to show links to range of pages around current page
+            for ($x = ($currentpage - $range); $x < (($currentpage + $range)  + 1); $x++) {
+            // if it's a valid page number...
+            if (($x > 0) && ($x <= $totalPages)) {
+                // if we're on current page...
+                if ($x == $currentpage) {
+                    // 'highlight' it but don't make a link
+                    echo " [<b>$x</b>] ";
+                // if not current page...
+                } else {
+                    // make it a link (CHANGE TO INCLUDE FILTER VALUES)
+                    echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$x'>$x</a> ";
+                } // end else
+            } // end if 
+            } // end for
+
+            // if not on last page, show forward and last page links        
+            if ($currentpage != $totalPages) {
+                // get next page
+                $nextpage = $currentpage + 1;
+                    // echo forward link for next page  (CHANGE TO INCLUDE FILTER VALUES)
+                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$nextpage'> &nbsp;></a> ";
+                // echo forward link for lastpage (CHANGE TO INCLUDE FILTER VALUES)
+                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$totalPages'>&nbsp;&nbsp;>></a> ";
+            } // end if
+            /****** end build pagination links ******/
+            ?>
+
+
+            
+            <!-- <a href=""><b><u>1</u></b> </a><a href="">2</a></p> -->
         </div>
     </div>
 
