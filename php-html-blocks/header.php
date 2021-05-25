@@ -24,11 +24,11 @@
                                 </svg>
                             </li>
                                 <ul class="dropdown-content">
-                                        <li><a href="#">Dog</a> </li>
-                                        <li><a href="#">Cat</a></li>
-                                        <li><a href="#">Bird</a></li>
-                                        <li><a href="#">Rodent / Rabbit</a></li>
-                                        <li> <a href="#">Reptile / Turtle</a></li>
+                                        <li><a href="search.php?city=All+Cebu&animal=Dog&gender=Any&age=Any&size=Any">Dog</a> </li>
+                                        <li><a href="search.php?city=All+Cebu&animal=Cat&gender=Any&age=Any&size=Any">Cat</a></li>
+                                        <li><a href="search.php?city=All+Cebu&animal=Bird&gender=Any&age=Any&size=Any">Bird</a></li>
+                                        <li><a href="search.php?city=All+Cebu&animal=Rabbit&gender=Any&age=Any&size=Any">Rodent / Rabbit</a></li>
+                                        <li> <a href="search.php?city=All+Cebu&animal=Reptile&gender=Any&age=Any&size=Any">Reptile / Turtle</a></li>
                                 </ul>
                         </div>
                         <div class="dropdown">

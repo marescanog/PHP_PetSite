@@ -17,7 +17,7 @@
                                     </h6>
                                 </li>
                                 <ul class="footer-sitemap-links">
-                                    <li><a href="">SEARCH SITE FOR PET</a></li>
+                                    <li><a href="search.php?city=All+Cebu&animal=Dog&gender=Any&age=Any&size=Any">SEARCH SITE FOR PET</a></li>
                                     <li><a href="">CHECK SHELTER</a></li>
                                     <li><a href="">POST FOR ADOPTION</a></li>
                                 </ul>
