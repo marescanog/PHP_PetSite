@@ -25,7 +25,7 @@
     </head>
     <body >
         <!-- Include the header file -->
-        <?php require './php-html-blocks/header.php'; ?>
+        <?php /*require './php-html-blocks/header.php';*/ ?>
     
         <!-- When the page link is valid, display page info. Otherwise display 404 page not found -->
         <?php

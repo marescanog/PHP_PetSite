@@ -64,6 +64,8 @@
         $petInfo = $petInfo->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    $totalPhotos = (int) $petInfo[0]['total_photos'];
+    $petName = $petInfo[0]['petName'];
     /* Close the Database connection */
     $db_connection = NULL;
 ?>

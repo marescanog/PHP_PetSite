@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <main class="inf__max_height">
+            <main class="inf__min_height">
                 <div class="inf__col-2 inf__max_width inf__center_height">
                     <div class="inf_content-block">
                         <div class="inf_-about">
@@ -59,19 +59,36 @@
                         <div class="inf_-slider-frame">
                             <div id="slider">
                                 <figure class="inf_slider-images" >
+                                    <?php                                     
+                                        for($ph_x = 0; $ph_x < $totalPhotos; $ph_x++){
+                                            echo '<img src="./images/PETS/Photos/'.$petID.'_img_'.($ph_x+1).'.jpg" alt="'.htmlentities($petName).' image '.($ph_x+1).'" draggable="false">';
+                                        }
+                                        
+                                    ?>
+                                    <!--template
                                        <img src="./images/PETS/Photos/peanut_img_1.jpg" alt="Peanut image 1" draggable="false">
-                                        <img src="./images/PETS/Photos/peanut_img_2.jpg" alt="Peanut image 2" draggable="false">
-                                        <img src="./images/PETS/Photos/peanut_img_3.jpg" alt="Peanut image 3" draggable="false">
-                                        <img src="./images/PETS/Photos/peanut_img_4.jpg" alt="Peanut image 4" draggable="false"> 
+                                    -->
                                 </figure>
                             </div>
                             <div class="inf_-slider-thumbnail-collection">
                                 <button class="inf_thumbnail-button previous" id="previous"><</button>
                                 <div class="inf_-slider-thumbnails">
+                                    <?php 
+                                    
+                                        for($ph_x = 0; $ph_x < $totalPhotos; $ph_x++){
+                                            $thumb_str = '<img src="./images/PETS/thumbnails/'.$petID.'_thumb_'.($ph_x+1).'.jpg" ';
+                                            if($ph_x == 0) {
+                                                $thumb_str.= 'class="inf_thumbnail-image_selected" ';
+                                            }
+                                            $thumb_str.='alt="'.htmlentities($petName).' thumbnail '.($ph_x+1).'">';
+                                            echo $thumb_str;
+                                        }
+                                     
+                                    ?>
+                                     <!-- template
                                     <img src="./images/PETS/thumbnails/peanut_thumb_1.jpg" alt="" class="inf_thumbnail-image_selected">
                                     <img src="./images/PETS/thumbnails/peanut_thumb_2.jpg" alt="" >
-                                    <img src="./images/PETS/thumbnails/peanut_thumb_3.jpg.png" alt="" >
-                                    <img src="./images/PETS/thumbnails/peanut_thumb_4.jpg" alt="" >
+                                    -->
                                 </div>
                                 <button class="inf_thumbnail-button next" id="next">></button>
                             </div>
