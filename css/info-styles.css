@@ -68,9 +68,21 @@
         flex-direction: column-reverse;
     }
 
+    .inf__max_height{
+        min-height: 65vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inf__center_height{
+        flex: 1;
+    }
+
     .inf__max_width{
         padding-right: 15px;
         padding-left: 15px;
+        
     }
 
     .inf__wrapper-vertical{

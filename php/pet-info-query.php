@@ -40,6 +40,7 @@
     $lastID += 0;
     
     /* First validation - Get Current pet_ID or set the default at 'NOT FOUND' */
+    /* pet_ID should be numeric */
     if (isset($_GET['pet_ID']) && is_numeric($_GET['pet_ID'])) {
         $petID = (int) $_GET['pet_ID'];
     } else {
@@ -51,7 +52,7 @@
         $petID = 'NOTFOUND';
     } /* end if */
 
-    /* Third validation - et_ID should be greater than or equal to 1 */
+    /* Third validation - pet_ID should be greater than or equal to 1 */
     if ($petID < 1) {
         $petID = 'NOTFOUND';
     } /* end if */

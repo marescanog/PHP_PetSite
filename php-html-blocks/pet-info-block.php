@@ -18,8 +18,8 @@
                 </div>
             </div>
 
-            <main>
-                <div class="inf__col-2 inf__max_width">
+            <main class="inf__max_height">
+                <div class="inf__col-2 inf__max_width inf__center_height">
                     <div class="inf_content-block">
                         <div class="inf_-about">
                             <div>
