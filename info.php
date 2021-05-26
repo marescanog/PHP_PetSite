@@ -25,14 +25,20 @@
     </head>
     <body >
         <!-- Include the header file -->
-        <?php /*require './php-html-blocks/header.php';*/ ?>
+        <?php require './php-html-blocks/header.php'; ?>
     
         <!-- When the page link is valid, display page info. Otherwise display 404 page not found -->
         <?php
             if($petID == 'NOTFOUND'){
                 require_once './php-html-blocks/Not-Found-404.php';
             } else {
-                require_once './php-html-blocks/pet-info-block.php';
+                foreach($db_err_messages as $message){
+                    echo $message;
+                    echo '</br>';
+                }
+                if($db_err_messages == null){
+                    require_once './php-html-blocks/pet-info-block.php';
+                }
             }
         ?>
 

@@ -255,30 +255,35 @@
                 </div>
             </div>
 
-            <ul class="res_-search-results-list">
+            <ul class="res_-search-results-list">   
                 <!-- TEMPLATE FOR BLOCK START -->
                 <?php
-
-                    foreach($results as $result){
-                        $petGender = $result['gender'];
-                        $petGender += 0;
-                        $petAge = $result['age'];
-                        $petAge += 0;
-                        echo '<br>';
-                          echo '<li class="res_--search-pet">';
-                          echo      '<div class="res_---search-pet-container">';
-                          echo          '<button class="res__search-target" data-pet-id='.$result['pet_ID'].' data-pet-name="'.$result['petName'].'"></button>';
-                          echo          '<div class="res__image-adjustment">';
-                          echo              '<img src="./images/PETS/cover/'.$result['pet_ID'].'.jpg" alt="peanut">';
-                          echo          '</div>';
-                          echo          '<div class="res_----search-pet-details">';
-                          echo              '<span class="res__search-pet-name">'.$result['petName'].'</span>';
-                          echo              '<span class="res__search-pet-meta">'.ucfirst(ENUM_GENDER::getKey($petGender)).' | '.ucfirst(ENUM_AGE::getKey($petAge)).'</span>';
-                          echo              '<span class="res__search-pet-breed">'.$result['breed'].'</span>';
-                          echo              '<span class="res__search-view-more">View More Details +</span>';
-                          echo          '</div>';
-                          echo      '</div>';
-                          echo '</li>';
+                    foreach($db_err_messages as $message){
+                        echo $message;
+                        echo '</br>';
+                    }
+                    if($results != null){
+                        foreach($results as $result){
+                            $petGender = $result['gender'];
+                            $petGender += 0;
+                            $petAge = $result['age'];
+                            $petAge += 0;
+                            echo '<br>';
+                              echo '<li class="res_--search-pet">';
+                              echo      '<div class="res_---search-pet-container">';
+                              echo          '<button class="res__search-target" data-pet-id='.$result['pet_ID'].' data-pet-name="'.$result['petName'].'"></button>';
+                              echo          '<div class="res__image-adjustment">';
+                              echo              '<img src="./images/PETS/cover/'.$result['pet_ID'].'.jpg" alt="peanut">';
+                              echo          '</div>';
+                              echo          '<div class="res_----search-pet-details">';
+                              echo              '<span class="res__search-pet-name">'.$result['petName'].'</span>';
+                              echo              '<span class="res__search-pet-meta">'.ucfirst(ENUM_GENDER::getKey($petGender)).' | '.ucfirst(ENUM_AGE::getKey($petAge)).'</span>';
+                              echo              '<span class="res__search-pet-breed">'.$result['breed'].'</span>';
+                              echo              '<span class="res__search-view-more">View More Details +</span>';
+                              echo          '</div>';
+                              echo      '</div>';
+                              echo '</li>';
+                        }
                     }
                 ?>               
             </ul>

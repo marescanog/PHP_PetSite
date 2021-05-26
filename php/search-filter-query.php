@@ -49,13 +49,19 @@
     /* Set Variables used for pagination logic*/
     $countResQuery = 'SELECT COUNT(*) ';
     $resultsPerPage = 12;
+    $totalResults = 0;
+    $db_err_messages = (array) null;
 
     /* Get total number of results from query based on filters */
     $countResQuery .= $query;
-    $countResQResults = $db_connection->query($countResQuery);
-    $countResQResults = $countResQResults->fetch();
-    $totalResults = $countResQResults[0];
-
+    try{
+        $countResQResults = $db_connection->query($countResQuery);
+        $countResQResults = $countResQResults->fetch();
+        $totalResults = $countResQResults[0];
+    } catch (Exception $e){
+        array_push($db_err_messages,'Db Error search-filter-query Line 62 - get total results');
+    }
+    
     /* Get Total Number of Pages (12 results per page)*/
     $totalPages = ceil($totalResults/$resultsPerPage);
 
@@ -86,8 +92,15 @@
     /* =========================================================================== */
     $filterQuery .= $query;
     $filterQuery .= ' LIMIT '.$offset.', '.$resultsPerPage;
-    $results = $db_connection->query( $filterQuery); 
-    $results = $results->fetchAll(PDO::FETCH_ASSOC);
+    $results = null;
+    
+    try{
+        $results = $db_connection->query( $filterQuery); 
+        $results = $results->fetchAll(PDO::FETCH_ASSOC);
+    }catch(Exception $e){
+        array_push($db_err_messages,'Db Error search-filter-query Line 100 - get data from database');
+    }
+
     
     /* Close the Database connection */
     $db_connection = NULL;

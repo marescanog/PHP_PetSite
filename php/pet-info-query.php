@@ -34,10 +34,17 @@
     /* find the last pet ID in the database */
     $lastRecordQuery = 'SELECT pet_ID FROM pets ORDER BY pets.pet_ID DESC LIMIT 1';
     $petInfoQuery = '';
-    $results = $db_connection->query($lastRecordQuery); 
-    $results = $results->fetch();
-    $lastID = $results[0];
-    $lastID += 0;
+    $lastID = 0;
+    $db_err_messages = (array) null;
+    try{
+        $results = $db_connection->query($lastRecordQuery); 
+        $results = $results->fetch();
+        $lastID = $results[0];
+        $lastID += 0;
+    } catch(Exception $e){
+        array_push($db_err_messages,'Db Error pet-info-query Line 45 - get last pet ID');
+    }
+
     
     /* First validation - Get Current pet_ID or set the default at 'NOT FOUND' */
     /* pet_ID should be numeric */
@@ -59,13 +66,18 @@
 
     /* IF PET ID IS NOT FOUND DO NOT RUN QUERY, Diplay 404 pet's page with ID blah not found */
     if($petID != 'NOTFOUND'){
-        $petInfoQuery = 'SELECT * FROM pets WHERE pet_ID = '.$petID;
-        $petInfo = $db_connection->query($petInfoQuery); 
-        $petInfo = $petInfo->fetchAll(PDO::FETCH_ASSOC);
+        try{
+            $petInfoQuery = 'SELECT * FROM pets WHERE pet_ID = '.$petID;
+            $petInfo = $db_connection->query($petInfoQuery); 
+            $petInfo = $petInfo->fetchAll(PDO::FETCH_ASSOC);
+            $totalPhotos = (int) $petInfo[0]['total_photos'];
+            $petName = $petInfo[0]['petName'];
+        } catch (Exception $e){
+            array_push($db_err_messages,'Db Error pet-info-query Line 76 - get last pet information');
+        }
     }
 
-    $totalPhotos = (int) $petInfo[0]['total_photos'];
-    $petName = $petInfo[0]['petName'];
+
     /* Close the Database connection */
     $db_connection = NULL;
 ?>
