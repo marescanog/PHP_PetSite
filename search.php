@@ -297,6 +297,7 @@
             (ENUM_GENDER::isValidName($gender)) ? $pagelink.='&gender='.$gender : $pagelink.='&gender=Any';
             (ENUM_AGE::isValidName($age)) ? $pagelink.='&age='.$age : $pagelink.='&age=Any';
             (ENUM_SIZE::isValidName($size)) ? $pagelink.='&size='.$size : $pagelink.='&size=Any';
+            $pagelink.='&page='.$currentpage;
 
             // if not on page 1, don't show back links
             if ($currentpage > 1) {

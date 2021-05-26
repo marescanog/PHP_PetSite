@@ -1,0 +1,130 @@
+/* MOBILE: If the browser window is smaller than 900px */
+
+.nf-wrapper{
+   font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+   color: gray;
+   text-align: center;
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+}
+
+.nf-container{
+    flex: 1;
+    height: 350px;
+    margin:auto;
+}
+
+.nf-message button{
+   padding: 5px;
+   width: 70px;
+   outline: none;
+   background-color: white;
+   border:3px solid gray;
+   border-radius: 10px;
+   font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+   font-weight: bolder;
+   color: gray;
+   font-size: 1rem;
+}
+
+
+.nf-message button:hover{
+   background-color: gray;
+   border:3px solid white;
+   border-radius: 10px;
+   color: white;
+   font-size: 1rem;
+}
+
+.nf-graphic{
+   max-height: 180px;
+}
+
+.nf-graphic svg{
+   width: 200px;
+   height: 200px;
+   fill: gray;
+}
+
+.nf-message p{
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+.nf-message button{
+   margin-bottom: 2em;
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .nf-container{
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        min-height: 800px;
+        padding-top: 0;
+    }
+
+    .nf-message button{
+        padding: 5px;
+        width: 100px;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .nf-message button:hover{
+        font-size: 1.5rem;
+    }
+
+    .nf-wrapper{
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    }
+    
+    
+    .nf-message{
+        flex: 1;
+    }
+    
+    
+    .nf-message h1{
+        font-size: 10rem;
+        font-weight: bolder;
+        line-height: 0.75em;
+    }
+    
+    .nf-message h2{
+        font-size: 3rem;
+    
+    }
+    
+    .nf-message p{
+        font-size: 1.2rem;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    
+    .nf-graphic{
+        flex: 1;
+        max-height: fit-content;
+    }
+    
+    .nf-graphic svg{
+        width: 300px;
+        height: 300px;
+        fill: gray;
+    }
+
+}
+
+
