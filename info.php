@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="./css/footer-styles.css">
         <link rel="stylesheet" href="./css/not-found.css">
         <meta name="currentPage" content="ADOPT">
+        <meta property="og:image" content="./images/LOGO/LOGO-BLOCK.svg" />
         <?php require './php-html-blocks/favicon.php'?>
         <?php require_once './php/enum.php'?>
     </head>

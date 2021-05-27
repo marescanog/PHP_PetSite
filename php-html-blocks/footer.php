@@ -2,7 +2,7 @@
         <div class="footer-max-width">
             <div class="footer-block-wrapper">
                 <div class="logo-block-wrapper">
-                    <img src="./images/LOGO/LOGO BLOCK.svg" alt="Cebu Pet Match Logo" class="footer-logo-style">
+                    <img src="./images/LOGO/LOGO-BLOCK.svg" alt="Cebu Pet Match Logo" class="footer-logo-style">
                 </div>
                 <div class="footer-sitemap-contact-block">
                     <div class="footer-sitemap">

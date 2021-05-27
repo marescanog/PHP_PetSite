@@ -55,11 +55,12 @@
     /* Get total number of results from query based on filters */
     $countResQuery .= $query;
     try{
-        $countResQResults = $db_connection->query($countResQuery);
-        $countResQResults = $countResQResults->fetch();
+        $stmt = $db_connection->query($countResQuery);
+        $countResQResults = $stmt->fetch();
+        $stmt = null;
         $totalResults = $countResQResults[0];
     } catch (Exception $e){
-        array_push($db_err_messages,'Db Error search-filter-query Line 62 - get total results');
+        array_push($db_err_messages,'Db Error search-filter-query Line 63 - get total results');
     }
     
     /* Get Total Number of Pages (12 results per page)*/
@@ -95,10 +96,11 @@
     $results = null;
     
     try{
-        $results = $db_connection->query( $filterQuery); 
-        $results = $results->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $db_connection->query( $filterQuery); 
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = null;
     }catch(Exception $e){
-        array_push($db_err_messages,'Db Error search-filter-query Line 100 - get data from database');
+        array_push($db_err_messages,'Db Error search-filter-query Line 103 - get data from database');
     }
 
     

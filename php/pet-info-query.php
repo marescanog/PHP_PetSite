@@ -37,10 +37,10 @@
     $lastID = 0;
     $db_err_messages = (array) null;
     try{
-        $results = $db_connection->query($lastRecordQuery); 
-        $results = $results->fetch();
-        $lastID = $results[0];
-        $lastID += 0;
+        $stmt = $db_connection->query($lastRecordQuery); 
+        $results = $stmt->fetch();
+        $stmt = null;
+        $lastID = (int) $results[0];
     } catch(Exception $e){
         array_push($db_err_messages,'Db Error pet-info-query Line 45 - get last pet ID');
     }
@@ -64,7 +64,7 @@
         $petID = 'NOTFOUND';
     } /* end if */
 
-    /* IF PET ID IS NOT FOUND DO NOT RUN QUERY, Diplay 404 pet's page with ID blah not found */
+    /* IF PET ID IS NOT FOUND DO NOT RUN QUERY, Diplay 404 pet's page with page not found */
     if($petID != 'NOTFOUND'){
         try{
             $petInfoQuery = 'SELECT * FROM pets WHERE pet_ID = '.$petID;

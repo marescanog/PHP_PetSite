@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="./css/footer-styles.css">
     <link rel="stylesheet" href="./css/search-bar-styles.css">
     <link rel="stylesheet" href="./css/results-styles.css">
+    <link rel="stylesheet" href="./css/no-results-styles.css">
     <meta name="currentPage" content="ADOPT">
+    <meta property="og:image" content="./images/LOGO/LOGO-BLOCK.svg" />
     <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script>
     <?php require './php-html-blocks/favicon.php'?>
     
@@ -172,7 +174,7 @@
                     <select name="gender" id="gender">
                         <option value="Any" 
                             <?php 
-                                /* Defaults to 'Any' when none of the choices selected*/
+                                /* Defaults to 'Any' when none of the choices selected */
                                 switch($gender){
                                     case 'male':
                                     case 'female':
@@ -191,7 +193,7 @@
                     <select name="age" id="age">
                         <option value="Any" 
                             <?php 
-                                /* Defaults to 'Any' when none of the choices selected*/
+                                /* Defaults to 'Any' when none of the choices selected */
                                 switch($age){
                                     case 'puppy':
                                     case 'young':
@@ -248,8 +250,10 @@
                     } else {
                         $remainingPages = $offset + $resultsPerPage;
                     }
+                    if($results != null){
+                        echo ' <p>Showing results <span>'.($offset + 1).'</span>-<span>'.$remainingPages.'</span></p>';
+                    }
                 ?>
-                <p>Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $remainingPages; ?></span></p>
                 <div class="res__hr-padding">
                     <hr>
                 </div>
@@ -284,6 +288,8 @@
                               echo      '</div>';
                               echo '</li>';
                         }
+                    } else {
+                        require_once './php-html-blocks/no-results.php';
                     }
                 ?>               
             </ul>
@@ -291,59 +297,67 @@
     </main>
 
      <div class="res__bottom_foot">
-            <p class="res__bottom_Page">Showing results <span><?php echo $offset + 1; ?></span>-<span><?php echo $remainingPages; ?></span></p>
-            <p class="res__bottom_Page">Pages 
-            <?php 
-            /* BUILD THE PAGINATION LINKS */
-            $pagelink='?city=';
-            /* Validation for the links to avoid html injection */
-            (ENUM_CITY::isValidName($city)) ? $pagelink.=$city : $pagelink.='All+Cebu';
-            (ENUM_SPECIES::isValidName($animal)) ? $pagelink.='&animal='.$animal : $pagelink.='&animal=Dog';
-            (ENUM_GENDER::isValidName($gender)) ? $pagelink.='&gender='.$gender : $pagelink.='&gender=Any';
-            (ENUM_AGE::isValidName($age)) ? $pagelink.='&age='.$age : $pagelink.='&age=Any';
-            (ENUM_SIZE::isValidName($size)) ? $pagelink.='&size='.$size : $pagelink.='&size=Any';
-            $pagelink.='&page='.$currentpage;
-
-            // if not on page 1, don't show back links
-            if ($currentpage > 1) {
-                // show << link to go back to page 1 
-                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=1'>&nbsp;&nbsp;<<&nbsp;&nbsp;</a> ";
-                // get previous page num
-                $prevpage = $currentpage - 1; 
-                // show < link to go back to 1 page
-                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$prevpage'>< &nbsp;</a> ";
-            } // end if
             
-            // range of num links to show
-            $range = 9;
+            
+            <?php 
+            if($results != null){
+                /* echo the pages html */
+                echo '<p class="res__bottom_Page">Showing results <span>'.($offset + 1).'</span>-<span>'.$remainingPages.'</span></p>';
+                echo '<p class="res__bottom_Page">Pages ';
+            }
+                /* BUILD THE PAGINATION LINKS */
+                $pagelink='?city=';
+                /* Validation for the links to avoid html injection */
+                (ENUM_CITY::isValidName($city)) ? $pagelink.=$city : $pagelink.='All+Cebu';
+                (ENUM_SPECIES::isValidName($animal)) ? $pagelink.='&animal='.$animal : $pagelink.='&animal=Dog';
+                (ENUM_GENDER::isValidName($gender)) ? $pagelink.='&gender='.$gender : $pagelink.='&gender=Any';
+                (ENUM_AGE::isValidName($age)) ? $pagelink.='&age='.$age : $pagelink.='&age=Any';
+                (ENUM_SIZE::isValidName($size)) ? $pagelink.='&size='.$size : $pagelink.='&size=Any';
+                $pagelink.='&page='.$currentpage;
 
-            // loop to show links to range of pages around current page
-            for ($x = ($currentpage - $range); $x < (($currentpage + $range)  + 1); $x++) {
-            // if it's a valid page number...
-            if (($x > 0) && ($x <= $totalPages)) {
-                // if we're on current page...
-                if ($x == $currentpage) {
-                    // 'highlight' it but don't make a link
-                    echo " [<b>$x</b>] ";
-                // if not current page...
-                } else {
-                    // make it a link (CHANGE TO INCLUDE FILTER VALUES)
-                    echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$x'>$x</a> ";
-                } // end else
-            } // end if 
-            } // end for
+            if($results != null){
+                // if not on page 1, don't show back links
+                if ($currentpage > 1) {
+                    // show << link to go back to page 1 
+                    echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=1'>&nbsp;&nbsp;<<&nbsp;&nbsp;</a> ";
+                    // get previous page num
+                    $prevpage = $currentpage - 1; 
+                    // show < link to go back to 1 page
+                    echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$prevpage'>< &nbsp;</a> ";
+                } // end if
+                
+                // range of num links to show
+                $range = 9;
 
-            // if not on last page, show forward and last page links        
-            if ($currentpage != $totalPages) {
-                // get next page
-                $nextpage = $currentpage + 1;
-                    // echo forward link for next page  (CHANGE TO INCLUDE FILTER VALUES)
-                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$nextpage'> &nbsp;></a> ";
-                // echo forward link for lastpage (CHANGE TO INCLUDE FILTER VALUES)
-                echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$totalPages'>&nbsp;&nbsp;>></a> ";
-            } // end if
-            /****** end build pagination links ******/
-            echo '<input type="hidden" data-current-page='.$currentpage.' id="pageLink" name="pageLink" value='.$pagelink.'>';
+                // loop to show links to range of pages around current page
+                for ($x = ($currentpage - $range); $x < (($currentpage + $range)  + 1); $x++) {
+                // if it's a valid page number...
+                if (($x > 0) && ($x <= $totalPages)) {
+                    // if we're on current page...
+                    if ($x == $currentpage) {
+                        // 'highlight' it but don't make a link
+                        echo " [<b>$x</b>] ";
+                    // if not current page...
+                    } else {
+                        // make it a link (CHANGE TO INCLUDE FILTER VALUES)
+                        echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$x'>$x</a> ";
+                    } // end else
+                } // end if 
+                } // end for
+
+                // if not on last page, show forward and last page links        
+                if ($currentpage != $totalPages) {
+                    // get next page
+                    $nextpage = $currentpage + 1;
+                        // echo forward link for next page  (CHANGE TO INCLUDE FILTER VALUES)
+                    echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$nextpage'> &nbsp;></a> ";
+                    // echo forward link for lastpage (CHANGE TO INCLUDE FILTER VALUES)
+                    echo " <a href='{$_SERVER['PHP_SELF']}{$pagelink}&page=$totalPages'>&nbsp;&nbsp;>></a> ";
+                } // end if
+                /****** end build pagination links ******/
+            }
+                echo '<input type="hidden" data-current-page='.$currentpage.' id="pageLink" name="pageLink" value='.$pagelink.'>';
+            
             ?>
         </div>
     </div>

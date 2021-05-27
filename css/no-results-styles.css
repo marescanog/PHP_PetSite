@@ -1,0 +1,32 @@
+/* MOBILE: If the browser window is smaller than 900px */
+
+.nr__wrapper{
+    text-align: center;
+    color: #4d4d4d;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nr__container h1{
+    font-size: 1.5rem;
+}
+
+.nr__container p{
+    font-size: 1rem;
+}
+
+.nr__container img{
+    width: 120px;
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .nr__wrapper{
+        width:350px;
+        height: 350px;
+    }
+}
