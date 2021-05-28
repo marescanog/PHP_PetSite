@@ -66,7 +66,7 @@
                             <ul class="dropdown-content">
                                 <li><a href="">GENERAL</a></li>
                                 <li><a href="">F.A.Q.S</a></li>     
-                                <li><a href="">CONTACT US</a></li>                           
+                                <li><a href="contact.php">CONTACT US</a></li>                           
                             </ul>
                         </div>
                     </ul>

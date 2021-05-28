@@ -1,0 +1,140 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.con_main-container{
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 2.5em;
+}
+
+.con_-img-container{
+    height: fit-content;
+    margin-bottom: auto;
+}
+
+.con_-img-container svg{
+    width: 150px;
+    height: 150px;
+}
+
+.con_-form-container input, label {
+    display: block;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    margin-top: 0.25em;
+    font-size: 1em;
+}
+
+.con_-form-container input, textarea{
+    width: 100%;
+    background-color: #F1F3F5;
+    border: 1px solid #CED4DA;
+    min-height: 2.5em;
+    outline: none;
+    margin-top: 0.25em;
+    padding-left: 10px;
+}
+
+.con_-form-container textarea{
+    padding-top:10px;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+}
+
+.con_-form-container button{
+    padding: 5px 30px 5px 30px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #8f9197;
+    background-color: #BF3D96;
+    color: white;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    box-shadow: -3px 3px 3px #707070;
+    margin-top: 0.75em;
+}
+
+.con_-form-container button:hover{
+    background-color: #d666b3;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .con_-img-container svg{
+        width: 225px;
+        height: 225px;
+    }
+    
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .con_main-container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2em;
+    }
+
+    .con_-img-container{
+        margin-top: 1.2em;
+    }
+
+    .con_-img-container svg{
+        width: 300px;
+        height: 300px;
+    }
+    
+    .con_-form-container{
+        width: 370px;
+      //  background-color: chartreuse;
+        margin-left: 3em;
+    }
+    
+}
+
+
