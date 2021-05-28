@@ -8,6 +8,11 @@
     margin-right: auto;
     display: flex;
     align-items: center;
+    max-width:210px;
+}
+
+.nr__container{
+    padding-top: 3em;
 }
 
 .nr__container h1{
@@ -20,12 +25,14 @@
 
 .nr__container img{
     width: 120px;
+    margin-bottom: 10px;
 }
 
 /* DESKTOP: If the browser window is 900px or larger */
 @media only screen and (min-width: 900px) {
 
     .nr__wrapper{
+        max-width:none;
         width:350px;
         height: 350px;
     }
