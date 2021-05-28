@@ -18,14 +18,14 @@
     </style>
 </head>
 <body >
-    <?php //require './php-html-blocks/header.php'?>
+    <?php require './php-html-blocks/header.php'?>
         <div style="background-color:#766F9B; min-height:100vh;">
             <div class="header-padding3" style="transform: translateY(15px);"></div>
             <div class="sty__left-right-margins tes__font">
                 <div class="sty__header">
                     <?php include './images/LOGO/headerTitles/testimonials.svg';?>
                 </div>
-                <div class="sty__-paper">
+                <div class="sty__-paper tes_spacing">
                     <!-- Section 1-->
                     <div class="tes_-inner-wrapper">
                         <div class='tes_--section-1'>
@@ -66,18 +66,16 @@
                                     <div class="tes_----section-3-paragraphs">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse </p>
                                         <h4>Want a pet like sparky?</h4>
-                                        <button>SEARCH FOR PET</button>
+                                        <button onclick="location.href='search.php';">SEARCH FOR PET</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-
                             </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <?php require './php-html-blocks/footer.php'?>
     
     <script src=""></script>
 

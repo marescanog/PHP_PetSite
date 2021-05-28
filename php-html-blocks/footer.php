@@ -43,9 +43,9 @@
                                         </svg>
                                     </h6></li>
                                 <ul class="footer-sitemap-links">
-                                    <li><a href="">Sarah and Connor</a></li>
-                                    <li><a href="">Nathan</a></li>
-                                    <li><a href="">Melinda</a></li>
+                                    <li><a href="testimony.php?testimony=1">Sarah and Connor</a></li>
+                                    <li><a href="testimony.php?testimony=2">Nathan</a></li>
+                                    <li><a href="testimony.php?testimony=3">Melinda</a></li>
                                 </ul>
                             </div>
                         </ul>

@@ -40,12 +40,19 @@
 /* ====================================== */
 
 /* MOBILE: If the browser window is smaller than 900px */
+    .tes_spacing{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
     .tes_-inner-wrapper{
         width: 95%;
         margin-left: auto;
         margin-right: auto;
        // background-color: blueviolet;
         font-family:  'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        max-height: fit-content;
     }
 
     .tes__font h2{
@@ -64,14 +71,6 @@
         font-family:  'Calibri Light', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
         text-indent: 3em;
     }
-    
-
-
-/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
-@media only screen and (min-width: 500px) {
-
-    
-}
 
 /* DESKTOP: If the browser window is 900px or larger */
 @media only screen and (min-width: 900px) {
@@ -233,20 +232,42 @@
 /* ====================================== */
 
 /* MOBILE: If the browser window is smaller than 900px */
+.tes_-middle-inner-wrapper{
+    max-height: fit-content;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
 
+.tes_-middle-inner-wrapper p{
+    text-align: justify;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+}
+.tes_--section-2-image{
+    margin-top: 1em;
+}
 
-
-/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
-@media only screen and (min-width: 500px) {
-
-    
+.tes_--section-2-image img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* DESKTOP: If the browser window is 900px or larger */
-@media only screen and (min-width: 900px) {
-
-    
+@media only screen and (min-width: 900px) {   
+    .tes_-middle-inner-wrapper{
+        margin-top: 4em;
+        margin-bottom: 3em;
+    }
 }
+
 
 /* ====================================== */
 /* ====================================== */
