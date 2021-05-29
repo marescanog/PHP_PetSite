@@ -40,7 +40,7 @@
                             </li>
                             <ul class="dropdown-content">
                                 <li><a href="rehome.php">Request to post pet up for adoption</a></li>
-                                <li><a href="">Nearby Shelters</a></li>                               
+                                <li><a href="shelters.php">Nearby Shelters</a></li>                               
                             </ul>
                         </div>
                         <div class="dropdown">

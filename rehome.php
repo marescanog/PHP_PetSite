@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/rehome-styles.css">
     <link rel="stylesheet" href="./css/header-styles.css">
     <link rel="stylesheet" href="./css/footer-styles.css">
-    <meta name="currentPage" content="ADOPT">
+    <meta name="currentPage" content="PLACEMENTS">
     <meta property="og:image" content="./images/LOGO/LOGO-BLOCK.svg" />
     <?php require './php-html-blocks/favicon.php'?>
 </head>
