@@ -166,7 +166,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem maximus, 
                                 mollis orci id, maximus nunc. Sed libero nibh, feugiat sit amet sodales et, 
                                 consectetur nec nisl. Maecenas consequat sollicitudin luctus. Integer vulputate dapibus...</p>
-                            <a href="">Click here to read the story</a>
+                            <a href="testimony.php?testimony=1">Click here to read the story</a>
                         </div>
                         <div class="hom_---testimonials-card">
                             <div class="hom_---testimon-image">
@@ -177,7 +177,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem maximus, 
                                 mollis orci id, maximus nunc. Sed libero nibh, feugiat sit amet sodales et, 
                                 consectetur nec nisl. Maecenas consequat sollicitudin luctus. Integer vulputate dapibus...</p>
-                            <a href="">Click here to read the story</a>
+                            <a href="testimony.php?testimony=2">Click here to read the story</a>
                         </div>
                         <div class="hom_---testimonials-card hom_---testimonials-last">
                             <div class="hom_---testimon-image">
@@ -188,7 +188,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem maximus, 
                                 mollis orci id, maximus nunc. Sed libero nibh, feugiat sit amet sodales et, 
                                 consectetur nec nisl. Maecenas consequat sollicitudin luctus. Integer vulputate dapibus...</p>
-                            <a href="">Click here to read the story</a>
+                            <a href="testimony.php?testimony=3">Click here to read the story</a>
                         </div>
                     </div>
                 </div> 

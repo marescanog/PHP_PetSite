@@ -39,7 +39,7 @@
                                 </svg>
                             </li>
                             <ul class="dropdown-content">
-                                <li><a href="">Request to post pet up for adoption</a></li>
+                                <li><a href="rehome.php">Request to post pet up for adoption</a></li>
                                 <li><a href="">Nearby Shelters</a></li>                               
                             </ul>
                         </div>

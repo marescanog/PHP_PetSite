@@ -1,0 +1,399 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.reh_main-content-container{
+    // background-color: blue;
+     margin-left: auto;
+     margin-right: auto;
+     padding-left: 1em;
+     padding-right: 1em;
+     font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+     margin-top: 1em;
+     padding-bottom: 1em;
+ }
+ 
+ .reh_main-content-container p{
+     text-align: justify;
+ }
+ 
+ .reh_main-content-container ul{
+     list-style-type: circle;
+     list-style-position: inside;;
+ }
+
+ .reh__thumb-image{
+    width: 50px;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .reh_main-content-container{
+        max-width: 600px;
+    }
+    
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .reh_main-content-container{
+        display: flex;
+        max-width: 1000px;
+        justify-content: space-around;
+        background-color: white;
+    }
+    
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      REHOMING INFORMATION SECTION      */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.reh_-rehome-info-container{
+    flex:1;
+}
+
+.reh_-rehome-info-container h4{
+    font-size: 1.25em;
+    margin-top: 1.5em;
+}
+
+.reh_-rehome-info-container p{
+    margin-top: 1em;
+    text-indent: 30px;
+}
+
+.reh_-rehome-info-container li{
+    margin-top: 1em;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {   
+
+    .reh_-rehome-info-container{
+        margin-right: 2%;
+        margin-left: 1em;
+        margin-top: 1em;
+    }
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            FORM SECTION                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.reh_-form-container{
+    flex:1.5;
+    max-width: none;
+    margin-top: 1.5em;
+}
+
+.reh_-form-container textarea{
+    padding-top:10px;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+}
+
+.reh_--form-textbox-container input, textarea{
+    width: 100%;
+    background-color: #F1F3F5;
+    border: 1px solid #CED4DA;
+    min-height: 2em;
+    outline: none;
+    padding-left: 10px;
+}
+
+.reh_--form-textbox-container input, label{
+   font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+   margin-top: 0.25em;
+   font-size: 1em;    
+   width: 100%;
+   padding-left: 10px;
+}
+
+.reh_--form-textbox-container label{
+    font-weight: bold;
+    color: #3A404C;
+}
+
+.reh_---form-texbox-flex-group.selectbox label{
+    display: block;
+}
+
+.reh_---form-texbox-flex-group.selectbox select{
+    width: 100%;
+    background-color: #F1F3F5;
+    border: 1px solid #CED4DA;
+    min-height: 2.3em;
+    outline: none;
+    padding-left: 10px;
+    margin-top: 0.25em;
+}
+
+.reh_---form-radio-spay{
+    margin-top: 0.5em;
+}
+
+.reh_---form-radio-vaccinate{
+    margin-top: 0.5em;
+}
+
+.reh_----form-texbox-flex-group-member{
+    padding: 5px 0 5px 0;
+}
+
+.reh_----form-radio-inner-sizing p{
+    text-align: left;
+    font-weight: bold;
+    color: #3A404C;
+}
+
+.reh_---form-file-upload-group{
+    width: 100%;
+    margin-top: 0.75em;
+    display: flex;
+    flex-direction: column;
+}
+
+.reh_--form-text-area-file-group label{
+    font-weight: bold;
+}
+
+.reh_--form-text-area-file-group p{
+    font-weight: bold;
+    margin-left: 0.5em;
+    color: #3A404C;
+}
+
+.reh_----form-file-upload-area{
+    background-color: #F1F3F5;
+    border: 1px solid #CED4DA;
+    min-height: 2.3em;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25em;
+}
+
+.reh_----form-file-upload-area input[type="file"] {
+    display: none;
+}
+
+.reh_-----form-file-upload-input{
+    background-color: #F1F3F5;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: normal;
+    width: fit-content;
+    padding: 10px;
+}
+
+.reh_-----form-file-upload-input:hover{
+    background-color: #fdfeff;
+}
+
+.reh_---form-textarea-group{
+    margin-top: 1em;
+}
+
+.reh_---form-textarea-group label{
+    color: #3A404C;
+}
+
+.reh_---form-textarea-group textarea{
+    margin-top: 0.5em;
+    resize: none;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .reh_-form-container{
+        flex:1.5;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .reh_-form-container{
+        margin-top: 0.5em;
+    }
+
+    .reh_--form-textbox-container label{
+        font-size: smaller;
+    }
+
+    .reh_--form-text-area-file-group p{
+        font-size: smaller; 
+    }
+
+    .reh_---form-textarea-group label{
+        font-size: smaller; 
+    }
+
+    .reh_---form-texbox-flex-group{
+        display: flex;
+    }
+
+    .reh_----form-texbox-flex-group-member{
+        flex:1;
+        padding: 5px;
+    }
+
+    .reh_-form-container{
+        flex:1.5;
+        margin-left: 1em;
+        max-width: none;
+    }
+
+    .reh_--form-radio-buttons-group{
+        display: flex;
+    }
+
+    .reh_---form-radio-spay{
+        flex: 1;
+    }
+    
+    .reh_---form-radio-vaccinate{
+        flex: 1;
+    }
+
+    .reh_----form-radio-inner-sizing{
+        max-width: 170px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .reh_----form-radio-inner-sizing p{
+        font-size: smaller;
+    }
+
+    .reh_-----form-radio-buttons-and-label{
+        margin-left: 15px;
+    }
+    
+}
+
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*       BUTTON FORM SUBMISISON           */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.reh_---form-button-group{
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.reh_---form-button-group p{
+    text-align: center;
+    color: #BF3D96;
+    margin-top: 1em;
+}
+
+.reh_---form-button-group button{
+    background-color: #BF3D96;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 30px 10px 30px;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid #888888;
+    box-shadow: -3px 3px 3px #707070;
+    margin-top: 1em;
+}
+
+.reh_---form-button-group button:hover{
+    background-color: #d666b3;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {   
+
+}

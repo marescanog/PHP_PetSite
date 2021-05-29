@@ -19,7 +19,7 @@
                                 <ul class="footer-sitemap-links">
                                     <li><a href="search.php?city=All+Cebu&animal=Dog&gender=Any&age=Any&size=Any">SEARCH SITE FOR PET</a></li>
                                     <li><a href="">CHECK SHELTER</a></li>
-                                    <li><a href="">POST FOR ADOPTION</a></li>
+                                    <li><a href="rehome.php">POST FOR ADOPTION</a></li>
                                 </ul>
                             </div>
                             <div  class="footer-sitemap-categories-block center-adjust" onclick="expandFooterMenuContent(1)">
