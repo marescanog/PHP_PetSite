@@ -1,0 +1,108 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.que__accordion{
+    max-width: 900px;
+    width: 90%;
+    margin: 2rem auto 0 auto;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    padding-bottom: 2rem;
+}
+
+.que__-accordion-item{
+    background-color: white;
+    color: #3A404C;
+    margin: 1.25rem 0 0 0;
+    border-radius:0.25rem;
+    box-shadow: 0 0 30px 5px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.07);
+}
+
+.que_--accordion-item-header{
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.que_--accordion-item-header::after{
+    content: "\002B ";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+}
+
+.que_--accordion-item-header.active::after{
+    content: "\2212";
+}
+
+.que_--accordion-item-body{
+    max-height:0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.que_---accordion-item-body-content{
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .que_--accordion-item-header{
+        font-size: 1.25rem;
+    }
+
+    .que__-accordion-item{
+        margin: 1.5rem 0;
+    }
+    
+}
+
+
+

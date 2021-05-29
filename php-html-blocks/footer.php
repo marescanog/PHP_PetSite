@@ -32,7 +32,7 @@
                                 </li>
                                 <ul class="footer-sitemap-links">
                                     <li><a href="">GENERAL</a></li>
-                                    <li><a href="">F.A.Q.S</a></li>
+                                    <li><a href="questions.php">F.A.Q.S</a></li>
                                 </ul>
                             </div>
                             <div  class="footer-sitemap-categories-block center-adjust" onclick="expandFooterMenuContent(2)">
