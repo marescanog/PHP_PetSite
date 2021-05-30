@@ -43,13 +43,23 @@
             padding:0;
             font-weight:bolder;
             color: white;
-            display:inline;
+            position: relative;
+            bottom:5px;
         }
 
         .fb-handle a {
-            display: block;
+            display: flex;
             text-decoration:none;
         }
+
+        .fb-handle p:before{
+            content: url(./images/ICONS/facebook.svg);
+            margin-right:5px;
+            position: relative;
+            top:6px;
+        }
+
+
     </style>
 </head>
 <body >
@@ -65,7 +75,7 @@
                     <div class="tes_-inner-wrapper">
                         <div class='tes_--section-1'>
                             <div class='tes_---section-1-image'>
-                                <img style="border:3px solid #766F9B;" src="./images/SHELTERS/iro400x450.jpg" alt="I.R.O.'s LOGO">
+                                <img style="border:3px solid #766F9B;" src="./images/SHELTERS/iro400x450.jpg" alt="">
                             </div>
                             <div class='tes_---section-1-content'>
                                 <h2>Island Rescue Organization (I.R.O)</h2>
@@ -74,22 +84,20 @@
                                     <h3>"Founded in 2010, IRO was the first non-profit animal Rescue Organization in Cebu that was established by a volunteers"</h3>
                                     <p>IRO offers 3 shelters in Cebu where you can adopt animals or put a pet up for adoption. The first shelter is located in Barangay Guba, Cebu City, Cebu, PH named CAMP IRO. This
                                         organization also offers a cat shelter called IRO 'O' Cattery located at Hernan Cortes, Mandaue City, Cebu, PH. The third shelter -Lolo Ali Center is 
-                                        located in Barangay Cagay, Barili, Cebu, PH.
-                                    </p>
+                                        located in Barangay Cagay, Barili, Cebu, PH.</p>
                                     <p>Iro also hosts various events for petowners and advertises Vaccinations and Spaying and Neutering for your pets. They also offer 
                                         advice on Responsible pet ownership on their website as well as show details on the Animal Welfare Act 1998. Visit their website at 
-                                        <a href="https://iroislandrescue.org/" target="_blank">iroislandrescue.org</a> to learn more about this organization. 
-                                        <div class="fb-handle">
-                                            <a href="https://www.facebook.com/IslandRescueOrganization/" target="_blank">
-                                                <?php include './images/ICONS/facebook.svg'?>
-                                                <p> Visit their facebook page to learn more about their events!</p>
-                                            </a>
-                                        </div>
-                                    </p>
+                                        <a href="https://iroislandrescue.org/" target="_blank">iroislandrescue.org</a> to learn more about this organization. </p>
+                                    <div class="fb-handle">
+                                        <a href="https://www.facebook.com/IslandRescueOrganization/" target="_blank">
+                                            <p> Visit their facebook page to learn more about their events!</p>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Section 2-->
                     <!-- Section 2-->
                     <div class="tes_-middle-inner-wrapper">
                         <h2 style="text-align:center;">"Mayari Animal Rescue (M.A.R.O)"</h2>
@@ -103,7 +111,6 @@
                                 Mayari Animal Rescue Organization, Inc. promotes and educates the public about the Philippines Animal Welfare Act (RA 8485) and teaches awareness for less privileged and helpless life and against cruelty in any form! </p>
                             <div class="fb-handle" style="margin: 10px auto;">
                                 <a href="https://www.facebook.com/MayariAnimalRescue" target="_blank">
-                                    <?php include './images/ICONS/facebook.svg'?>
                                     <p> Visit their facebook page to learn more about their events!</p>
                                 </a>
                             </div>
@@ -111,27 +118,26 @@
                   </div>
                     <!-- Section 3-->
                     <div class="tes_-inner-wrapper">
-                            <div class='tes_--section-3'>
-                                <div class='tes_---section-3-image'>
-                                    <img style="border:3px solid #766F9B;" src="./images/SHELTERS/cebupound400x300.jpg" alt="">
+                        <div class='tes_--section-3'>
+                            <div class='tes_---section-3-image'>
+                                <img style="border:3px solid #766F9B;" src="./images/SHELTERS/cebupound400x300.jpg" alt="">
+                            </div>
+                            <div class='tes_---section-3-content'>
+                                <h2>Cebu City Animal Care and Control (Cebu City Pound)</h2>
+                                <div class="tes_----section-3-horizontal" style="width:100%;"></div>
+                                <div class="tes_----section-3-paragraphs">
+                                    <p> The Cebu City pound is a government organization that promotes animal wellness, Vaccination, Rabies Awareness and Spay and Neutering events.
+                                        They offer pet adoption services in cebu and instructions on their adoption process can be found at this <a href="https://www.everythingcebu.com/attractions/places/adopt-a-pet-at-cebu-city-pound/" target="_blank">link</a> 
+                                        They also offer an online pet adoption proces through their facebook page. The shelter is located at F. Batiller St., North Reclamation Area.
+                                    </p>
                                 </div>
-                                <div class='tes_---section-3-content'>
-                                    <h2>Cebu City Animal Care and Control (Cebu City Pound)</h2>
-                                    <div class="tes_----section-3-horizontal" style="width:100%;"></div>
-                                    <div class="tes_----section-3-paragraphs">
-                                        <p> The Cebu City pound is a government organization that promotes animal wellness, Vaccination, Rabies Awareness and Spay and Neutering events.
-                                            They offer pet adoption services in cebu and instructions on their adoption process can be found at <a href="https://www.everythingcebu.com/attractions/places/adopt-a-pet-at-cebu-city-pound/" target="_blank">this link</a> 
-                                            They also offer an online pet adoption proces through their facebook page. The shelter is located at F. Batiller St., North Reclamation Area.
-                                        </p>
-                                    </div>
-                                    <div class="fb-handle">
-                                        <a href="https://www.facebook.com/Cebu-City-Animal-Care-and-Control-116284158442818/" target="_blank">
-                                            <?php include './images/ICONS/facebook.svg'?>
-                                            <p> Visit their facebook page to learn more about their events!</p>
-                                        </a>
-                                    </div>
+                                <div class="fb-handle">
+                                    <a href="https://www.facebook.com/Cebu-City-Animal-Care-and-Control-116284158442818/" target="_blank">
+                                        <p> Visit their facebook page to learn more about their events!</p>
+                                    </a>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
