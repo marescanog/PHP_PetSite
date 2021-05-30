@@ -75,7 +75,7 @@
                     <div class="tes_-inner-wrapper">
                         <div class='tes_--section-1'>
                             <div class='tes_---section-1-image'>
-                                <img style="border:3px solid #766F9B;" src="./images/SHELTERS/iro400x450.jpg" alt="">
+                                <img style="border:3px solid #766F9B;" src="./images/SHELTERS/iro400x450.jpg" alt="I.R.O's Logo">
                             </div>
                             <div class='tes_---section-1-content'>
                                 <h2>Island Rescue Organization (I.R.O)</h2>
@@ -102,7 +102,7 @@
                     <div class="tes_-middle-inner-wrapper">
                         <h2 style="text-align:center;">"Mayari Animal Rescue (M.A.R.O)"</h2>
                         <div class='tes_--section-2-image'>
-                            <img style="border:3px solid #766F9B;" src="./images/SHELTERS/mayari600x400.jpg" alt="">
+                            <img style="border:3px solid #766F9B;" src="./images/SHELTERS/mayari600x400.jpg" alt="M.A.R.O's logo">
                         </div>
                         <div>
                             <p> M.A.R.O. is a nonprofit organization whose main focus is to provide treatment and recovery for street dogs and cats who are sick. They also provide 
@@ -120,7 +120,7 @@
                     <div class="tes_-inner-wrapper">
                         <div class='tes_--section-3'>
                             <div class='tes_---section-3-image'>
-                                <img style="border:3px solid #766F9B;" src="./images/SHELTERS/cebupound400x300.jpg" alt="">
+                                <img style="border:3px solid #766F9B;" src="./images/SHELTERS/cebupound400x300.jpg" alt="A view of the Cebu City Pound location">
                             </div>
                             <div class='tes_---section-3-content'>
                                 <h2>Cebu City Animal Care and Control (Cebu City Pound)</h2>
