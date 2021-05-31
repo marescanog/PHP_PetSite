@@ -51,9 +51,9 @@
                                 </svg>
                             </li>
                             <ul class="dropdown-content">
-                                <li><a href="testimony.php?testimony=1">Sarah and Connor</a></li>
+                                <li><a href="testimony.php?testimony=1">Melinda</a></li>
                                 <li><a href="testimony.php?testimony=2">Nathan</a></li>
-                                <li><a href="testimony.php?testimony=3">Melinda</a></li>
+                                <li><a href="testimony.php?testimony=3">Sarah and Connor</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">

@@ -1,0 +1,12 @@
+<?php $arr=array (
+  'Article' => '3',
+  'Name' => 'Sarah and Connor',
+  'Head1' => '"Our boring daily routine is now gone. Everyday is a fun new surprise with wolf"',
+  'Paragraph1' => 'We have been together for so many years, and it is the same old routine. It is like a whole new meaning to being an old married couple.  Same routine, day in and day out, wake up, breakfast then go to work, then after work go home, dinner then sleep the repeat. We felt something was missing and a friend suggested getting a pet.',
+  'Paragraph2' => 'Going to Cebu pet match, we spotted Wolf and felt it was right.  We knew that Wolf is our dog.  Ever since Wolf came into our life, life seems to be more meaningful.  We go to the park and play, we hang out in pet friendly malls.',
+  'Head2' => '"Wolf helped us get back into shape. We were encouraged to do daily walks and add something new to our routine."',
+  'Paragraph3' => 'Everyday something new happens with Wolf and it is not the same old same old anymore.  We take walks together, stop by doughnut shops where our lucky dog would be given a free donut by the girl who works in the donut shop.  We even have a healthier life style ever since the dog has come into our lives.  We are getting regular exercise through our walks.',
+  'Paragraph4' => 'Wolf immediately warmed up to us by wagging his tail when he saw us at Cebu Pet Match.  We knew that this was our dog because he stared straight into our eyes without blinking.  It was like he was telling us with the expression in his eyes that we should take him home to be our pet. Each day brings a new experience with our dog.',
+  'PetName' => 'Wolf',
+  'Paragraph5' => 'Wolf had a hard time finding a home since he was already an adult dog. Most potential adopters would rather adopt a young dog or a puppy. Wolf\'s previous owner never thought that his overseas visa application to work at an oil rig would be approved. He spent most of his time working locally and having wolf as a companion. One day, he got the approval but unfortunately cannot take wolf with him. He searched to his best abilities but could not find a good owner to leave Wolf to. Eventually he posted an ad on Cebu Pet Match and was able to find a Sarah and Conner who was willing to be Wolf\'s new owners. The previous owner -Mark was very happy that his old friend wolf can continue to live the rest of his life with good people who will take care of him.',
+) ?>

@@ -42,7 +42,7 @@
                                     <div class="bar__-select">                                  <!-- custom-select-wrapper -->
                                         <div class="bar__-custom-select"> <!-- custom-select -->
                                             <div class="bar__-select-trigger bar__city">        <!-- custom-select__trigger -->
-                                                <span>Enter City</span>
+                                                <span>Select City</span>
                                                 <div class="arrow" style="margin-left: 10px;"></div>
                                             </div>
                                             <div class="bar__-select-options" data-select-bar-type="0">                  <!-- custom-options -->
@@ -156,38 +156,36 @@
                             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 64 64"><defs><style>.cls-1{fill:#211753;}</style></defs><title>comment</title><path class="cls-1" d="M0.72,0.08A0.67,0.67,0,0,0,0,.8V47.28A0.72,0.72,0,0,0,.72,48H48L64,64V0.72A0.67,0.67,0,0,0,63.28,0H0.8Z"/></svg>
                         <span>Real</span> Testimonials</h2>
                     </div>
+                    <?php 
+                    /* Load array Data */
+                    require_once './testimony-articles/articleSnippet.php';
+                    ?>
                     <div class="hom_--testimon-row">
                         <div class="hom_---testimonials-card">
                             <div class="hom_---testimon-image">
-                                <img src="./images/PEOPLE/banner/Sarah-Connor.jpg" alt="A picture of Sarah, Connor and their adopted pet">
+                                <img src="./images/PEOPLE/banner/<?php echo $arrSnippet[0]['articleNumber'];?>.jpg" alt="A picture of Sarah, Connor and their adopted pet">
                             </div>
-                            <h3>Sarah and Connor</h3>
-                            <span>Adopted "Wolf"</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem maximus, 
-                                mollis orci id, maximus nunc. Sed libero nibh, feugiat sit amet sodales et, 
-                                consectetur nec nisl. Maecenas consequat sollicitudin luctus. Integer vulputate dapibus...</p>
+                            <h3><?php echo $arrSnippet[0]['name'];?></h3>
+                            <span>Adopted "<?php echo $arrSnippet[0]['petname'];?>"</span>
+                            <p><?php echo $arrSnippet[0]['snippet'];?></p>
                             <a href="testimony.php?testimony=1">Click here to read the story</a>
                         </div>
                         <div class="hom_---testimonials-card">
                             <div class="hom_---testimon-image">
-                                <img src="./images/PEOPLE/banner/Nathan.jpg" alt="A picture of Sarah, Connor and their adopted pet">
+                                <img src="./images/PEOPLE/banner/<?php echo $arrSnippet[1]['articleNumber'];?>.jpg" alt="A picture of Sarah, Connor and their adopted pet">
                             </div>
-                            <h3>Nathan</h3>
-                            <span>Adopted "Butter"</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem maximus, 
-                                mollis orci id, maximus nunc. Sed libero nibh, feugiat sit amet sodales et, 
-                                consectetur nec nisl. Maecenas consequat sollicitudin luctus. Integer vulputate dapibus...</p>
+                            <h3><?php echo $arrSnippet[1]['name'];?></h3>
+                            <span>Adopted "<?php echo $arrSnippet[1]['petname'];?>"</span>
+                            <p><?php echo $arrSnippet[1]['snippet'];?></p>
                             <a href="testimony.php?testimony=2">Click here to read the story</a>
                         </div>
                         <div class="hom_---testimonials-card hom_---testimonials-last">
                             <div class="hom_---testimon-image">
-                                <img src="./images/PEOPLE/banner/Melinda.jpg" alt="A picture of Sarah, Connor and their adopted pet">
+                                <img src="./images/PEOPLE/banner/<?php echo $arrSnippet[2]['articleNumber'];?>.jpg" alt="A picture of Sarah, Connor and their adopted pet">
                             </div>
-                            <h3>Melinda</h3>
-                            <span>Adopted "Sparky"</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem maximus, 
-                                mollis orci id, maximus nunc. Sed libero nibh, feugiat sit amet sodales et, 
-                                consectetur nec nisl. Maecenas consequat sollicitudin luctus. Integer vulputate dapibus...</p>
+                            <h3><?php echo $arrSnippet[2]['name'];?></h3>
+                            <span>Adopted "<?php echo $arrSnippet[2]['petname'];?>"</span>
+                            <p><?php echo $arrSnippet[2]['snippet'];?></p>
                             <a href="testimony.php?testimony=3">Click here to read the story</a>
                         </div>
                     </div>
