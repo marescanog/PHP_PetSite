@@ -90,4 +90,16 @@
         const Open = 1;
         const Adopted = 2;
     }
+
+    abstract class ENUM_APPROV_STATUS{
+        const Pending = 1;
+        const Approved = 2;
+        const Declined = 3;
+    }
+
+    abstract class ENUM_FORM_TYPE{
+        const REH = 1;
+        const GEN = 2;
+        const ADP = 3;
+    }
 ?>

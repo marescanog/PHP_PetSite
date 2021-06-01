@@ -1,3 +1,7 @@
+<?php 
+    require_once('./php/enum.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +20,7 @@
 </head>
 <body >
 
-    <?php require './php-html-blocks/header.php'?>
+    <?php// require './php-html-blocks/header.php'?>
 
         <div style="background-color:#766F9B; min-height:100vh;">
             <div class="header-padding3" style="transform: translateY(15px);"></div>
@@ -67,46 +71,57 @@
                          <!--END Rehoming Information section-->
 
                         <!--Form Section-->
-                        <form class="reh_-form-container">
+                        <form class="reh_-form-container" id="rehomeForm" action="" method="post" enctype="multipart/form-data" onsubmit="rehomeSubmit(event)">
                             <!--Start Text and Selection Boxes Group-->
                             <div class="reh_--form-textbox-container">
                                 <div class="reh_---form-texbox-flex-group">
                                     <div class="reh_----form-texbox-flex-group-member"> 
                                         <label for="fname" class="field1">Owner's First Name *</label>
-                                        <input class="field1" type="text" name="fname" id="fname" required><br>
+                                        <input class="field1" type="text" name="fname" id="fname" maxlength="50" required><br> <!--Required-->
                                     </div>
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="lname" >Owner's Last Name </label>
-                                        <input type="text" name="lname" id="lname"><br>
+                                        <input type="text" name="lname" id="lname" maxlength="50"><br>
                                     </div>
                                 </div>
 
                                 <div class="reh_---form-texbox-flex-group">
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="email" >Email Address *</label>
-                                        <input type="email" name="email" id="email" required><br>
+                                        <input type="email" name="email" id="email" maxlength="100" required><br> <!--Required-->
                                     </div>
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="mobile" >Mobile No. </label>
-                                        <input type="tel" name="mobile" id="mobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{11}" placeholder="09X-XXX-XXXX"><br>
+                                        <input type="tel" name="mobile" id="mobile" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}|[0-9]{11}" placeholder="09XX-XXX-XXXX"><br>
                                     </div>
                                 </div>
 
-                                <div class="reh_---form-texbox-flex-group">
+                                <div class="reh_---form-texbox-flex-group selectbox">
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="petname" >Pet's Name *</label>
-                                        <input type="text" name="petname" id="petname" required><br>
+                                        <input type="text" name="petname" id="petname" maxlength="50" required><br > <!--Required-->
                                     </div>
                                     <div class="reh_----form-texbox-flex-group-member">
-                                        <label for="specie" >Specie *</label>
-                                        <input type="text" name="specie" id="specie" required><br>
+                                        <label for="specie" >Pet's Specie *</label>
+                                        <select name="specie" id="specie" > <!--Required-->
+                                            <option value="" disabled selected>Select Specie</option>
+                                            <option value=<?php echo ENUM_SPECIES::Dog; ?>>Dog</option>
+                                            <option value=<?php echo ENUM_SPECIES::Cat; ?>>Cat</option>
+                                            <option value=<?php echo ENUM_SPECIES::Bird; ?>>Bird</option>
+                                            <option value=<?php echo ENUM_SPECIES::Reptile; ?>>Reptile</option>
+                                            <option value=<?php echo ENUM_SPECIES::Rabbit; ?>>Rabbit</option>
+                                        </select><br>
+                                    </div>
+                                    <div class="reh_----form-texbox-flex-group-member">
+                                        <label for="specie" >Breed </label>
+                                        <input type="text" name="breed" id="breed" maxlength="50"><br> 
                                     </div>
                                 </div>
 
                                 <div class="reh_---form-texbox-flex-group">
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="age" >Age *</label>
-                                        <input type="number" name="age" id="age" required><br>
+                                        <input type="number" name="age" id="age" required><br> <!--Required-->
                                     </div>
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="Bday" >Pet's birthday</label>
@@ -117,22 +132,22 @@
                                 <div class="reh_---form-texbox-flex-group selectbox">
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="gender" >Pet's Gender *</label>
-                                        <select name="gender" id="gender" required>
+                                        <select name="gender" id="gender" required> <!--Required-->
                                             <option value="" disabled selected>Select Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
+                                            <option value=<?php echo ENUM_GENDER::male; ?>>Male</option>
+                                            <option value=<?php echo ENUM_GENDER::female; ?>>Female</option>
                                         </select><br>
                                     </div>
                                     <div class="reh_----form-texbox-flex-group-member">
                                         <label for="city" >Pet's City *</label>
-                                        <select name="city" id="city" required>
+                                        <select name="city" id="city" required> <!--Required-->
                                             <option value="" disabled selected>Select City</option>
-                                            <option value="Cebu">Cebu</option>
-                                            <option value="Mandaue">Mandaue</option>
-                                            <option value="Lapulapu">Lapulapu</option>
-                                            <option value="Toledo">Toledo</option>
-                                            <option value="Danao">Danao</option>
-                                            <option value="female">Talisay</option>
+                                            <option value=<?php echo ENUM_CITY::Cebu; ?> >Cebu</option>
+                                            <option value=<?php echo ENUM_CITY::Mandaue; ?> >Mandaue</option>
+                                            <option value=<?php echo ENUM_CITY::Lapulapu; ?> >Lapulapu</option>
+                                            <option value=<?php echo ENUM_CITY::Toledo; ?> >Toledo</option>
+                                            <option value=<?php echo ENUM_CITY::Danao; ?> >Danao</option>
+                                            <option value=<?php echo ENUM_CITY::Talisay; ?> >Talisay</option>
                                         </select><br>
                                     </div>
                                 </div>
@@ -144,9 +159,9 @@
                                     <div class="reh_----form-radio-inner-sizing">
                                         <p>Is your pet spayed or neutered? *</p>
                                         <div class="reh_-----form-radio-buttons-and-label">
-                                            <input type="radio" id="spay-yes" name="spay-yes" value="yes" required>
+                                            <input type="radio" id="spay-yes" name="spay" value="yes" required> <!--Required-->
                                             <label for="spay-yes">yes</label><br>
-                                            <input type="radio" id="spay-no" name="spay-no" value="no">
+                                            <input type="radio" id="spay-no" name="spay" value="no">
                                             <label for="spay-no">no</label><br>
                                         </div>
                                     </div>
@@ -155,9 +170,9 @@
                                     <div class="reh_----form-radio-inner-sizing">
                                         <p>Is your pet's vaccinations up to date? *</p>
                                         <div  class="reh_-----form-radio-buttons-and-label">
-                                            <input type="radio" id="vacc-yes" name="vacc-yes" value="yes" required>
+                                            <input type="radio" id="vacc-yes" name="vacc" value="yes" required> <!--Required-->
                                             <label for="vacc-yes">yes</label><br>
-                                            <input type="radio" id="vacc-no" name="vacc-no" value="no">
+                                            <input type="radio" id="vacc-no" name="vacc" value="no">
                                             <label for="vacc-no">no</label><br>
                                         </div>
                                     </div>
@@ -171,7 +186,7 @@
                                     <div class="reh_----form-file-upload-area">
                                         <div >
                                             <label for="fileUpload" class="reh_-----form-file-upload-input">SELECT IMAGES</label>
-                                            <input type="file" id="fileUpload" name="fileUpload" multiple accept="image/*" required><br>
+                                            <input type="file" id="fileUpload" multiple accept="image/*" required><br> <!--Required-->
                                         </div>
                                         <div id="image-holder"></div>
                                     </div>
@@ -179,17 +194,17 @@
 
                                 <div class="reh_---form-textarea-group">
                                     <label for="petDesc" >Pet description: *</label>
-                                    <textarea id="petDesc" name="petDesc" rows="5" cols="20" required></textarea><br>
+                                    <textarea id="petDesc" name="petDesc" rows="5" cols="20" maxlength="2500" required></textarea><br> <!--Required-->
                                 </div>
 
                                 <div class="reh_---form-textarea-group">
                                     <label for="reason" >Reason for rehoming: *</label>
-                                    <textarea id="reason" name="reason" rows="5" cols="20" required></textarea><br>
+                                    <textarea id="reason" name="reason" rows="5" cols="20" maxlength="2500" required></textarea><br> <!--Required-->
                                 </div>
                             </div>
                             <!--End textarea and File upload Group-->
                             <div class="reh_---form-button-group">
-                                <button>SUBMIT</button>
+                                <button type="submit" name="submit">SUBMIT</button>
                                 <p>You will be notified if your request has been approved within 24-48 hours.</p>
                             </div>
                         </form>
@@ -201,8 +216,9 @@
 
         <?php require './php-html-blocks/footer.php'?>
 
-    <script src="./javascript/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script>
     <script src="./javascript/imageUpload.js"></script>
+    <script type="text/javascript" src="./javascript/formSubmission.js"></script>
 
     <script type="text/javascript">
     </script>
