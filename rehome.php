@@ -20,7 +20,7 @@
 </head>
 <body >
 
-    <?php// require './php-html-blocks/header.php'?>
+    <?php require './php-html-blocks/header.php'?>
 
         <div style="background-color:#766F9B; min-height:100vh;">
             <div class="header-padding3" style="transform: translateY(15px);"></div>
@@ -217,7 +217,7 @@
         <?php require './php-html-blocks/footer.php'?>
 
     <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script>
-    <script src="./javascript/imageUpload.js"></script>
+    <script type="text/javascript" src="./javascript/imageUpload.js"></script>
     <script type="text/javascript" src="./javascript/formSubmission.js"></script>
 
     <script type="text/javascript">
