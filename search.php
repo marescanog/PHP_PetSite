@@ -205,7 +205,23 @@
                                         echo ' selected';                                    
                                 }
                             ?>>Any</option>
-                        <option value="puppy" <?php if($age == 'puppy'){echo ' selected';}?>>Puppy</option>
+                        <option value="puppy" <?php if($age == 'puppy'){echo ' selected';}?>>
+                            <?php 
+                                /* Defaults to 'Puppy' when none of the choices selected*/
+                                switch($animal){
+                                    case 'Cat';
+                                        echo 'Kitten';
+                                    break;
+                                    case 'Bird';
+                                    case 'Reptile';
+                                    case 'Rabbit';
+                                        echo 'Juvenile';
+                                    break;
+                                    default:
+                                        echo 'Puppy';
+                                }
+                            ?>
+                        </option>
                         <option value="young" <?php if($age == 'young'){echo ' selected';}?>>Young</option>
                         <option value="adult" <?php if($age == 'adult'){echo ' selected';}?>>Adult</option>
                         <option value="senior" <?php if($age == 'senior'){echo ' selected';}?>>Senior</option>
@@ -272,6 +288,20 @@
                             $petGender += 0;
                             $petAge = $result['age'];
                             $petAge += 0;
+                            $petAge = ucfirst(ENUM_AGE::getKey($petAge));
+                            /* Age Classification Depends on Species */
+                            if($petAge == 'Puppy'){
+                                switch($animal){
+                                    case 'Cat';
+                                        $petAge = 'Kitten';
+                                    break;
+                                    case 'Bird';
+                                    case 'Reptile';
+                                    case 'Rabbit';
+                                        $petAge = 'Juvenile';
+                                    break;
+                                }
+                            }
                             echo '<br>';
                               echo '<li class="res_--search-pet">';
                               echo      '<div class="res_---search-pet-container">';
@@ -281,7 +311,7 @@
                               echo          '</div>';
                               echo          '<div class="res_----search-pet-details">';
                               echo              '<span class="res__search-pet-name">'.$result['petName'].'</span>';
-                              echo              '<span class="res__search-pet-meta">'.ucfirst(ENUM_GENDER::getKey($petGender)).' | '.ucfirst(ENUM_AGE::getKey($petAge)).'</span>';
+                              echo              '<span class="res__search-pet-meta">'.ucfirst(ENUM_GENDER::getKey($petGender)).' | '.$petAge.'</span>';
                               echo              '<span class="res__search-pet-breed">'.$result['breed'].'</span>';
                               echo              '<span class="res__search-view-more">View More Details +</span>';
                               echo          '</div>';
