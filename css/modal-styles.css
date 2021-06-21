@@ -1,0 +1,148 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div, pagename can also be featurename)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.mod__modal{
+    display: none;
+    position:fixed;
+    z-index: 10001;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.mod__modal-content{
+    background-color: white;
+    margin: 10% auto;
+    min-width: 270px;
+    max-width: 550px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0, 0.2), 0 7px 20px 0 rgba(0,0,0, 0.17);
+    font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
+
+.mod__closeBtn{
+    color: rgb(156, 156, 156);
+    float: right;
+    font-size: 35px;
+    transform: translateY(-20px);
+}
+
+.mod__closeBtn:hover, .mod__closeBtn:focus{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .mod__-header{
+        background: #211753;
+        color:white;
+        padding: 15px;
+    }
+
+    .mod__-header h2{
+        margin: 0;
+    }
+
+    .inf_-contact .mod_-button{
+        font-size: 1rem;
+        width: 130px;
+        height: 45px;
+    }
+
+    .mod__-body{
+        padding: 10px 20px;
+    }
+        .mod__-body input, label{
+            display: block;
+            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            margin-top: 0;
+            font-size: 1em;
+        }
+
+        .mod__-body input{
+            width: 100%;
+            background-color: #F1F3F5;
+            border: 1px solid #CED4DA;
+            min-height: 2em;
+            outline: none;
+            margin-top: 0;
+            padding-left: 10px;
+        }
+    
+    .mod__--form-wrapper{
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mod__--sucess-container{
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+
+        .mod__--sucess-container h3, p, span{
+            margin-top: 10px;
+        }
+
+        .mod__--sucess-container h3{
+            color: #211753;
+            font-family: 'Calibri light', 'Trebuchet MS', sans-serif;
+        }
+
+        .mod__--sucess-container span{
+            color: #BF3D96;
+        }
+
+    .mod__-hidden{
+        display: none;
+    }
+
+
+

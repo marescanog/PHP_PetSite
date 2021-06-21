@@ -51,7 +51,7 @@
                         </div>
                         <div class="inf_-contact">
                             <h4>Want to adopt <span><?php echo htmlentities($petInfo[0]['petName']); ?></span>?</h4>
-                            <button>CONTACT</button>
+                            <button id="modalBtn">CONTACT</button>
                         </div>
                     </div>
 
