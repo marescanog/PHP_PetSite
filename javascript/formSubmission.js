@@ -45,3 +45,29 @@ function rehomeSubmit(e){
         });
     }   
 }
+
+function adoptionContactSubmit(e){
+    e.preventDefault();
+
+    // Grab the form HTML DOM element
+    let myForm = $("#modalForm")[0];
+
+    $.ajax({
+        url: './php/modalContactFormSubmission.php',
+        type: 'post',
+        data: $('#modalForm').serialize(),
+        success:function(response){
+            //console.log(response);
+            var res = JSON.parse(response);
+            if(res["status"] == 200){
+                myForm.reset();
+                //console.log("success");
+                $('#modalForm').css("display", "none");
+                $('#sucessSubmit').css("display", "block");
+                document.getElementById("refNo").innerText = res["refNo"];
+            } else {
+                alert(res["message"]);
+            }
+        }
+    });
+}

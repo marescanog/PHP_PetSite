@@ -34,16 +34,21 @@
                     <span class="mod__closeBtn" id="closeBtn">&times;</span>
                     <h2>CONTACT</h2>
                 </div>
-                <form id="modalForm" class="mod__-body">
+                <form id="modalForm" class="mod__-body" action="" method="post" onsubmit="adoptionContactSubmit(event)">
                     <div class="mod__--form-wrapper">
                         <label for="fname">First name:</label>
-                        <input type="text" id="fname" name="fname"><br>
+                        <input type="text" id="fname" name="fname" maxlength="25" required><br>
                         <label for="lname">Last name:</label>
-                        <input type="text" id="lname" name="lname"><br>
+                        <input type="text" id="lname" name="lname" maxlength="25" required><br>
                         <label for="lname">E-mail:</label>
-                        <input type="email" id="email" name="email"><br>
+                        <input type="email" id="email" name="email" maxlength="45" required><br>
                         <label for="lname">Phone Number:</label>
-                        <input type="number" id="number" name="number"><br>  
+                        <input type="tel" name="mobile" id="mobile" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}|[0-9]{11}" placeholder="09XX-XXX-XXXX" required> 
+                        <input type="hidden" id="petID" name="petID" value="
+                            <?php 
+                                echo $petID;
+                            ?>
+                            ">  
                         <p style="font-size:small;">Enter your contact information to inqire about adoption! The foster carer or shelter will contact you within 24-48 hours.</p><br>      
                         <div class="inf_-contact">
                             <button class="mod_-button">SUBMIT</button>
@@ -55,7 +60,7 @@
                         <img src="./images/ICONS/features/Adopt.svg" alt="Sucessful adoption logo">
                         <h3>Your submission was sucessful!</h3>
                         <p>Your confirmation number is</p>
-                        <span>00000000</span>
+                        <span id="refNo"> 000 </span>
                         <p style="font-size:small;">Please wait 24-48 hours for the foster carer to contact you. To know about the status of your inquiry, submit a follow-up at the general contact us page with the confirmation number.</p>
                     </div>
                 </div>
@@ -84,29 +89,7 @@
         <?php require './php-html-blocks/footer.php'?>
 
         <script src="./javascript/modal.js" type="text/javascript"></script>
-        <script type="text/javascript">
-           
-            $('#modalForm').submit(function(e){
-                e.preventDefault();
-                $.ajax({
-                    url: './php/modalContactFormSubmission.php',
-                    type: 'post',
-                    data:$('#modalForm').serialize(),
-                    success:function(response){
-                        console.log(response);
-                        //var res = JSON.parse(response);
-                        //alert(res["message"]);
-                        console.log("success");
-                        //console.log(res["fname"]);
-                        //console.log(res["lname"]);
-                        //console.log(res["email"]);
-                        //console.log(res["number"]);
-                        $('#modalForm').css("display", "none");
-                        $('#sucessSubmit').css("display", "block");
-                    }
-                });
-            });
+        <script src="./javascript/formSubmission.js" type="text/javascript"></script>
 
-        </script>
     </body>
 </html>

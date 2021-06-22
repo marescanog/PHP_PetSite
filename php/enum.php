@@ -102,4 +102,10 @@
         const GEN = 2;
         const ADP = 3;
     }
+
+    abstract class ENUM_TICKET_STAT_TYPE{
+        const NEW_TKT = 1;
+        const PENDING = 2;
+        const CLOSED = 3;
+    }
 ?>
