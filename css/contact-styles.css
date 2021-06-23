@@ -103,6 +103,47 @@
     background-color: #d666b3;
 }
 
+.con_display-none{
+    display: none;
+}
+
+.con_-form-container p, span, h3{
+    text-align: center;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.con_-form-container h3{
+    margin-top: 15px;
+    font-size: 1.5rem;
+    max-width: none;
+}
+
+    .con_---Info-Paragraph{
+        font-size:small; 
+        max-width:250px; 
+        margin-left:auto; 
+        margin-right:auto;
+        margin-bottom: 15px;
+    }
+
+    .con_---refNo-container{
+        margin-top: 15px;
+        margin-bottom: 10px;
+        color: #BF3D96;
+        font-size: 1.2rem;
+    }
+
+    .con_---submit-another{
+        font-weight: bold;
+        color: #38288b;
+    }
+
+    .con_---submit-another:hover{
+        text-decoration: underline;
+        cursor: pointer;
+        color: #211753;
+    }
+
 /* TABLET: If the browser window is 900px or larger (For text adjustment)*/
 @media only screen and (min-width: 500px) {
     .con_-img-container svg{

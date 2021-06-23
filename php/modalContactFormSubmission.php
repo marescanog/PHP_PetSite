@@ -12,8 +12,8 @@
     $lname_cntct = isset($_REQUEST['lname']) ? trim($_REQUEST['lname']) : null;
     $email_cntct = isset($_REQUEST['email']) ? trim($_REQUEST['email']) : null;
     $number_cntct = isset($_REQUEST['mobile']) ? $_REQUEST['mobile'] : 'none';
-        if(empty($mobile)){
-            $mobile = 'none';
+        if(empty($number_cntct)){
+            $number_cntct = 'none';
         }
     $pet_ID = isset($_REQUEST['petID']) ? trim($_REQUEST['petID']) : null;
 

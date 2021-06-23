@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/contact-styles.css">
     <link rel="stylesheet" href="./css/header-styles.css">
     <link rel="stylesheet" href="./css/footer-styles.css">
+    <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script> 
     <meta name="currentPage" content="ABOUT">
     <meta property="og:image" content="./images/LOGO/LOGO-BLOCK.svg" />
     <?php require './php-html-blocks/favicon.php'?>
@@ -32,24 +33,38 @@
                         <div class="con_-img-container">
                             <?php include './images/ICONS/contact.svg';?>
                         </div>
-                        <form action="" class="con_-form-container">
+                        <form id="contact-form" action="" action="" method="post" class="con_-form-container" onsubmit="contactformSubmit(event)">
                             <label for="name" >Full Name *</label>
-                            <input type="text" name="name" id="name" placeholder="Your First and Last Name" required><br>
+                            <input type="text" name="name" id="name" placeholder="Your First and Last Name" maxlength="50" required ><br>
                             <label for="email">Email Address *</label>
-                            <input type="email" name="email" id="email" placeholder="Your_email@email.com" required><br>
+                            <input type="email" name="email" id="email" placeholder="Your_email@email.com" maxlength="45" required><br>
                             <label for="mobile">Mobile No.</label>
-                            <input type="tel" name="mobile" id="mobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{11}" placeholder="09X-XXX-XXXX"><br>
+                            <input type="tel" name="mobile" id="mobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{11}" placeholder="09X-XXX-XXXX" maxlength="15"><br>
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="10" cols="50" placeholder="Your Message" required></textarea><br>
+                            <textarea id="message" name="message" rows="10" cols="50" placeholder="Your Message" maxlength="10000" required></textarea><br>
                             <button>SUBMIT</button>
                         </form>
+                        <div id="form-sucess" class= "con_-form-container con_display-none">
+                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                            <lottie-player src="https://assets9.lottiefiles.com/datafiles/wxvpPtnApiUPy4Y/data.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px; margin-left:auto; margin-right:auto; margin-top:10px"    autoplay></lottie-player>
+                                <div class= "con_--sucess-contents">
+                                    <h3>Your message has been sent!</h3>
+                                    <div class="con_---refNo-container">
+                                        <p>Your confirmation number is</p>
+                                        <p id="refNo"> 000 </p>
+                                    </div>
+                                    <p class="con_---Info-Paragraph">A representative will contact you within 24-48 hours about your inquiry.</p>
+                                    <p id="new-submit" class="con_---submit-another" onclick="submitNewContactForm()">Submit a new inquiry</p>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     <?php require './php-html-blocks/footer.php'?>
-    
-    <script src=""></script>
+
+    <script src="./javascript/formSubmission.js" type="text/javascript"></script>
+
 
     <script type="text/javascript">
     </script>
