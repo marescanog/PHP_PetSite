@@ -87,6 +87,7 @@ function contactformSubmit(e){
             var res = JSON.parse(response);
             if(res["status"] == 200){
                 myForm.reset();
+                //console.log(res["emailStat"]);
                 console.log("success");
                 $('#contact-form').css("display", "none");
                 $('#form-sucess').css("display", "block");
