@@ -72,7 +72,12 @@ function adoptionContactSubmit(e){
     });
 }
 
+
+
+// next to do is add a loading spinner when the Submit Button is clicked
+
 function contactformSubmit(e){
+    enableSpinner();
     e.preventDefault();
 
     // Grab the form HTML DOM element
@@ -87,13 +92,17 @@ function contactformSubmit(e){
             var res = JSON.parse(response);
             if(res["status"] == 200){
                 myForm.reset();
-                //console.log(res["emailStat"]);
-                console.log("success");
-                $('#contact-form').css("display", "none");
+                // console.log(res["emailStat"]);
+                // console.log("success");
                 $('#form-sucess').css("display", "block");
+                $('#form-sucess-contents').css("display", "block");
+                $('#spinner').css("display", "none");
                 document.getElementById("refNo").innerText = res["refNo"];
             } else {
                 alert(res["message"]);
+                $('#contact-form').css("display", "block");
+                $('#form-sucess').css("display", "none");
+                $('#spinner').css("display", "none");
             }
         }
     });
@@ -103,4 +112,11 @@ function contactformSubmit(e){
 function submitNewContactForm(){
     $('#contact-form').css("display", "block");
     $('#form-sucess').css("display", "none");
+    $('#form-sucess-contents').css("display", "none");
+}
+
+function enableSpinner() {
+    $('#contact-form').css("display", "none");
+    $('#form-sucess').css("display", "block");
+    $('#spinner').css("display", "block");
 }

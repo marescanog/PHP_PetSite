@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/reset-styles.css">
     <link rel="stylesheet" href="./css/stylish-page-wrapper-styles.css">
     <link rel="stylesheet" href="./css/contact-styles.css">
+    <link rel="stylesheet" href="./css/spinner-styles.css">
     <link rel="stylesheet" href="./css/header-styles.css">
     <link rel="stylesheet" href="./css/footer-styles.css">
     <script type="text/javascript" src="./javascript/jquery-3.6.0.min.js"></script> 
@@ -42,21 +43,26 @@
                             <input type="tel" name="mobile" id="mobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{11}" placeholder="09X-XXX-XXXX" maxlength="15"><br>
                             <label for="message">Message *</label>
                             <textarea id="message" name="message" rows="10" cols="50" placeholder="Your Message" maxlength="10000" required></textarea><br>
-                            <button>SUBMIT</button>
-                        </form>
+                            <button >SUBMIT</button>
+                        </form >
+
                         <div id="form-sucess" class= "con_-form-container con_display-none">
-                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                            <lottie-player src="https://assets9.lottiefiles.com/datafiles/wxvpPtnApiUPy4Y/data.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px; margin-left:auto; margin-right:auto; margin-top:10px"    autoplay></lottie-player>
-                                <div class= "con_--sucess-contents">
-                                    <h3>Your message has been sent!</h3>
-                                    <div class="con_---refNo-container">
-                                        <p>Your confirmation number is</p>
-                                        <p id="refNo"> 000 </p>
+                            <div id="spinner" class="spinner-1"></div>
+                            <div id="form-sucess-contents" class= "con_display-none">
+                                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                <lottie-player src="https://assets9.lottiefiles.com/datafiles/wxvpPtnApiUPy4Y/data.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px; margin-left:auto; margin-right:auto; margin-top:10px"    autoplay></lottie-player>
+                                    <div class= "con_--sucess-contents">
+                                        <h3>Your message has been sent!</h3>
+                                        <div class="con_---refNo-container">
+                                            <p>Your confirmation number is</p>
+                                            <p id="refNo"> 000 </p>
+                                        </div>
+                                        <p class="con_---Info-Paragraph">A representative will contact you within 24-48 hours about your inquiry.</p>
+                                        <p id="new-submit" class="con_---submit-another" onclick="submitNewContactForm()">Submit a new inquiry</p>
                                     </div>
-                                    <p class="con_---Info-Paragraph">A representative will contact you within 24-48 hours about your inquiry.</p>
-                                    <p id="new-submit" class="con_---submit-another" onclick="submitNewContactForm()">Submit a new inquiry</p>
-                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -1,0 +1,46 @@
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*                Spinner                 */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.spinner-1:before{
+    content:"";
+    box-sizing: border-box;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    height: 60px;
+    width: 60px;
+    margin-top: 40px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border: 7px solid lightgray;
+    border-top-color: #BF3D96;
+    animation: spinner 0.65s linear infinite;
+    text-align: center;
+}
+
+@keyframes spinner{
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .spinner-1:before{
+        margin-top: 80px;
+    }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .spinner-1:before{
+        margin-top: -30px;
+        margin-left: 120px;
+    }
+}
