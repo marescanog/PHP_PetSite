@@ -48,7 +48,8 @@ function rehomeSubmit(e){
 
 function adoptionContactSubmit(e){
     e.preventDefault();
-
+    enableAdoptionFormSpinner();
+    
     // Grab the form HTML DOM element
     let myForm = $("#modalForm")[0];
 
@@ -62,24 +63,29 @@ function adoptionContactSubmit(e){
             if(res["status"] == 200){
                 myForm.reset();
                 //console.log("success");
-                $('#modalForm').css("display", "none");
                 $('#sucessSubmit').css("display", "block");
+                $('#spinner').css("display", "none");
                 document.getElementById("refNo").innerText = res["refNo"];
             } else {
+                $('#modalForm').css("display", "block");
+                $('#spinner').css("display", "none");
                 alert(res["message"]);
             }
         }
     });
 }
 
+function enableAdoptionFormSpinner(){
+    $('#modalForm').css("display", "none");
+    $('#spinner').css("display", "block");
+}
 
 
-// next to do is add a loading spinner when the Submit Button is clicked
 
 function contactformSubmit(e){
     enableSpinner();
     e.preventDefault();
-
+    $(window).scrollTop(0);
     // Grab the form HTML DOM element
     let myForm = $("#contact-form")[0];
 

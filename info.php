@@ -16,6 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/reset-styles.css">
         <link rel="stylesheet" href="./css/modal-styles.css">
+        <link rel="stylesheet" href="./css/spinner-styles.css">
         <link rel="stylesheet" href="./css/info-styles.css">
         <link rel="stylesheet" href="./css/header-styles.css">
         <link rel="stylesheet" href="./css/footer-styles.css">
@@ -55,6 +56,7 @@
                         </div>
                     </div>
                 </form>
+                <div id="spinner" class="mod__-body spinner-1 modal-spn mod__-hidden"><br><br><br><br><br></div>
                 <div id="sucessSubmit" class="mod__-body mod__-hidden">
                     <div class="mod__--sucess-container">
                         <img src="./images/ICONS/features/Adopt.svg" alt="Sucessful adoption logo">

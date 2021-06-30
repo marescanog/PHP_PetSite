@@ -24,6 +24,10 @@
     text-align: center;
 }
 
+.spinner-1.modal-spn:before{
+    margin-top: 20px;
+}
+
 @keyframes spinner{
     to {
         transform: rotate(360deg);
@@ -35,6 +39,10 @@
     .spinner-1:before{
         margin-top: 80px;
     }
+
+    .spinner-1.modal-spn:before{
+        margin-top: 20px;
+    }
 }
 
 /* DESKTOP: If the browser window is 900px or larger */
@@ -42,5 +50,10 @@
     .spinner-1:before{
         margin-top: -30px;
         margin-left: 120px;
+    }
+
+    .spinner-1.modal-spn:before{
+        margin-top: 20px;
+        margin-left: -30px;
     }
 }
