@@ -50,6 +50,26 @@
                                 echo $petID;
                             ?>
                             ">  
+                        <input type="hidden" id="petName" name="petName" value="
+                        <?php 
+                            echo $petName;
+                        ?>
+                        ">  
+                        <input type="hidden" id="petSpecie" name="petSpecie" value="
+                        <?php 
+                            echo $animal;
+                        ?>
+                        "> 
+                        <input type="hidden" id="petBreed" name="petBreed" value="
+                        <?php 
+                            echo htmlentities($petInfo[0]['breed']);
+                        ?>
+                        "> 
+                        <input type="hidden" id="petGender" name="petGender" value="
+                        <?php 
+                            echo ucfirst(ENUM_GENDER::getKey((int)$petInfo[0]['gender']));
+                        ?>
+                        "> 
                         <p style="font-size:small;">Enter your contact information to inqire about adoption! The foster carer or shelter will contact you within 24-48 hours.</p><br>      
                         <div class="inf_-contact">
                             <button class="mod_-button">SUBMIT</button>
