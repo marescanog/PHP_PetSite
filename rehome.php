@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/reset-styles.css">
     <link rel="stylesheet" href="./css/stylish-page-wrapper-styles.css">
     <link rel="stylesheet" href="./css/rehome-styles.css">
+    <link rel="stylesheet" href="./css/spinner-styles.css">
     <link rel="stylesheet" href="./css/header-styles.css">
     <link rel="stylesheet" href="./css/footer-styles.css">
     <meta name="currentPage" content="PLACEMENTS">
@@ -21,6 +22,11 @@
 <body >
 
     <?php require './php-html-blocks/header.php'?>
+
+        <!-- Modal for Spinner -->
+        <div id="simpleModal" class="mod__modal">
+                <div id="spinner" class="spinner-1 rehform-spn"><br><br><br><br><br></div>
+        </div>
 
         <div style="background-color:#766F9B; min-height:100vh;">
             <div class="header-padding3" style="transform: translateY(15px);"></div>
@@ -72,6 +78,8 @@
 
                         <!--Form Section-->
                         <form class="reh_-form-container" id="rehomeForm" action="" method="post" enctype="multipart/form-data" onsubmit="rehomeSubmit(event)">
+                            <!--Start Text and Selection Boxes Group-->
+
                             <!--Start Text and Selection Boxes Group-->
                             <div class="reh_--form-textbox-container">
                                 <div class="reh_---form-texbox-flex-group">
@@ -207,6 +215,7 @@
                                 <button type="submit" name="submit">SUBMIT</button>
                                 <p>You will be notified if your request has been approved within 24-48 hours.</p>
                             </div>
+
                         </form>
                         <!--END Form Section-->
                     </div>

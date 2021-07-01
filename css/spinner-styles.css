@@ -28,6 +28,13 @@
     margin-top: 20px;
 }
 
+.spinner-1.rehform-spn:before{
+    top: 50%;
+    left: 50%;
+    margin-top: 0px;
+    margin-left: -30px;
+}
+
 @keyframes spinner{
     to {
         transform: rotate(360deg);

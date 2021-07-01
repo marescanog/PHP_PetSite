@@ -1,6 +1,7 @@
 <?php 
 
 include_once("../../private/db_connect_upload.php");
+require_once('../../private/email_info.php');
 require_once('./enum.php');
 
 $retVal = "";
@@ -255,12 +256,94 @@ if($isValid){
     if($isValid){
         $retVal = "Rehome form submission sucess. Email sent to ".$email." With reference ID REH-".$referenceNum;
         $status = 200;
+
+        // Send Grid API
+
+        $email_sender = "noreplycebupetmatch@gmail.com";
+        $body =             
+            "
+                <div style=\"background-color:#211753; padding:10px; display:flex; flex-direction:row;\">
+                    <img src=\"https://i.imgur.com/qymvU60.png\" alt=\"Cebu Pet Match Logo\" style=\"width:50px;height:50px; display: inline-block;\">
+                    <h1 style=\"color:#FFF; font-family: 'Montserrat', sans-serif; font-size:2rem; display: inline-block; margin-top:auto; margin-bottom:auto; padding-left:10px;\"> 
+                        Cebu Pet Match
+                    </h1>
+                </div>
+                <div style=\"font-family:'Calibri Light'; padding:10px\">
+                    <br>
+                    <p style=\"font-size:1.55em;\"> Greetings <strong>".$fname."</strong>!</p>
+                    <p style=\"font-size:1.2em;\"> The reference number for your rehoming inquiry is <span style=\"color:#BF3D96;\"><strong>REH-".$referenceNum."</strong></span>.</p> 
+        
+                    <div style=\"width:85%; margin-left:auto; margin-right:auto;\">
+                        <p style=\"font-size:0.9rem; margin:0;\">Your Form Submission:</p>
+                        <div style=\"background-color:#F6F6F6; padding:10px; min-height:70px; \">
+                            <p><strong>Pet Name:</strong> ".$petName."</p>
+                            <p><strong>Specie:</strong> ".ENUM_SPECIES::getKey($specie)."</p>
+                            <p><strong>Breed:</strong> ".$breed."</p>
+                            <p><strong>Age:</strong> ".$age."</p>
+                            <p><strong>Birthday:</strong> ".$bday."</p>
+                            <p><strong>Gender:</strong> ".ENUM_GENDER::getKey($gender)."</p>
+                            <p><strong>City:</strong> ".ENUM_CITY::getKey($city)."</p>
+                            <p><strong>Spayed?</strong> ".$spay."</p>
+                            <p><strong>Vaccinated?</strong> ".$vaccinated."</p>
+                            <p><strong>Pet Description:</strong> ".$petDescription."</p>
+                            <p><strong>Reason for rehoming:</strong> ".$reason."</p>
+                            <p><strong>Number of Images Submitted:</strong> ".$imageCount."</p>
+                            <p><strong>Mobile Number Provided:</strong> ".$mobile."</p>
+                        </div>
+                    </div>
+                    
+                    <p> Please Allow 24-48 hours for a representative to contact you. Thank you for your interest and have a great day!</p>
+                    <p> -The Cebu Pet Match Team</p>
+                    <br>
+                    <hr>
+                    <p style=\"font-size:0.85rem;\"> This email was sent to ".$email." because you've submitted an inquiry on the cebupetmatch.xyz website. If you did not submit an inquiry, please disregard this message.  </p>
+                </div>
+            ";
+    
+        $subject = "Cebu Pet Match Rehoming Inquiry Submission";
+    
+        $headers = array(
+            "Authorization: Bearer ".$SENDGRID_API_KEY,
+            'Content-Type: application/json',
+        );
+        $data_email = array(
+            "personalizations" => array(
+                array(
+                    "to" => array(
+                        array(
+                            "email" => $email,
+                            "name" => $fname
+                        )
+                    )
+                )
+            ),
+            "from" => array(
+                "email" => $noreplyEmail
+            ),
+            "subject" => $subject,
+            "content" => array(
+                array(
+                    "type" => "text/html",
+                    "value" => $body
+                )
+            )
+        );
+    
+    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.sendgrid.com/v3/mail/send");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data_email));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
     }
 
 
-    /*
-        INSERT PHP MAILER CODE HERE
-    */
+
 }
 
 //var_dump($retVal);
