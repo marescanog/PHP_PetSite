@@ -28,8 +28,25 @@
                             <div >
                                 <div class = "inf_--about-content">
                                     <ul class="inf_---about-content-col-1">
-                                        <li><span>Species</span><?php echo ENUM_SPECIES::getKey((int)$petInfo[0]['species']);?></li>
-                                        <li><span>Age</span><?php echo ucfirst(ENUM_AGE::getKey((int)$petInfo[0]['age']));?></li>
+                                        <li><span>Species</span><?php 
+                                            $animal_species = ENUM_SPECIES::getKey((int)$petInfo[0]['species']);
+                                            echo $animal_species;
+                                            ?></li>
+                                        <li><span>Age</span><?php 
+                                            //echo ucfirst(ENUM_AGE::getKey((int)$petInfo[0]['age']));
+                                            switch($animal_species){
+                                                case 'Cat';
+                                                    echo 'Kitten';
+                                                break;
+                                                case 'Bird';
+                                                case 'Reptile';
+                                                case 'Rabbit';
+                                                    echo 'Juvenile';
+                                                break;
+                                                default:
+                                                    echo 'Puppy';
+                                            }
+                                            ?></li>
                                         <li><span>Gender</span><?php echo ucfirst(ENUM_GENDER::getKey((int)$petInfo[0]['gender']));?></li>
                                    </ul>
                                    <ul class="inf_---about-content-col-2">
