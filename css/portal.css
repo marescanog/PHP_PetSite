@@ -1,0 +1,185 @@
+body {
+    background-image: url(../images/LOGO/background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Montserrat,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.por_Overlay {
+    height: 100vh;
+    overflow: auto;
+    background: rgba(178, 171, 255, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.por_Overlay .por_-Wrapper {
+    background: #fff;
+    border-radius: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 37px 54px 60px;
+    position: relative;
+    zoom: .8;
+}
+
+.por_----box-header {
+    margin-bottom: 14px;
+    height: 120px;
+    width: 80%;
+    margin-left: 10%;
+    background: url(../images/LOGO/logoAdmin3.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+
+.por_----box-form {
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.inputlabel {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 40px;
+    letter-spacing: .428571px;
+    color: #1d293b;
+    max-width: 500px;
+}
+
+.Input {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 6px;
+    min-width: 500px;
+}
+/*#BF3D96  #beb8ff */
+
+.por_button{
+    margin-top: 28px;
+    background-color: #e95ed6 ;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: .428571px;
+    padding: 20px;
+    text-align: center;
+}
+
+.por_button:hover{
+    background-color: #BF3D96;
+}
+
+
+.Input>input[type=password], .Input>input[type=text] {
+    font-family: Montserrat, sans-serif;
+    border: 1px solid #dce2ea;
+    border-radius: 10px;
+    padding: 15px 19px;
+    font-size: 18px;
+    line-height: 40px;
+    letter-spacing: .428571px;
+    color: #7a8499;
+    font-weight: 500;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    font-weight: 400;
+}
+
+.por---forgot-password {
+    font-size: 13px;
+    margin-top: 14px;
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: .428571px;
+    color: #e95ed6;
+    margin-top: 14px;
+    font-weight: 1000;
+}
+
+.hidden{
+    display: none;
+}
+
+.smallNote{
+    font-size: .9rem;
+    letter-spacing: .428571px;
+    font-family: Montserrat, sans-serif;
+}
+
+.smallNoteContainer{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .por_Overlay{
+        width: 100vw;
+        height: unset;
+        min-height: 100vh;
+    }
+
+    .por_Overlay .por_-Wrapper {
+        -ms-transform: none;
+        transform: none;
+        padding: 15px;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        zoom: unset;
+    }
+
+    .por_box{
+       width: 100%;
+       margin-top:0;
+       margin-bottom:0;
+       flex-grow: 1;
+       display: flex;
+       flex-direction: column;
+    }
+
+    .Input {
+        min-width: unset;
+    }
+    
+}
