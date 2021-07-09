@@ -1,0 +1,194 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              GENERAL                   */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+.hea_fixed-elem{
+    position: fixed;
+    width: 100%;
+}
+.hea_body-styles{
+    background-color:#995E9C; 
+    height: 100%;
+    width:100%;
+}
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              HEADER BAR                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.header{
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 100%;
+}
+
+.header svg{
+    fill:#707070;
+    cursor: pointer;
+}
+
+.header svg:hover{
+    fill:#BF3D96;
+    cursor: pointer;
+}
+
+
+.logo{
+    margin-left: 5px;
+    display: inline;
+}
+
+.left-icons{
+    float: right;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .header{
+        padding: 15px;
+    }
+}
+
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              DRAWER NAV                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.drawer{
+    background-color: #5C5679;
+    color: white;
+    font-family: 'Calibri', sans-serif;
+    height: 100vh;
+    width: 75%;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.drawer.show{
+    display: block;
+    transform: translateX(0);
+    transition: transform 0.5s;
+}
+
+.drawer-padd{
+    padding: 10px 0 10px 0;
+}
+
+.drawer-padd ul{
+    list-style-type: none;
+}
+
+.drawer-padd h4{
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.drawer--header svg{
+    fill: white;
+    transform: translate(-10px,-1px);
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.drawer--header svg:hover{
+    fill:#d379b7;
+}
+
+.drawer--header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.drawer li{
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 0.9rem;
+}
+
+.drawer li:hover{
+    background-color: #3c3779;
+}
+
+.selected li{
+    background-color: blue;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .left-icons{
+        display: flex;
+        flex-direction: row;
+        min-width: 200px;
+        justify-content: space-evenly;
+    }
+
+    .drawer{
+        min-width: 200px;
+        max-width: 400px;
+        width: 15%;
+        transform: translateX(0);
+    }
+
+    .drawer.show{
+        transform: translateX(-100%);
+    }
+}
