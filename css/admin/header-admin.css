@@ -43,7 +43,6 @@
     width: 100%;
 }
 .hea_body-styles{
-    background-color:#995E9C; 
     height: 100%;
     width:100%;
 }
@@ -61,6 +60,8 @@
     background-color: #FFFFFF;
     padding: 10px;
     width: 100%;
+    border-bottom: 2px #bebebe solid;
+    background-color: white;
 }
 
 .header svg{
@@ -156,7 +157,12 @@
 .drawer li{
     padding: 10px;
     padding-left: 30px;
+}
+
+.drawer li a{
     font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
 }
 
 .drawer li:hover{
@@ -166,6 +172,7 @@
 .selected li{
     background-color: blue;
 }
+
 
 /* TABLET: If the browser window is 900px or larger (For text adjustment)*/
 @media only screen and (min-width: 500px) {
@@ -191,4 +198,53 @@
     .drawer.show{
         transform: translateX(-100%);
     }
+}
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*           Empty Div Spacing            */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+
+.hea_empty-div-style{
+    height: 60px;
+    width: 100%;
+}
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .header{
+        padding: 15px;
+    }
+
+    .hea_-empty-flex-div{
+        display: flex;
+    }
+
+    .hea_--empty-div-drawer{
+        flex:1;
+        min-width: 200px;
+        max-width: 400px;
+        margin-left: 1.2em;
+        transition: All 0.5s;
+    }
+    
+    .hea_--div-main{
+        flex: 6;
+    }
+
+    .shrink{
+        max-width: 1px !important;
+        min-width: 1px !important;
+    }
+
 }
