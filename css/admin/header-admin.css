@@ -16,7 +16,6 @@
             </div>
         </div>
     </div>
-
     Group your page layout into important sections.
     Use a ascii-styled header comment to describe the section.
     For example below:
@@ -28,7 +27,6 @@
     //=====================================//
     //=====================================//
     
-
 ===================================================================== */
 
 /* ====================================== */
@@ -41,6 +39,7 @@
 .hea_fixed-elem{
     position: fixed;
     width: 100%;
+    z-index: 2;
 }
 .hea_body-styles{
     height: 100%;
@@ -84,6 +83,10 @@
     float: right;
 }
 
+.header-spacing{
+    height: 50px;
+}
+
 /* TABLET: If the browser window is 900px or larger (For text adjustment)*/
 @media only screen and (min-width: 500px) {
     
@@ -93,6 +96,10 @@
 @media only screen and (min-width: 900px) {
     .header{
         padding: 15px;
+    }
+
+    .header-spacing{
+        height: 60px;
     }
 }
 
@@ -116,6 +123,7 @@
     width: 75%;
     transform: translateX(-100%);
     transition: transform 0.5s;
+    position: fixed;
 }
 
 .drawer.show{
@@ -190,7 +198,7 @@
 
     .drawer{
         min-width: 200px;
-        max-width: 400px;
+        max-width: 200px;
         width: 15%;
         transform: translateX(0);
     }
@@ -204,16 +212,16 @@
 /* ====================================== */
 /* ====================================== */
 /*                                        */
-/*           Empty Div Spacing            */
+/*                Side Nav                */
 /*                                        */
 /* ====================================== */
 /* ====================================== */
 
 /* MOBILE: If the browser window is smaller than 900px */
-
-.hea_empty-div-style{
-    height: 60px;
-    width: 100%;
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 0px;
 }
 
 /* TABLET: If the browser window is 900px or larger (For text adjustment)*/
@@ -222,29 +230,25 @@
 
 /* DESKTOP: If the browser window is 900px or larger */
 @media only screen and (min-width: 900px) {
-    .header{
-        padding: 15px;
+    #main {
+        margin-left: 200px;
     }
+}
 
-    .hea_-empty-flex-div{
-        display: flex;
-    }
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*           Empty Div Spacing            */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
 
-    .hea_--empty-div-drawer{
-        flex:1;
-        min-width: 200px;
-        max-width: 400px;
-        margin-left: 1.2em;
-        transition: All 0.5s;
-    }
-    
-    .hea_--div-main{
-        flex: 6;
-    }
+/* MOBILE: If the browser window is smaller than 900px */
 
-    .shrink{
-        max-width: 1px !important;
-        min-width: 1px !important;
-    }
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
 
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
 }

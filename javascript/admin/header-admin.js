@@ -1,16 +1,21 @@
 // Runtime Code
 var mobileScreen = window.matchMedia("(max-width:900px)");
 var drawer = document.getElementById("drawer");
+var mainContent = document.getElementById("main");
 var navItems = document.getElementById("menuNav").children;
 
 // Reset to default when breakpoint for mobile has been crossed
-function resetDefault(mobileScreen){
+function resetDefault(){
     if(drawer.classList.contains("show")){
         drawer.classList.remove("show");
     }
 
-    if(document.getElementById("emptyHead").classList.contains("shrink")){
-        document.getElementById("emptyHead").classList.remove("shrink");
+    if(!detectMob()) {
+        //Desktop
+        openNav();
+    } else {
+        //Mobile
+        closeNav();
     }
 
 }
@@ -21,7 +26,23 @@ mobileScreen.addEventListener('change', resetDefault);
 
 function toggleDrawer(){
     drawer.classList.toggle("show");
-    document.getElementById("emptyHead").classList.toggle("shrink");
+
+    if(!detectMob()) {
+        if(drawer.classList.contains("show")){
+            closeNav();
+        } else {
+            openNav();
+        }
+    }
+
+}
+
+function openNav(){
+    mainContent.style.marginLeft = "200px";
+}
+
+function closeNav(){
+    mainContent.style.marginLeft= "0";
 }
 
 // Sets the background color for slected menu item
@@ -33,6 +54,7 @@ function setSelectedMenuItem(num){
     }
 }
 
-
-
-
+// Detects Mobile View based on browser width
+function detectMob() {
+    return ( window.innerWidth <= 900 );
+}
