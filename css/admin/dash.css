@@ -1,0 +1,173 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            MAIN SECTION                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.das__padd{
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+}
+
+.das_tickets{
+    margin: 0.6rem 0;
+}
+
+.das_content-management{
+    margin: 0.6rem 0;
+}
+
+.das_mainSection h3{
+    text-decoration: underline;
+    color: #707070;
+    font-size: 1rem;
+}
+
+.das_content-management ul{
+    list-style-type: none;
+    padding-left: 1em;
+}
+
+    .das_content-management li{
+        margin: 1em 0;
+    }
+
+        .das_content-management a{
+            text-decoration: none;
+        }
+
+        .das_content-management a:hover{
+            text-decoration: underline;
+        }
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            Ticket cards                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.das_-tickets-container{
+    padding: 1em;
+}
+
+.das_-tickets-container:hover{
+    cursor: pointer;
+}
+
+.das_--ticket-box{
+    background-color: rgb(88, 88, 88);
+    color: white;
+    padding: 1em;
+    border-radius: 10px;
+    max-width: 225px;
+}
+
+.das_--ticket-box h4{
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.das_---ticket-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.das_---ticket-content p{
+    font-size: 2.1rem;
+}
+
+    .das_--tckt-purple{
+        background-color: #995E9C;
+    }
+
+        .das_--tckt-purple:hover{
+            opacity: 80%;
+        }
+
+    .das_--tckt-blue{
+        background-color: #0073CB;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+        .das_--tckt-blue:hover{
+            opacity: 80%;
+        }
+
+    .das_--tckt-green{
+        background-color: #65CB00;
+    }
+
+        .das_--tckt-green:hover{
+            opacity: 80%;
+        }
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .das_-tickets-container{
+        padding: 1em 0;
+        max-width: 800px;
+    }
+
+    .das_--ticket-box{
+        padding: 1.5em;
+        min-width: 235px;
+    }
+
+    .das_-tickets-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .das_--tckt-blue{
+        margin: 0;
+        margin-left: 0.5em;
+    }
+
+    .das_--tckt-green{
+        margin-left: 0.5em;
+    }
+    
+}
+

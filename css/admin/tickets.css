@@ -1,0 +1,411 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            MAIN SECTION                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.das__padd{
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+}
+
+body{
+    background-color:#E8E8E8 ;
+}
+
+.main__width span{
+    font-size: 0.75rem;
+    display: none;
+}
+
+.main__width span:hover{
+ cursor: pointer;
+ text-decoration: underline;
+}
+
+.main__width span.arrow:hover{
+    text-decoration: none;
+}
+
+.main__breadcrumbs{
+   display: flex;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #727272;
+}
+
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+    .main__width span{
+        display: block;
+    }
+}
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*                 CARD                   */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+
+
+/* MOBILE: If the browser window is smaller than 900px */
+.tkt_card_wrapper{
+    min-height: 80vh;
+    //background-color: yellow;
+}
+
+.tkt_card{
+    background-color: white;
+    min-height: 75vh;
+    padding: 10px 0;
+}
+    .tkt_-card-table{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 75vh;
+    }
+
+    .tkt_--card-thead_body{
+        height: 100%;
+    }
+
+    .tkt_-card-header{
+        display: none;
+    }
+        .tkt_--card-thead{
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            padding: 1em 0;
+            border-bottom: 2px solid #BEBEBE;
+            font-weight: bold;
+            color:#727272;
+        }
+
+        .tkt_--card-thead svg {
+            fill:#A3A3A3;
+            position: absolute;
+            margin-left: 6em;
+        }
+
+        .tkt_--card-thead svg:hover {
+            fill:#5f5f5f;
+            cursor: pointer;
+        }
+
+            .tkt_---card-thead-group{
+                display: flex;
+                text-align: center;
+            }
+
+            .tkt_---card-thead-group p{
+                min-width: 100px;
+            }
+
+        .tkt_--card-tbody{
+            //display: flex;
+            padding-top: 0.5em;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        .tkt_--card-item{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding:0.5em 0;
+            align-items: center;
+        }
+
+            .tkt_--card-item p {
+                min-width: 90px;
+                text-align: center;
+            }
+
+            .tkt_---card-item-btn{
+                min-width: 90px;
+                //outline: none;
+                border: 0;
+                padding: 0.5em 0.25em;
+                background-color: #9797CA;
+                color: white;
+                font-weight: bold;
+                border-radius: 0.25em;
+            }
+
+            .tkt_---card-item-btn:hover{
+                background-color: #8585b4;
+                cursor: pointer;
+            }
+                .tkt_---orange{
+                    background-color: #E7AA50;
+                }
+                .tkt_---orange:hover{
+                    background-color: #b3833d;
+                }
+
+                .tkt_---gray{
+                    background-color: #A3A3A3;
+                }
+                .tkt_---gray:hover{
+                    background-color: #727171;
+                }
+        
+        .col-mobile-hide{
+            display: none;
+        }
+
+        .col-mobile-hide-body{
+            display: none;
+        }
+
+    .tkt_-card-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        bottom: 1px;
+        padding: 1em 1em 0.5em 1em;
+    }
+
+/* Search BAR  */
+    .tkt_--crd-hdr-searchFrom i {
+        position: absolute;
+    }
+
+    .icon {
+        padding: 5px;
+        min-width: 40px;
+    }
+
+    .tkt_--crd-hdr-searchFrom input {
+        text-align: right;
+        height: 2em;
+        border:2px solid #BEBEBE;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 5px;
+        color: #A3a3a3;
+    }
+
+/* Card footer */
+.tkt---card-foot-show-number-entries p, .tkt---card-foot-show-number-entries select {
+    display: inline;
+}
+
+.tkt---card-foot-show-number-entries select{
+    border: 0;
+}
+
+.tkt---card--foot-pagination a{
+    background-color: #EDEDED;
+    padding:0.25rem;
+    margin-left: 0;
+    border: 1px solid #EDEDED;
+    display: inline-flex !important;
+}
+
+.tkt---card--foot-pagination a:hover{
+    cursor: pointer;
+    background-color: lightgray;
+    color: black;
+}
+
+.tkt-crd-foot-extra-pages{
+    display: inline-flex;
+    display: none;
+}
+
+    a.a-selected {
+        background-color: #72729b;
+        color: white;
+    }
+
+    a.a-selected:hover {
+        background-color: rgb(100, 100, 131);
+        color: white;
+    }
+
+    a.a-side{
+        background-color: lightgray;
+    }
+
+    a.a-side:hover{
+        background-color: rgb(165, 164, 164);
+        color: black;
+    }
+
+
+
+
+/* TABLET: If the browser window is 700px or larger (For text adjustment)*/
+@media only screen and (min-width: 700px) {
+        .col-mobile-hide{
+            display: flex;
+        }
+
+        .col-mobile-hide-body{
+            display: inline;
+        }
+
+        .tkt_---card-thead-group p{
+            min-width: 150px;
+        }
+
+        .tkt_--card-item p {
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .tkt_--card-thead svg {
+            margin-left: 8em;
+        }
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+
+        .tkt_card_wrapper{
+           padding: 15px;
+        }
+
+        .tkt_card{
+            max-width: 1100px;
+            margin: 0 0.75em;
+            box-shadow: 0 0 5px rgba(0,0,0,.4);
+            border-radius: 5px;
+            padding: 1em 0;
+        }
+
+        .tkt_-card-header{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1em 0.5em 1em;
+            color: #AEAEAE;
+            font-size: small;
+            font-weight: bold;
+        }
+
+
+        .tkt_-card-table{
+            justify-content: flex-start;
+        }
+
+        .tkt_-card-footer{
+           margin-top:auto;
+           margin-bottom: auto;
+           padding: 0 1em 0.5em 1em;
+           font-size: small;
+           color: gray;
+           font-weight: bold;
+        }
+
+            .tkt---card-foot-show-number-entries select{
+                font-size: .75rem;
+                color: gray;
+                font-weight: bold;
+            }
+
+        .tkt_--card-tbody{
+            overflow-y: scroll;
+        }
+
+        .tkt_--card-thead{
+            padding-right: 1em;
+        }
+        
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+/* for height */
+@media only screen and (min-width: 900px) {
+
+    .tkt_card_wrapper{
+        min-height: 0;
+        height: 580px;
+        overflow-y: hidden;
+    }
+
+    .tkt_card{
+        min-height: 0;
+        height: max-content;
+        height: 540px;
+        overflow-y: hidden;
+    }
+
+    .tkt_--card-thead_body{
+        min-height: 0;
+        height: 380px;
+    }
+
+    /*Pushes footer up or down*/
+    .tkt_-card-table{
+        min-height: 0;
+        height: 565px;
+    }
+    
+    .tkt_--card-tbody{
+        min-height: 0;
+        height: 380px;
+        overflow-y: scroll;
+    }
+
+    .tkt---card--foot-pagination a{
+        padding:0.5rem;
+        display: inline-flex;
+    }
+
+    .tkt---card--foot-pagination{
+        display: inline-flex;
+    }
+
+    .tkt-crd-foot-extra-pages{
+        display: inline-flex;
+    }
+
+}
+
+
+

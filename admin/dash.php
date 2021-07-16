@@ -34,9 +34,51 @@
         </div>
    <!-- Side Nav End -->
    <!-- Main Start -->
-   <main id="main">
-       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores perspiciatis mollitia officia eos nostrum placeat dolore incidunt nihil dicta similique quasi consectetur esse et, veritatis alias fuga molestiae, commodi ad? Ab repudiandae cum cupiditate saepe facere. Laborum, impedit quibusdam, facilis cum commodi aliquid ea, debitis nesciunt nisi eligendi modi optio expedita sit. Laudantium exercitationem voluptatum impedit illum, ducimus blanditiis in molestiae totam accusamus cupiditate aliquid ut molestias ipsa vel suscipit maiores! Ducimus nihil nisi est corrupti nulla ab cum aperiam, mollitia dignissimos consequatur! Quo sit eum fugit repudiandae atque nihil, sed quia autem minima dignissimos. Ut necessitatibus totam distinctio, quam mollitia nesciunt quisquam sit voluptatum, animi hic nulla voluptatibus dolore, voluptates facilis dolores ipsa voluptatem nobis perspiciatis doloremque harum sunt sed praesentium. Provident esse expedita cumque nihil ab voluptatem quidem, quasi nulla! Accusamus repellat sapiente assumenda saepe, vitae doloribus possimus? Temporibus incidunt vel, ad odit accusamus velit natus, enim distinctio sapiente aliquam sint voluptatibus, provident saepe explicabo omnis iure quae reprehenderit beatae vero tenetur corrupti? Placeat consequuntur adipisci debitis veritatis, error expedita repellat commodi voluptas voluptatum porro eligendi ratione id vitae, provident odio velit dicta neque autem deleniti non! Qui animi, placeat amet quae asperiores velit nam nisi facilis nobis?</p>
-       <a href="www.google.com">TEST</a>
+   <main id="main" class="das_mainSection">
+       <section class="main__padd main__header das__padd">
+           <div class="main__width">
+                <h2>Welcome back, <span>Username</span></h2>
+           </div>
+       </section>
+       <section class="main__padd das_tickets">
+            <h3>TICKETS</h3>
+            <div class="das_-tickets-container">
+                <div class="das_--ticket-box das_--tckt-purple">
+                    <div class="das_---ticket-content">
+                        <p>0</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 370 246">
+                        <path d="M456.75,211.38V152.71a30,30,0,0,0-30-30h-310a30,30,0,0,0-30,30v58.8a34.49,34.49,0,0,1,0,68.4v58.8a30,30,0,0,0,30,30h310a30,30,0,0,0,30-30V280a34.5,34.5,0,0,1,0-68.65Zm-62,98.83a15.5,15.5,0,0,1-15.5,15.5h-215a15.5,15.5,0,0,1-15.5-15.5v-129a15.5,15.5,0,0,1,15.5-15.5h215a15.5,15.5,0,0,1,15.5,15.5Z" transform="translate(-86.75 -122.71)" fill="#704773"/><rect x="80.5" y="62" width="209" height="122" fill="#704773"/></svg>                    </svg>
+                    </div>
+                    <h4>ADOPTION REQUESTS</h4>
+                </div>
+                <div class="das_--ticket-box das_--tckt-blue">
+                    <div class="das_---ticket-content">
+                        <p>0</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 133.28 135.32">
+                        <path d="M359,55H258.91c-9.16,0-16.59,6.46-16.59,14.43V175.93c0,8,7.43,14.43,16.59,14.43H359c9.17,0,16.6-6.46,16.6-14.43V69.47C375.6,61.5,368.17,55,359,55Zm-82.41,110c-4.51,0-8.16-3.18-8.16-7.1s3.65-7.1,8.16-7.1,8.16,3.18,8.16,7.1S281.1,165.05,276.59,165.05Zm0-29.34c-4.51,0-8.16-3.17-8.16-7.09s3.65-7.1,8.16-7.1,8.16,3.18,8.16,7.1S281.1,135.71,276.59,135.71Zm0-30.51c-4.51,0-8.16-3.18-8.16-7.1s3.65-7.1,8.16-7.1,8.16,3.18,8.16,7.1S281.1,105.2,276.59,105.2Zm77.79,56.54a1.79,1.79,0,0,1-1.9,1.65H300.25a1.79,1.79,0,0,1-1.9-1.65v-7.57a1.79,1.79,0,0,1,1.9-1.66h52.23a1.79,1.79,0,0,1,1.9,1.66Zm0-29.34a1.79,1.79,0,0,1-1.9,1.66H300.25a1.79,1.79,0,0,1-1.9-1.66v-7.57a1.79,1.79,0,0,1,1.9-1.65h52.23a1.79,1.79,0,0,1,1.9,1.65Zm0-30.52a1.79,1.79,0,0,1-1.9,1.66H300.25a1.79,1.79,0,0,1-1.9-1.66V94.31a1.79,1.79,0,0,1,1.9-1.65h52.23a1.79,1.79,0,0,1,1.9,1.65Z" transform="translate(-242.32 -55.04)" fill="#0a4b7c"/></svg>                    </svg>
+                    </div>
+                    <h4>ADOPTION REQUESTS</h4>
+                </div>
+                <div class="das_--ticket-box das_--tckt-green">
+                    <div class="das_---ticket-content das_--tckt-green">
+                        <p>0</p>
+                        <svg id="Web" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 73 73">
+                        <path id="Path_4" data-name="Path 4" d="M10.95,10.95Q20.987,0,36.5,0T62.05,10.95Q73,20.987,73,36.5T62.05,62.05Q52.013,73,36.5,73T10.95,62.05C4.258,54.75,0,46.842,0,36.5S3.65,17.642,10.95,10.95ZM41.367,65.7q3.65,0,9.125-5.475c2.433-4.258,4.258-8.517,4.258-12.775a10.074,10.074,0,0,0-3.042-7.3c-2.433-2.433-4.867-3.65-7.908-3.65H37.717a17.762,17.762,0,0,1-5.475-1.217,5.523,5.523,0,0,1-1.825-4.258,3.161,3.161,0,0,1,1.217-2.433,4.612,4.612,0,0,1,2.433-1.217A4.152,4.152,0,0,1,37.108,29.2c1.217.608,1.825,1.217,2.433,1.217a3.657,3.657,0,0,0,2.433-.608,3.657,3.657,0,0,0,.608-2.433c0-1.825-1.217-4.258-3.042-6.083A25.162,25.162,0,0,0,42.583,9.733a1.308,1.308,0,0,0-1.217-1.217A18.806,18.806,0,0,0,36.5,7.3c-6.692.608-11.558,1.825-15.817,4.867a15.315,15.315,0,0,0-5.475,12.167,15.576,15.576,0,0,0,4.867,11.558,16.62,16.62,0,0,0,11.558,4.867h0v2.433a7.81,7.81,0,0,0,2.433,6.083,8.859,8.859,0,0,0,5.475,3.65v10.95c0,.608,0,.608.608,1.217S40.758,65.7,41.367,65.7Z" fill="#468D00"/>
+                        </svg>
+                    </div>
+                    <h4>ADOPTION REQUESTS</h4>
+                </div>
+            </div>
+       </section>
+       <section class="main__padd das_content-management">
+           <h3>CONTENT MANAGEMENT</h3>
+            <ul>
+                <li><a href="">PET INFORMATION DATA</a></li>
+                <li><a href="">TESTIMONIAL DATA</a></li>
+                <li><a href="">IMAGES</a></li>
+                <li><a href="">ARCHIVE</a></li>
+            </ul>
+       </section>
    </main>
    <!-- Main END -->
    <script src="../javascript/admin/header-admin.js" type="text/javascript"></script>
