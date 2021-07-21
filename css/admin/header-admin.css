@@ -50,6 +50,10 @@
     background-color: #F2EFFF;
 }
 
+.main__header-white{
+    background-color: white;
+}
+
 .main__padd{
     padding: 0 1em;
 }

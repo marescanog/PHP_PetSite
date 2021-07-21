@@ -1,0 +1,136 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              GENERAL                   */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+body{
+    background-color:#E8E8E8 ;
+}
+
+.das__padd{
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    position: fixed;
+    width: 100%;
+    border-bottom: solid 2px lightgray ;
+}
+
+.extra_padd{
+    padding-top: 6em;
+}
+
+.inf__content_pad{
+    width: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    #main{
+        height: 92vh;
+        flex-direction: column;
+    }
+
+    .inf__content_pad{
+        width: 70%;
+        min-width: 700px;
+        background-color: white;
+    }
+}
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              Ticket Data               */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.inf-ticket-data-container{
+    max-height: 550px;
+    background-color: powderblue;
+    overflow-y: scroll;
+}
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .inf-ticket-data-container{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+}
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            Ticket Column               */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.inf-ticket-data-table{
+    max-height: 550px;
+    background-color: palevioletred;
+    overflow-y: scroll;
+}
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .inf-ticket-data-table{
+        max-height: 250px;
+        overflow-y: scroll;
+    }
+}
+    
