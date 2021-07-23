@@ -46,21 +46,70 @@
                     <div class="inf--tkt-status-header">
                         CLOSED
                     </div>
-                    <h3>GEH-DC001</h3>
+                    <h3 class="inf--tkt-h3">GEH-DC001</h3>
                 </div>
-                <h2>GENERAL CONTACT INQUIRY TICKET</h2>
+                <h2 class="inf-tkt-h2">GENERAL CONTACT INQUIRY TICKET</h2>
            </div>
        </section>
        <main class="extra_padd inf__content_pad">
            <section class="inf-ticket-data-container">
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
+                <form class="inf--tkt-data-form">
+                    <div class="inf--tkt-data-header">
+                        <h4>TICKET DATA</h4>
+                        <button class="btn-tkt-head btn-comment">COMMENT</button>
+                        <button class="btn-tkt-head btn-edit">EDIT</button>
+                        <button class="btn-tkt-head btn-save hide">SAVE</button>
+                        <button class="btn-tkt-head btn-cancel hide">CANCEL</button>
+                    </div>
+                    <div class="inf---tkt-data-row">
+                        <div class="inf----form-column">
+                            <!-- inf-----enable" -->
+                            <div class="inf-----form-group ">
+                                <label for="name-input">Name: </label>
+                                <input type="text" placeholder="User's Name" disabled>
+                            </div>
+                            <!-- inf-----enable -->
+                            <div class="inf-----form-group ">
+                                <label for="name-input">Email: </label>
+                                <input type="text"  placeholder="User's Email" disabled>
+                            </div>
+                            <!-- inf-----enable -->
+                            <div class="inf-----form-group ">
+                                <label for="name-input">Number: </label>
+                                <input type="text"  placeholder="User's Number" disabled>
+                            </div>
+                        </div>
+                        <div class="inf----form-column">
+                            <!-- inf-----enable -->
+                            <div class="inf-----form-group">
+                                <label for="name-input">Message: </label>
+                                <textarea name="" id="" cols="30" rows="5" placeholder="The User's message" disabled></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inf---admin-notes hide">
+                         <hr class="br-space">                        
+
+                                <label for="name-input">Status: </label>
+                                <div class="inf-----form-group inf-----enable">
+                                     <select name="" id="">
+                                        <option value="">New Ticket</option>
+                                        <option value="">Pending</option>
+                                        <option value="">Closed</option>
+                                    </select>
+                                </div>
+
+                                <label for="name-input">Administrator's Notes: </label>
+                                <div class="inf-----form-group inf-----enable">
+                                    <textarea name="" id="" cols="150" rows="5" placeholder="Lorem ipsum dolor"></textarea>
+                                </div>
+
+                        <button class="btn-tkt-head btn-save ">SAVE</button>
+                        <button class="btn-tkt-head btn-cancel ">CANCEL</button>
+                    </div>
+
+                </form>
            </section>
            <section class="inf-ticket-data-table">
            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>

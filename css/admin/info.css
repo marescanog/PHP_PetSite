@@ -43,15 +43,14 @@ body{
 }
 
 .das__padd{
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
+    padding: 0.25em 0.75rem;
     position: fixed;
     width: 100%;
     border-bottom: solid 2px lightgray ;
 }
 
 .extra_padd{
-    padding-top: 6em;
+    padding-top: 4.50em;
 }
 
 .inf__content_pad{
@@ -60,9 +59,23 @@ body{
     height: 100%;
 }
 
+.hide{
+    display: none !important;
+}
+
+.br-space{
+    margin-bottom: 0.5em;
+}
 
 /* TABLET: If the browser window is 500px or larger (For text adjustment)*/
 @media only screen and (min-width: 500px) {
+    .das__padd{
+        padding: 0.75em 1.5rem;
+    }
+
+    .extra_padd{
+        padding-top: 5.5em;
+    }
 }
 
 /* DESKTOP: If the browser window is 900px or larger */
@@ -77,6 +90,65 @@ body{
         min-width: 700px;
         background-color: white;
     }
+
+    .das__padd{
+        padding: 0.75em 2rem;
+    }
+
+    .extra_padd{
+        padding-top: 6em;
+    }
+    
+}
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*               HEADER                   */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.inf-tkt-header{
+    margin: 0.25em 0;
+}
+
+.inf--tkt-status-header{
+    background-color: #9797CA;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    color:white;
+    font-weight: bold;
+    font-size: small;
+}
+    .inf--tkt-stat-orange{
+        background-color: #E7AA50;
+    }
+
+    .inf--tkt-stat-gray{
+        background-color: #A3A3A3;
+    }
+
+.inf--tkt-h3{
+    display: inline;
+    font-size: 1rem;
+}
+
+.inf-tkt-h2{
+    font-size: 1rem !important;
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .inf--tkt-status-header{
+        font-size: 1rem;
+    }
+
+    .inf-tkt-h2{
+        font-size: 1.2rem !important;
+    }
+    
 }
 
 /* ====================================== */
@@ -89,20 +161,208 @@ body{
 
 /* MOBILE: If the browser window is smaller than 900px */
 .inf-ticket-data-container{
-    max-height: 550px;
-    background-color: powderblue;
+    //background-color: powderblue;
     overflow-y: scroll;
+    padding: .5em 1em;
+    min-height: 150px;
+    max-height: 450px;
+}
+
+.inf--tkt-data-header h4, .inf--tkt-data-header button{
+    display: inline-block;
+}
+
+.inf--tkt-data-header{
+    margin-bottom: 0.75em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inf--tkt-data-form{
+    display: flex;
+    flex-direction: column;
+}
+
+// .inf-----form-group{
+//     margin-top: 1em;
+//     // display: flex;
+//     // flex-direction: column;
+//     // justify-content: end;
+// }
+
+.inf---admin-notes{
+    padding: 0.5em 0;
+}
+
+    .inf---admin-notes label{
+        font-size: 1em;
+        font-family: Calibri, sans-serif;
+        font-weight: bold;
+    }
+
+    .inf---admin-notes textarea{
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        width: 95%;
+    }
+
+
+
+.btn-tkt-head{
+    outline: none;
+    border: 0;
+    padding: .25em .5em;
+    margin-left: .75em;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px gray;
+}
+
+    .btn-comment:focus, .btn-edit:focus{
+        outline: rgb(66, 62, 87) solid 2px;
+    }
+
+    .btn-comment{
+        background-color: #E29F2E;
+    }
+
+        .btn-comment:hover{
+            background-color: #b68127;
+        }
+
+    .btn-edit{
+        background-color: #4FA6E9;
+    }
+
+        .btn-edit:hover{
+            background-color: #3b80b4;
+        }
+
+    .btn-save{
+        background-color: #5cb85c;
+    }
+
+        .btn-save:hover{
+            background-color: #489248;
+        }
+
+    .btn-cancel{
+        background-color: #d9534f;
+    }
+
+        .btn-cancel:hover{
+            background-color: #a53d3a;
+        }
+
+.inf-----form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 0.75em;
+}
+
+.inf-----form-group input, .inf-----form-group label, .inf-----form-group textarea .inf-----form-group select{
+    font-family: Calibri, sans-serif;
+    font-size: 1rem;
+}
+
+.inf-----form-group input{
+    border-radius: 5px;
+    outline: none;
+    height: 30px;
+    padding: 0 0.5em;
+    border: 0;
+    pointer-events: none;
+    border: 1px solid lightgray;
+}
+
+    .inf-----form-group select, .inf-----form-group.inf-----enable input, .inf-----form-group.inf-----enable textarea{
+        border: 2px solid #cfcfcf;
+        pointer-events: all;
+    }
+
+    .inf-----form-group select:focus, .inf-----form-group.inf-----enable input:focus, .inf-----form-group.inf-----enable textarea:focus{
+        border: 2px solid #9797CA;
+    }
+
+
+.inf-----form-group select{
+    outline: none;
+    padding: 0.25em;
+    border-radius: 5px;
+    margin-left: 0.25em;
+    margin-top: 0.25em;
+    width: 50%;
+    max-width: 200px;
+    min-width: 100px;
+    font-family: Calibri, sans-serif;
+}
+
+.inf-----form-group textarea{
+    resize: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    font-family: Calibri, sans-serif;
+    font-size: 1rem;
+    border: 1px solid lightgray;
+    pointer-events: none;
+}
+
+.inf-----form-group label{
+    color: #747474;
+    font-weight: 300px;
+    margin-right: .25em;
+    min-width: 60px;
 }
 
 /* TABLET: If the browser window is 500px or larger (For text adjustment)*/
 @media only screen and (min-width: 500px) {
+    .inf-ticket-data-container{
+        min-height: 300px;
+    }
 }
 
 /* DESKTOP: If the browser window is 900px or larger */
 @media only screen and (min-width: 900px) {
     .inf-ticket-data-container{
         max-height: 300px;
+        min-height: 150px;
         overflow-y: scroll;
+    }
+
+    .inf-ticket-data-container{
+        padding: 0.75em 1em;
+    }
+
+    .inf----form-group{
+        margin-top: 1em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    // .inf--tkt-data-form{
+
+    // }
+
+    .inf---tkt-data-row{
+        display: flex;
+        justify-content: end;
+    }
+
+    .inf----form-column{
+        margin-right: 1.25em;
+    }
+
+    .inf-----form-group{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 }
 
