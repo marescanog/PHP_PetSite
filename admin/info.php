@@ -112,14 +112,66 @@
                 </form>
            </section>
            <section class="inf-ticket-data-table">
-           <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda aperiam debitis nobis doloribus necessitatibus iure modi nam atque quam vel maxime in quia dolorum, illo illum eaque? In, architecto, similique molestiae ea totam, repellat enim autem quae corrupti quam laudantium tenetur quisquam pariatur neque impedit corporis. Recusandae cum deleniti explicabo itaque eius cumque sint, eligendi, laboriosam illo vel odit ab iusto beatae vero commodi quibusdam quis perspiciatis at adipisci suscipit! Neque eveniet quia perferendis hic velit harum vel. Odit ipsa laborum rerum obcaecati odio qui corrupti mollitia ratione tenetur nemo. Nisi ad dolorum eius. Distinctio, autem? Nesciunt, maxime excepturi?</p>
+               <div class="inf--tkt-table-header">
+                    <div class="inf---tkt-th-group inf-flex-1">
+                        <h3>Date</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><polygon points="13.41 16.59 12 18 16 22 20 18 18.59 16.59 17 18.17 17 3 15 3 15 18.17 13.41 16.59"/><polygon points="10.59 7.41 12 6 8 2 4 6 5.41 7.41 7 5.83 7 21 9 21 9 5.83 10.59 7.41"/></svg>
+                    </div>
+                    <div class="inf---tkt-th-group inf-flex-1">
+                        <h3>Time</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><polygon points="13.41 16.59 12 18 16 22 20 18 18.59 16.59 17 18.17 17 3 15 3 15 18.17 13.41 16.59"/><polygon points="10.59 7.41 12 6 8 2 4 6 5.41 7.41 7 5.83 7 21 9 21 9 5.83 10.59 7.41"/></svg>
+                    </div>
+                    <div class="inf---tkt-th-group inf-flex-3">
+                        <h3>Notes</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><polygon points="13.41 16.59 12 18 16 22 20 18 18.59 16.59 17 18.17 17 3 15 3 15 18.17 13.41 16.59"/><polygon points="10.59 7.41 12 6 8 2 4 6 5.41 7.41 7 5.83 7 21 9 21 9 5.83 10.59 7.41"/></svg>
+                    </div>
+               </div>
+               <div class="inf--tkt-table-body">
+                    <div class="inf---tkt-tr-group">
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>06/07/2021</p>
+                        </div>
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>11:21:00</p>
+                        </div>
+                        <div class="inf-pad-x-1 inf-flex-3" style="text-align:justify">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime animi magnam facilis voluptatibus non, fugiat ratione aut eveniet harum totam quae nostrum nulla ab quasi.</p>
+                        </div>
+                    </div>
+                    <div class="inf---tkt-tr-group">
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>06/07/2021</p>
+                        </div>
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>11:21:00</p>
+                        </div>
+                        <div class="inf-pad-x-1 inf-flex-3" style="text-align:justify">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime animi magnam facilis voluptatibus non, fugiat ratione aut eveniet harum totam quae nostrum nulla ab quasi.</p>
+                        </div>
+                    </div>
+                    <div class="inf---tkt-tr-group">
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>06/07/2021</p>
+                        </div>
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>11:21:00</p>
+                        </div>
+                        <div class="inf-pad-x-1 inf-flex-3" style="text-align:justify">
+                            <p>quasi.</p>
+                        </div>
+                    </div>
+                    <div class="inf---tkt-tr-group">
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>06/07/2021</p>
+                        </div>
+                        <div class="inf-pad-y-1 inf-flex-1">
+                            <p>11:21:00</p>
+                        </div>
+                        <div class="inf-pad-x-1 inf-flex-3" style="text-align:justify">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia odio, nihil veritatis facere delectus, laboriosam nam alias ipsam itaque non quidem beatae corrupti exercitationem eligendi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime animi magnam facilis voluptatibus non, fugiat ratione aut eveniet harum totam quae nostrum nulla ab quasi.</p>
+                        </div>
+                    </div>
+               </div>
            </section>
        </main>
     </div>
