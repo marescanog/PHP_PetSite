@@ -1,0 +1,159 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            MAIN SECTION                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.das__padd{
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+}
+
+.edt_container{
+    background-color: #E8E8E8;
+    min-height: 100vh;
+    // padding: 0.5em 1em;
+    font-family: Calibri, sans-serif;
+}
+
+.edt_pad{
+    padding: 0.5em 1em;
+}
+
+.edt_container h2{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25em;
+    padding-top: 0.5em;
+    padding-left: 1em;
+}
+
+.edt_form-group{
+   margin-bottom: 0.5em;
+}
+
+.edt_label-group p{
+    margin-top: 0.5em
+}
+
+.edt_form-group-2 button{
+    background-color: #A3A3A3;
+    padding: 0.5em 1.25em;
+    border-radius: 10px;
+    border:1px solid #707070;
+    outline: 0;
+    margin-top: 0.5em;
+    font-weight:bold;
+    color:#707070;
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .edt_container{
+        background-color: #E8E8E8;
+        min-height: 100vh;
+        // padding: 1em 2.5em;
+        // padding-right: 5em;
+    }
+
+    .edt_container h2{
+        padding-top: 0.5em;
+        padding-left: 2em;
+    }
+
+    .edt_pad{
+        padding: 0.25em 2.5em;
+        padding-right: 5em;
+    }
+
+    .edt_container h2{
+        font-size: 1.25rem;
+    }
+
+    .edt_form-group-2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .edt_label-group{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .edt_form-group-2 button{
+        margin: 0em 1em;
+    }
+
+    .edt_label-group p{
+        margin-top: 0em
+    }
+}
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              CONTENTS                  */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.edt_contents{
+    background-color: white;
+    margin-top: 0.5em;
+    padding:0;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+    padding:0.5em;
+}
+
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .edt_contents{
+        margin: 0.5em 2.5em;
+        margin-right: 5em;
+        border-radius: 3px;
+    }
+}
+
+
