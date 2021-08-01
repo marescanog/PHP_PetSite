@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="../css/reset-styles.css">
     <link rel="stylesheet" href="../css/admin/header-admin.css">
     <link rel="stylesheet" href="../css/admin/editcontent.css">
+    <link rel="stylesheet" href="../css/admin/testimonials-styles.css">
 </head>
 <body class="hea_body-styles" onload="setSelectedMenuItem(4)">
     <!-- Header Menu with Drawer Start -->
     <?php require '../php-html-blocks/admin/header-admin.php'?>
     <!-- Header Menu with Drawer End -->
+
+    <!-- Get testimonial Data Start-->
+    <?php 
+        require_once '../php/admin/set-testimonial-admin.php';
+    ?>
+    <!-- Get testimonial Data Start-->
 
    <!-- Side Nav Start -->
    <div class="header-spacing"></div>
@@ -63,7 +70,51 @@
             </div>    
         </div>
         <div class="edt_pad edt_contents">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nulla voluptate dolorem veniam non expedita, ut perferendis. Dicta reiciendis quae beatae veniam iusto vero necessitatibus.</p>
+        <div class="sty__-paper tes_spacing">
+                    <!-- Section 1-->
+                    <div class="tes_-inner-wrapper">
+                        <div class='tes_--section-1'>
+                            <div class='tes_---section-1-image'>
+                                <img src="../images/PEOPLE/testimonials/<?php echo $arr['Article'];?>-400x450.jpg" alt="<?php echo $arr['Name'].' and '.$arr['PetName'];?>">
+                            </div>
+                            <div class='tes_---section-1-content'>
+                                <h2><?php echo $arr['Name'];?></h2>
+                                <div class="tes_----section-1-horizontal"></div>
+                                <div class="tes_----section-1-paragraphs">
+                                    <h3><?php echo $arr['Head1'];?></h3>
+                                    <p><?php echo $arr['Paragraph1'];?></p>
+                                    <p><?php echo $arr['Paragraph2'];?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 2-->
+                    <div class="tes_-middle-inner-wrapper">
+                        <h3><?php echo $arr['Head2'];?></h3>
+                        <div class='tes_--section-2-image'>
+                            <img src="../images/PEOPLE/testimonials/<?php echo $arr['Article'];?>-600x400.jpg" alt="<?php echo $arr['Name'].' and '.$arr['PetName'];?>">
+                        </div>
+                        <div>
+                            <p><?php echo $arr['Paragraph3'];?></p>
+                            <p><?php echo $arr['Paragraph4'];?></p>
+                        </div>
+                  </div>
+                    <!-- Section 3-->
+                    <div class="tes_-inner-wrapper">
+                            <div class='tes_--section-3'>
+                                <div class='tes_---section-3-image'>
+                                    <img src="../images/PEOPLE/testimonials/<?php echo $arr['Article'];?>-400x300.jpg" alt="<?php echo $arr['PetName'];?>">
+                                </div>
+                                <div class='tes_---section-3-content'>
+                                    <h2><?php echo $arr['PetName'];?></h2>
+                                    <div class="tes_----section-3-horizontal"></div>
+                                    <div class="tes_----section-3-paragraphs">
+                                        <p><?php echo $arr['Paragraph5'];?> </p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
         </div>
     </form>
   </main>

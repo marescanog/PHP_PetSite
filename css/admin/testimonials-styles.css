@@ -1,0 +1,405 @@
+/* ==================================================================                                 
+    CSS PERSONAL NAMING CONVENTION: 
+        General classes: pagename__classname (Can be applied to any div)
+        Outmost classes: pagename_classname
+        Inner classes:
+            1 indent: pagename_-classname
+            2 indent: pagename_--classname
+            3 indent: pagename_---classname
+                and so on...
+    Sample HTML with applied names:
+    <div class="pagename_classname">
+        <div class="pagename_-classname">
+            <div class="pagename_--classname">
+                <div class="pagename_--classname">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Group your page layout into important sections.
+    Use a ascii-styled header comment to describe the section.
+    For example below:
+    //=====================================//
+    //=====================================//
+    //                                     //
+    //          YOUR SECTION NAME          //
+    //                                     //
+    //=====================================//
+    //=====================================//
+    
+
+===================================================================== */
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*      GENERAL CLASSES AND SELECTORS     */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+    .tes_spacing{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .tes_-inner-wrapper{
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        // background-color: blueviolet;
+        font-family:  'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        max-height: fit-content;
+    }
+
+    .tes__font h2{
+        font-family: 'Noto Sans TC', sans-serif;
+        color: #766F9B;
+    }
+
+    .tes_----section-1-paragraphs h3, .tes_-middle-inner-wrapper h3, .tes_---section-3-content h2{
+        font-family: 'Calibri Light','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        color: #BF3D96;
+        text-align: center;
+        font-weight: 200;  
+    }
+    
+    .tes_---section-3-content h2, .tes_-middle-inner-wrapper h3{
+        font-weight: bold;
+    }
+
+    .tes_---section-3-content h2{
+        font-size: 1.5rem;
+    }
+
+    .tes__font p{
+        font-family:  'Calibri Light', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        text-indent: 3em;
+    }
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .tes_-inner-wrapper{
+        width: 70%;
+    }
+}
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*            SECTION - 1                 */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+    .tes_--section-1 img{
+        border-radius: 15px;
+        margin-top: 1em;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: bottom;
+    }
+
+    .tes_---section-1-image{
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .tes_---section-1-content h2{
+        text-align: center;
+        margin-top:10px;
+    }
+    
+
+    .tes_----section-1-horizontal{
+        background-color: #5c5877;
+        padding: 2px;
+        width: 90%;
+        border-radius: 10px 10px 10px 10px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .tes_----section-1-paragraphs{
+        text-align: justify;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tes_----section-1-paragraphs h3{
+        font-size: 1.2rem;
+        padding-top: 1em;
+    }
+
+    .tes_----section-1-paragraphs p{
+        text-indent: 1.5em;
+        padding-top: 1em;
+        text-align: justify;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+
+    .tes_--section-1{
+        padding-top: 2em;
+    }
+
+    .tes_----section-1-horizontal{
+        width: 350px;
+        padding: 4px;
+    }
+
+    .tes_----section-1-paragraphs h3{
+        max-width: 450px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .tes_--section-1{
+        padding-top: 0;
+        display: flex;
+    }
+
+    .tes_--section-1 img{
+        margin-top: 4em;
+    }
+
+    .tes_---section-1-image{
+        flex: 1;
+        padding: 0;
+    }
+
+    .tes_---section-1-content{
+        flex: 1.5;
+        margin-top:4em;
+    }
+
+    .tes_---section-1-content h2{
+        font-size: 1.75rem;
+        margin-left: 1em;
+        text-align: left;
+        margin-top:0;
+    }
+
+    .tes_----section-1-horizontal{
+        padding: 5px;
+        width: 350px;
+        border-radius: 0 10px 10px 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .tes_----section-1-paragraphs{
+        margin-top:1em;
+        max-width: none;
+        margin-left: 1.5em;
+        margin-right: 0;
+
+    }
+
+    .tes_----section-1-paragraphs h3{
+        margin-left: 3em;
+        margin-right: 3em;
+        font-weight: 100;
+        font-size: 1.25rem;
+        max-width: none;
+    }
+
+    .tes_----section-1-paragraphs p{
+        margin-top:1em;
+        margin-left: 1em;
+        margin-right: 0;
+    }
+    
+}
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*             SECTION - 2                */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.tes_-middle-inner-wrapper{
+    max-height: fit-content;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.tes_-middle-inner-wrapper p{
+    text-align: justify;
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+}
+.tes_--section-2-image{
+    margin-top: 1em;
+}
+
+.tes_--section-2-image img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {   
+    .tes_-middle-inner-wrapper{
+        margin-top: 4em;
+        margin-bottom: 3em;
+    }
+}
+
+
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              SECTION - 3               */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.tes_--section-3 img{
+    border-radius: 15px;
+    margin-top: 1em;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.tes_--section-3 {
+    padding-bottom: 2.5em;
+}
+.tes_---section-3-image{
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.tes_---section-3-content h2{
+    text-align: center;
+    margin-top:10px;
+}
+
+.tes_----section-3-horizontal{
+    background-color: #5c5877;
+    padding: 2px;
+    width: 90%;
+    border-radius: 10px 10px 10px 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tes_----section-3-paragraphs{
+    text-align: justify;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.tes_----section-3-paragraphs p{
+    margin-top: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.tes_----section-3-paragraphs h4{
+    margin-top:1.5em;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+
+
+/* TABLET: If the browser window is 900px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+    .tes_----section-3-horizontal{
+        width: 350px;
+        padding: 4px;
+    }
+    
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {    
+    .tes_--section-3{
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .tes_---section-3-image{
+        flex: 1;
+        padding: 0;
+    }
+
+    .tes_---section-3-content{
+        flex: 1.5;
+        margin-top:4em;
+    }
+
+    .tes_---section-3-content h2{
+        text-align: right;
+        margin-top: 0;
+        margin-right: 2em;
+    }
+
+    .tes_----section-3-horizontal{
+        padding: 5px;
+        width: 450px;
+        border-radius: 10px 0 0 10px;
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .tes_----section-3-paragraphs{
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: 2em;
+    }
+    
+    .tes_----section-3-paragraphs p{
+        text-align: justify;
+        margin-top: 2em;
+        margin-left: 0;
+    }
+}
+
+
