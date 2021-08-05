@@ -50,6 +50,8 @@
     line-height: 20px;
     outline: 0;
     max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* TABLET: If the browser window is 500px or larger (For text adjustment)*/
@@ -149,6 +151,11 @@
         padding-left: 5px;
         padding-right: 5px;
     }
+
+    .tes_---section-1-content{
+        margin-right: auto;
+        margin-left: auto;
+    }
     
     .tes_---section-1-content h2{
         font-family: 'Noto Sans TC', sans-serif;
@@ -159,7 +166,6 @@
         margin-top: 0.75em;
         font-size: 1.5rem;
     }
-    
 
     .tes_----section-1-horizontal{
         background-color: #5c5877;
@@ -210,6 +216,18 @@
         margin-left: auto;
     }
 
+    .tes_----section-1-paragraphs{
+        max-width: 450px;
+    }
+
+    .tes_---section-1-content{
+        max-width: 550px;
+    }
+
+    .tes_---section-1-image{
+        max-width: 450px;
+    }
+
 }
 
 /* DESKTOP: If the browser window is 900px or larger */
@@ -228,6 +246,7 @@
     .tes_---section-1-image{
         flex: 1;
         padding: 0;
+        max-width: 400px;
     }
 
     .tes_---section-1-content{
@@ -285,7 +304,7 @@
 /* MOBILE: If the browser window is smaller than 900px */
 .tes_-middle-inner-wrapper{
     max-height: fit-content;
-    max-width: 850px;
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
@@ -296,15 +315,19 @@
 
 .tes_-middle-text-container{
     font-family: 'Calibri light', 'Trebuchet MS', sans-serif;
-    max-width: 500px;
+    max-width: 475px;
     margin-left: auto;
     margin-right: auto;
     color: #BF3D96;
     text-align: center;
-    font-weight: 200 !important;  
     font-size: 1rem;
     height: max-content;
     margin-top: 1rem;
+}
+
+.tes_-middle-text-container h3{
+    font-weight: normal;  
+    font-size: 1.2rem;
 }
 
 .tes_-middle-inner-wrapper p{
@@ -312,7 +335,12 @@
     padding-right: 1em;
     padding-left: 1em;
     margin-top: 1em;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    text-indent: 1.5em;
 }
+
 .tes_--section-2-image{
     margin-top: 1em;
 }
@@ -322,6 +350,24 @@
     height: 400px;
     object-fit: cover;
     object-position: center;
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+    .tes_-middle-inner-wrapper{
+        max-width: 650px;
+    }
+
+    .tes_-middle-text-container{
+        max-width: 650px;
+    }
+
+    .tes_-middle-inner-wrapper p{
+        margin-top: 1em;
+        max-width: 600px;
+    }
+
+
 }
 
 /* DESKTOP: If the browser window is 900px or larger */
@@ -364,8 +410,15 @@
 }
 
 .tes_---section-3-content h2{
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #766F9B;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
-    margin-top:10px;
+    font-weight: 400;
+    margin-top: 0.75em;
+    font-size: 1.5rem;
+    
 }
 
 .tes_----section-3-horizontal{
@@ -392,6 +445,7 @@
     margin-top: 1em;
     margin-right: 1em;
     margin-left: 1em;
+    text-indent: 1.5em;
 }
 
 .tes_----section-3-paragraphs h4{
@@ -407,6 +461,14 @@
     .tes_----section-3-horizontal{
         width: 350px;
         padding: 4px;
+    }
+
+    .tes_----section-3-paragraphs{
+        max-width: 400px;
+    }
+
+    .tes_---section-3-image{
+        max-width: 450px;
     }
     
 }
@@ -435,7 +497,7 @@
     .tes_---section-3-content h2{
         text-align: right;
         margin-top: 0;
-        margin-right: 2em;
+        padding-right: 2em;
     }
 
     .tes_----section-3-horizontal{
@@ -456,6 +518,7 @@
         text-align: justify;
         margin-top: 2em;
         margin-left: 0;
+
     }
 }
 
