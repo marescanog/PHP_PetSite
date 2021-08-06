@@ -121,6 +121,17 @@
         <p>test</p>
     </form>
   </main>
+    <!-- Toolbar Start -->
+    <div class="edt_toolbar-container">
+        <button id="btn-hide">HIDE</button>
+        <button id="btn-top">TOP</button>
+        <div class="edt_-toolbar-indicator">
+            <p>NO CURRENT CHANGES</p>
+        </div>
+        <button id="btn-save">SAVE</button>
+        <button id="btn-show">SHOW</button>
+    </div>
+    <!-- Toolbar End -->
    <!-- Main END -->
    <script src="../javascript/admin/header-admin.js" type="text/javascript"></script>
 </body>
