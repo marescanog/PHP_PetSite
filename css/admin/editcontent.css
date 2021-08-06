@@ -158,3 +158,95 @@
 }
 
 
+/* ====================================== */
+/* ====================================== */
+/*                                        */
+/*              TOOLBAR                   */
+/*                                        */
+/* ====================================== */
+/* ====================================== */
+
+/* MOBILE: If the browser window is smaller than 900px */
+.edt_toolbar-container{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    display: flex;
+}
+
+.edt_toolbar-container button{
+    padding: 0.5em 0.4em;
+    background-color: #DDD6FF;
+    border: 2px solid #5f5f5f;
+    font-family: 'Calibri';
+    outline: 0;
+}
+
+.edt_toolbar-container button:focus{
+    background-color: #ffffff;
+}
+
+.edt_toolbar-container button:hover{
+    background-color: #ffffff;
+}
+
+.edt_-toolbar-indicator{
+    padding: 0.5em 0.35em;
+    background-color: #DDD6FF;
+    border: 2px solid #5f5f5f;
+    transform: translateX(2px);
+    font-family: 'Calibri';
+    max-width: 100px;
+    font-size: small;
+    text-align: center;
+}
+
+#btn-hide{
+    border-radius: 8px 0 0 8px;
+    transform: translateX(6px);
+}
+
+#btn-hide::before{
+    content: '→';
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#btn-top{
+    transform: translateX(4px);
+}
+
+#btn-top::before{
+    content: '↑';
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#btn-save{
+    border-radius: 0 8px 8px 0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#btn-show{
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+#btn-show::before{
+    content: '←';
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+}
+/* TABLET: If the browser window is 500px or larger (For text adjustment)*/
+@media only screen and (min-width: 500px) {
+}
+
+/* DESKTOP: If the browser window is 900px or larger */
+@media only screen and (min-width: 900px) {
+}
