@@ -128,7 +128,7 @@
         <div class="edt_-toolbar-indicator">
             <p>NO CURRENT CHANGES</p>
         </div>
-        <button id="btn-save">SAVE</button>
+        <button id="btn-save">SAVE.</button>
         <button id="btn-show">SHOW</button>
     </div>
     <!-- Toolbar End -->
